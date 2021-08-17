@@ -1,10 +1,17 @@
 /** @format */
 
-import React from "react";
-import { Switch } from "react-router-dom";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { mainRoutes } from '../routes/mainRoutes';
 
 const ContentSwitcher = () => {
-  return <Switch></Switch>;
+  return (
+    <Switch>
+      {mainRoutes.map(route => {
+        <Route>{route}</Route>;
+      })}
+    </Switch>
+  );
 };
 
 export default ContentSwitcher;
