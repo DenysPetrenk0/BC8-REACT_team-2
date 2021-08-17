@@ -1,0 +1,11 @@
+.footerContainer {
+  text-align: center;
+  color: #858598;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+}
+
+.footerIcon {
+  fill: #ffbc33;
+}
