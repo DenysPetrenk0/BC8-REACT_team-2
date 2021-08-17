@@ -12,7 +12,7 @@ export const mainRoutes = [
   },
   {
     name: 'Register',
-    path: '/registration',
+    path: '/auth',
     component: lazy(
       () => import('#') /* webpackChunkName: "RegistrationPage" */,
     ),
@@ -22,8 +22,8 @@ export const mainRoutes = [
     // redirectTo: '/',
   },
   {
-    name: 'Login',
-    path: '/login',
+    name: 'Contacts',
+    path: '/contacts-us',
     component: lazy(() => import('#') /* webpackChunkName: "LoginPage" */),
     exact: true,
     // restricted: true,
@@ -31,8 +31,17 @@ export const mainRoutes = [
     // redirectTo: '/',
   },
   {
-    name: 'Contacts',
-    path: '/contacts',
+    name: 'Planing',
+    path: '/planing',
+    component: lazy(() => import('#') /* webpackChunkName: "LoginPage" */),
+    exact: true,
+    // restricted: true,
+    // isPrivate: false,
+    // redirectTo: '/',
+  },
+  {
+    name: 'Awards',
+    path: '/awards',
     component: lazy(() => import('#') /* webpackChunkName: "LoginPage" */),
     exact: true,
     // restricted: true,
