@@ -5,14 +5,16 @@ import footerIcon from './footerIcon.svg';
 const footer = () => {
   return (
     <div className={styles.footerContainer}>
-      <h2>
-        KidsLike
+      <div className={styles.footerTitleContainer}>
+        <h2 className={styles.footerTitle}>KidsLike</h2>
         <svg className={styles.footerIcon} width="12" height="12">
           <use href={footerIcon + '#icon-footerIconsvg'}></use>
         </svg>
-      </h2>
-      <p>Делаем жизнь родителей и детей изи :)</p>
-      <p>2020</p>
+      </div>
+      <p className={styles.footerSlogan}>
+        Делаем жизнь родителей и детей изи :)
+      </p>
+      <p className={styles.footerDate}>2020</p>
     </div>
   );
 };
