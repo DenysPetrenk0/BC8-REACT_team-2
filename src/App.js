@@ -1,16 +1,19 @@
 /** @format */
 
-import React from 'react';
+import React, { Suspense } from 'react';
+import Loader from 'react-loader-spinner';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import AwardsPage from './pages/awards/AwardsPage';
-// import Contacts from './pages/contacts/Contacts';
+import ContentSwitcher from './contentSwitcher/ContentSwitcher';
+import { mainRoutes } from './routes/mainRoutes';
 
 const App = () => {
   return (
     <div className="container">
       <Header />
-      <AwardsPage />
+      <Suspense fallback={<Loader />}>
+        <ContentSwitcher routes={mainRoutes} />
+      </Suspense>
       {/* <Contacts /> */}
       <Footer />
     </div>
