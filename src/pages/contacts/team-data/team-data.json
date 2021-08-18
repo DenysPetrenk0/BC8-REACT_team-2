@@ -1,0 +1,219 @@
+[
+  {
+    "foto": "../images/denis.webp",
+    "name": "Денис Петренко",
+    "position": "Team Lead",
+    "links": [
+      {
+        "name": "instagram",
+        "href": "https://www.instagram.com/",
+        "icon": "#icon-instagram"
+      },
+      {
+        "name": "twitter",
+        "href": "https://twitter.com/",
+        "icon": "#icon-twitter"
+      },
+      {
+        "name": "facebook",
+        "href": "https://www.facebook.com/",
+        "icon": "#icon-facebook"
+      },
+      {
+        "name": "linkedin",
+        "href": "https://www.linkedin.com/",
+        "icon": "#icon-linkedin"
+      }
+    ]
+  },
+  {
+    "foto": "../images/serhii.webp",
+    "name": "Сергей Булынин",
+    "position": "Scrum Master",
+    "links": [
+      {
+        "name": "instagram",
+        "href": "https://www.instagram.com/",
+        "icon": "#icon-instagram"
+      },
+      {
+        "name": "twitter",
+        "href": "https://twitter.com/",
+        "icon": "#icon-twitter"
+      },
+      {
+        "name": "facebook",
+        "href": "https://www.facebook.com/",
+        "icon": "#icon-facebook"
+      },
+      {
+        "name": "linkedin",
+        "href": "https://www.linkedin.com/",
+        "icon": "#icon-linkedin"
+      }
+    ]
+  },
+  {
+    "foto": "images/alina.webp",
+    "name": "Алина Акомпи",
+    "position": "Front-End Developer",
+    "links": [
+      {
+        "name": "instagram",
+        "href": "https://www.instagram.com/",
+        "icon": "#icon-instagram"
+      },
+      {
+        "name": "twitter",
+        "href": "https://twitter.com/",
+        "icon": "#icon-twitter"
+      },
+      {
+        "name": "facebook",
+        "href": "https://www.facebook.com/",
+        "icon": "#icon-facebook"
+      },
+      {
+        "name": "linkedin",
+        "href": "https://www.linkedin.com/",
+        "icon": "#icon-linkedin"
+      }
+    ]
+  },
+  {
+    "foto": "../images/iryna.webp",
+    "name": "Ирина Колесник",
+    "position": "Front-End Developer",
+    "links": [
+      {
+        "name": "instagram",
+        "href": "https://www.instagram.com/",
+        "icon": "#icon-instagram"
+      },
+      {
+        "name": "twitter",
+        "href": "https://twitter.com/",
+        "icon": "#icon-twitter"
+      },
+      {
+        "name": "facebook",
+        "href": "https://www.facebook.com/",
+        "icon": "#icon-facebook"
+      },
+      {
+        "name": "linkedin",
+        "href": "https://www.linkedin.com/",
+        "icon": "#icon-linkedin"
+      }
+    ]
+  },
+
+  {
+    "foto": "../images/julia.webp",
+    "name": "Юлия Доброва",
+    "position": "Front-End Developer",
+    "links": [
+      {
+        "name": "instagram",
+        "href": "https://www.instagram.com/",
+        "icon": "#icon-instagram"
+      },
+      {
+        "name": "twitter",
+        "href": "https://twitter.com/",
+        "icon": "#icon-twitter"
+      },
+      {
+        "name": "facebook",
+        "href": "https://www.facebook.com/",
+        "icon": "#icon-facebook"
+      },
+      {
+        "name": "linkedin",
+        "href": "https://www.linkedin.com/",
+        "icon": "#icon-linkedin"
+      }
+    ]
+  },
+  {
+    "foto": "../images/natalia.webp",
+    "name": "Наталья Половинко",
+    "position": "Front-End Developer",
+    "links": [
+      {
+        "name": "instagram",
+        "href": "https://www.instagram.com/",
+        "icon": "#icon-instagram"
+      },
+      {
+        "name": "twitter",
+        "href": "https://twitter.com/",
+        "icon": "#icon-twitter"
+      },
+      {
+        "name": "facebook",
+        "href": "https://www.facebook.com/",
+        "icon": "#icon-facebook"
+      },
+      {
+        "name": "linkedin",
+        "href": "https://www.linkedin.com/",
+        "icon": "#icon-linkedin"
+      }
+    ]
+  },
+  {
+    "foto": "../images/anton.webp",
+    "name": "Антон Шарудило",
+    "position": "Front-End Developer",
+    "links": [
+      {
+        "name": "instagram",
+        "href": "https://www.instagram.com/",
+        "icon": "#icon-instagram"
+      },
+      {
+        "name": "twitter",
+        "href": "https://twitter.com/",
+        "icon": "#icon-twitter"
+      },
+      {
+        "name": "facebook",
+        "href": "https://www.facebook.com/",
+        "icon": "#icon-facebook"
+      },
+      {
+        "name": "linkedin",
+        "href": "https://www.linkedin.com/",
+        "icon": "#icon-linkedin"
+      }
+    ]
+  },
+  {
+    "foto": "../images/vlad.webp",
+    "name": "Владислав Бочковский",
+    "position": "Front-End Developer",
+    "links": [
+      {
+        "name": "instagram",
+        "href": "https://www.instagram.com/",
+        "icon": "#icon-instagram"
+      },
+      {
+        "name": "twitter",
+        "href": "https://twitter.com/",
+        "icon": "#icon-twitter"
+      },
+      {
+        "name": "facebook",
+        "href": "https://www.facebook.com/",
+        "icon": "#icon-facebook"
+      },
+      {
+        "name": "linkedin",
+        "href": "https://www.linkedin.com/",
+        "icon": "#icon-linkedin"
+      }
+    ]
+  }
+]
