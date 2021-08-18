@@ -42,7 +42,12 @@ export const mainRoutes = [
   {
     name: 'Awards',
     path: '/awards',
-    component: lazy(() => import('#') /* webpackChunkName: "LoginPage" */),
+    component: lazy(
+      () =>
+        import(
+          '../pages/awards/AwardsPage'
+        ) /* webpackChunkName: "AwardsPage" */,
+    ),
     exact: true,
     // restricted: true,
     // isPrivate: false,
