@@ -7,11 +7,11 @@ import Contacts from './pages/contacts/Contacts';
 
 const App = () => {
   return (
-    <>
+    <div className="container">
       <Header />
       <Contacts />
       <Footer />
-    </>
+    </div>
   );
 };
 

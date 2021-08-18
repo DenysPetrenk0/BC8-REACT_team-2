@@ -13,7 +13,7 @@ const Contacts = () => {
         {teamDatas.map(data => (
           <li className={styles.item} key={data.name}>
             <img
-              src=""
+              src={alina + ''}
               className={styles.foto}
               alt={data.name}
               width="280"
@@ -50,5 +50,4 @@ const Contacts = () => {
 
 export default Contacts;
 
-// {alina + ''}
 // {images.alina.webp}
