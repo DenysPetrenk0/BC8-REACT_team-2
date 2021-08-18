@@ -36,7 +36,7 @@
   height: 194px;
   background-color: #cccccc;
   border-radius: 6px 6px 0px 0px;
-  /* box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1); */
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
 }
 .Awards__ListFooter {
   position: relative;
