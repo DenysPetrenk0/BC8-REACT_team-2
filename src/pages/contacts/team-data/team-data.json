@@ -2,6 +2,7 @@
   {
     "foto": "../images/denis.webp",
     "name": "Денис Петренко",
+    "id": "denis",
     "position": "Team Lead",
     "links": [
       {
@@ -10,9 +11,9 @@
         "icon": "#icon-instagram"
       },
       {
-        "name": "twitter",
-        "href": "https://twitter.com/",
-        "icon": "#icon-twitter"
+        "name": "github",
+        "href": "https://github.com/",
+        "icon": "#icon-github"
       },
       {
         "name": "facebook",
@@ -29,6 +30,7 @@
   {
     "foto": "../images/serhii.webp",
     "name": "Сергей Булынин",
+    "id": "serhii",
     "position": "Scrum Master",
     "links": [
       {
@@ -37,9 +39,9 @@
         "icon": "#icon-instagram"
       },
       {
-        "name": "twitter",
-        "href": "https://twitter.com/",
-        "icon": "#icon-twitter"
+        "name": "github",
+        "href": "https://github.com/",
+        "icon": "#icon-github"
       },
       {
         "name": "facebook",
@@ -56,6 +58,7 @@
   {
     "foto": "images/alina.webp",
     "name": "Алина Акомпи",
+    "id": "alina",
     "position": "Front-End Developer",
     "links": [
       {
@@ -64,9 +67,9 @@
         "icon": "#icon-instagram"
       },
       {
-        "name": "twitter",
-        "href": "https://twitter.com/",
-        "icon": "#icon-twitter"
+        "name": "github",
+        "href": "https://github.com/",
+        "icon": "#icon-github"
       },
       {
         "name": "facebook",
@@ -83,6 +86,7 @@
   {
     "foto": "../images/iryna.webp",
     "name": "Ирина Колесник",
+    "id": "iryna",
     "position": "Front-End Developer",
     "links": [
       {
@@ -91,9 +95,9 @@
         "icon": "#icon-instagram"
       },
       {
-        "name": "twitter",
-        "href": "https://twitter.com/",
-        "icon": "#icon-twitter"
+        "name": "github",
+        "href": "https://github.com/",
+        "icon": "#icon-github"
       },
       {
         "name": "facebook",
@@ -111,26 +115,27 @@
   {
     "foto": "../images/julia.webp",
     "name": "Юлия Доброва",
+    "id": "julia",
     "position": "Front-End Developer",
     "links": [
       {
         "name": "instagram",
-        "href": "https://www.instagram.com/",
+        "href": "https://www.instagram.com/julie_dobrova/",
         "icon": "#icon-instagram"
       },
       {
-        "name": "twitter",
-        "href": "https://twitter.com/",
-        "icon": "#icon-twitter"
+        "name": "github",
+        "href": "https://github.com/YuliaDobrova",
+        "icon": "#icon-github"
       },
       {
         "name": "facebook",
-        "href": "https://www.facebook.com/",
+        "href": "https://www.facebook.com/profile.php?id=100011297070190",
         "icon": "#icon-facebook"
       },
       {
         "name": "linkedin",
-        "href": "https://www.linkedin.com/",
+        "href": "https://www.linkedin.com/in/yulia-dobrova-37a335217/",
         "icon": "#icon-linkedin"
       }
     ]
@@ -138,6 +143,7 @@
   {
     "foto": "../images/natalia.webp",
     "name": "Наталья Половинко",
+    "id": "natalia",
     "position": "Front-End Developer",
     "links": [
       {
@@ -146,9 +152,9 @@
         "icon": "#icon-instagram"
       },
       {
-        "name": "twitter",
-        "href": "https://twitter.com/",
-        "icon": "#icon-twitter"
+        "name": "github",
+        "href": "https://github.com/",
+        "icon": "#icon-github"
       },
       {
         "name": "facebook",
@@ -165,6 +171,7 @@
   {
     "foto": "../images/anton.webp",
     "name": "Антон Шарудило",
+    "id": "anton",
     "position": "Front-End Developer",
     "links": [
       {
@@ -173,9 +180,9 @@
         "icon": "#icon-instagram"
       },
       {
-        "name": "twitter",
-        "href": "https://twitter.com/",
-        "icon": "#icon-twitter"
+        "name": "github",
+        "href": "https://github.com/",
+        "icon": "#icon-github"
       },
       {
         "name": "facebook",
@@ -192,6 +199,7 @@
   {
     "foto": "../images/vlad.webp",
     "name": "Владислав Бочковский",
+    "id": "vlad",
     "position": "Front-End Developer",
     "links": [
       {
@@ -200,9 +208,9 @@
         "icon": "#icon-instagram"
       },
       {
-        "name": "twitter",
-        "href": "https://twitter.com/",
-        "icon": "#icon-twitter"
+        "name": "github",
+        "href": "https://github.com/",
+        "icon": "#icon-github"
       },
       {
         "name": "facebook",
