@@ -9,7 +9,7 @@ const initialState = {
   reward: 0,
 };
 
-const Planning = () => {
+const PlanningPage = () => {
   const [task, setTask] = useState(initialState);
   console.log('~ task', task);
 
@@ -69,4 +69,4 @@ const Planning = () => {
   // <AddCustomTask/>
 };
 
-export default Planning;
+export default PlanningPage;

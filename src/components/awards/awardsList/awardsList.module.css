@@ -1,19 +1,42 @@
 .Awards__List {
-  list-style: none;
   margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: -10px;
+  margin-bottom: -10px;
+
+  @media screen and (min-width: 580px) {
+    margin-top: -20px;
+    margin-left: -20px;
+  }
+  @media screen and (min-width: 1180px) {
+  }
 }
 
 .Awards__ListItem {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  @media screen and (min-width: 580px) {
+    flex-basis: calc((100% / 2) - 40px);
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  @media screen and (min-width: 1180px) {
+    flex-basis: calc((100% / 4) - 80px);
+  }
+}
+
+.Awards__ListItemWrapper {
   width: 280px;
   height: 262px;
-  margin-bottom: 10px;
 }
 .Awards__ListImage {
   width: 280px;
   height: 194px;
-  background-color: #ffffff;
+  background-color: #cccccc;
   border-radius: 6px 6px 0px 0px;
-  /* box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1); */
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
 }
 .Awards__ListFooter {
   position: relative;

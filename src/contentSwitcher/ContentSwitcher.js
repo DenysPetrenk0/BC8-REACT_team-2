@@ -2,14 +2,18 @@
 
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { mainRoutes } from '../routes/mainRoutes';
 
-const ContentSwitcher = () => {
+const ContentSwitcher = ({ routes, path = '' }) => {
   return (
     <Switch>
-      {mainRoutes.map(route => {
-        <Route>{route}</Route>;
-      })}
+      {routes.map(route => (
+        <Route
+          path={path + route.path}
+          component={route.component}
+          exact={route.exact}
+          key={route.path}
+        />
+      ))}
     </Switch>
   );
 };

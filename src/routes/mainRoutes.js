@@ -2,52 +2,45 @@ import { lazy } from 'react';
 
 export const mainRoutes = [
   {
-    name: 'Home',
+    name: 'Главная',
     path: '/',
-    component: lazy(() => import('#') /* webpackChunkName: "HomePage" */),
+    component: lazy(() => import('../pages/main/MainPage')),
     exact: true,
     // restricted: false,
     // isPrivate: false,
     // redirectTo: '/',
   },
   {
-    name: 'Register',
+    name: 'Авторизация',
     path: '/auth',
-    component: lazy(
-      () => import('#') /* webpackChunkName: "RegistrationPage" */,
-    ),
+    component: lazy(() => import('../pages/auth/AuthPage')),
     exact: true,
     // restricted: true,
     // isPrivate: false,
     // redirectTo: '/',
   },
   {
-    name: 'Contacts',
+    name: 'Контакты',
     path: '/contacts-us',
-    component: lazy(() => import('#') /* webpackChunkName: "LoginPage" */),
+    component: lazy(() => import('../pages/contacts/Contacts')),
     exact: true,
     // restricted: true,
     // isPrivate: false,
     // redirectTo: '/',
   },
   {
-    name: 'Planing',
+    name: 'Планирование',
     path: '/planing',
-    component: lazy(() => import('#') /* webpackChunkName: "LoginPage" */),
+    component: lazy(() => import('../pages/planning/PlanningPage')),
     exact: true,
     // restricted: true,
     // isPrivate: false,
     // redirectTo: '/',
   },
   {
-    name: 'Awards',
+    name: 'Награды',
     path: '/awards',
-    component: lazy(
-      () =>
-        import(
-          '../pages/awards/AwardsPage'
-        ) /* webpackChunkName: "AwardsPage" */,
-    ),
+    component: lazy(() => import('../pages/awards/AwardsPage')),
     exact: true,
     // restricted: true,
     // isPrivate: false,
