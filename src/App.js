@@ -9,13 +9,13 @@ import Spinner from './components/spinner/Spinner';
 
 const App = () => {
   return (
-    <>
+    <div className="container">
       <Header />
       <Suspense fallback={<Spinner />}>
         <ContentSwitcher routes={mainRoutes} />
       </Suspense>
       <Footer />
-    </>
+    </div>
   );
 };
 

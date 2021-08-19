@@ -1,0 +1,22 @@
+.inputImageLabel {
+  cursor: pointer;
+}
+
+.inputImageLabel:hover {
+}
+
+.inputImage {
+  position: absolute;
+  top: 98px;
+  visibility: hidden;
+}
+
+.modalTaskIcon {
+  position: absolute;
+  top: 98px;
+  right: 12px;
+}
+
+.modalTaskIcon:hover {
+  fill: #ffbc33;
+}

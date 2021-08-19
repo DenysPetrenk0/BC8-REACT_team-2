@@ -1,11 +1,8 @@
 import axios from 'axios';
-import {
-  getWeekError,
-  getWeekRequest,
-  getWeekSuccess,
-} from '../actions/weekActions';
+import { getWeekError, getWeekRequest, getWeekSuccess } from './weekActions';
 
 axios.defaults.baseURL = 'https://kidslikev1.herokuapp.com';
+
 const baseToken =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTFkNWNiMzgyZTljNjAwMTcxMmIxOWQiLCJzaWQiOiI2MTFkNWNiMzgyZTljNjAwMTcxMmIxOWUiLCJpYXQiOjE2MjkzMTQyMjd9.wrHrO1h-7Lwa3-FV2hpIMIdPagqGR1fcFjRi2CxuKF8';
 

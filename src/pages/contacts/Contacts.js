@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './Contacts.module.css';
 import teamDatas from './team-data/team-data.json';
-import alina from './images/alina.webp';
+// import alina from './images/alina.webp';
+import foto from './team-data/foto';
 import sprite from './images/sprite.svg';
 
 const Contacts = () => {
@@ -13,7 +14,7 @@ const Contacts = () => {
         {teamDatas.map(data => (
           <li className={styles.item} key={data.name}>
             <img
-              src=""
+              src={foto[data.id]}
               className={styles.foto}
               alt={data.name}
               width="280"
@@ -50,5 +51,4 @@ const Contacts = () => {
 
 export default Contacts;
 
-// {alina + ''}
 // {images.alina.webp}

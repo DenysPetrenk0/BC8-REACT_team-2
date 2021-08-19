@@ -1,10 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
-import {
-  filterTabs,
-  getWeekError,
-  getWeekSuccess,
-} from '../actions/weekActions';
+import { filterTabs, getWeekError, getWeekSuccess } from './weekActions';
 
 const infoWeekReduser = createReducer([], {
   [getWeekSuccess]: (_, { payload }) => payload.week,
