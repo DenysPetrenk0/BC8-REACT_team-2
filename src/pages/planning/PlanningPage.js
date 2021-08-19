@@ -1,19 +1,16 @@
 import React, { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './Planning.module.css';
-// import { getTasks } from './redux/selectors';
+import { getTasks } from '../../redux/tasks/tasksSelector';
 import { addTask } from '../../redux/tasks/tasksOperation';
 import PlanningPoints from '../../components/planningPoints/PlanningPoints';
 import PlanningCards from '../../components/planningCards/PlanningCards';
-
-const initialState = {
-  title: '',
-  reward: 0,
-  imageUrl: '',
-};
+import { useSelector } from 'react-redux';
+import FormTest from './FormTest';
 
 const PlanningPage = () => {
   const dispatch = useDispatch();
+  const tasks = useSelector(getTasks);
 
   // create task for form
   const onAddTask = useCallback(
@@ -23,13 +20,6 @@ const PlanningPage = () => {
     [dispatch],
   );
 
-  // select week
-
-  // const selectDay = e => {
-  //   const week = e.target.value;
-  //   setWeek(date);
-  // };
-
   // get tasks
   // только активные или все таски?
   // const tasks = useSelector(getActiveTask);
@@ -38,13 +28,12 @@ const PlanningPage = () => {
       <div>
         <h2 className={styles.planningTitle}>План на неделю:</h2>
         <PlanningPoints />
+        <FormTest onAddTask={onAddTask} />
         <div>
-          <select>
-            <option>17-24</option>
-          </select>
+          <p>17-24.08</p>
         </div>
       </div>
-      <PlanningCards />
+      <PlanningCards tasks={tasks} />
       {/*<NewTaskModal onAddTask={onAddTask}/>
       <AddCustomTask /> */}
     </>
@@ -60,41 +49,3 @@ export default PlanningPage;
     </option>
   ))}
 </select>; */
-
-// const onHandleChange = event => {
-//   const { name, value } = event.target;
-//   setTask(prev => ({ ...prev, [name]: value }));
-// };
-
-// const onHandleSubmit = useCallback(
-//   event => {
-//     event.preventDefault();
-//     onAddTask(task);
-//     setTask({ ...initialState });
-//   },
-//   [task, onAddTask],
-// );
-
-/* <form onSubmit={onHandleSubmit} autoComplete="on">
-      <input
-        type="text"
-        name="title"
-        value={task.title}
-        minLength="3"
-        required
-        onChange={onHandleChange}
-        label="title"
-      />
-      <input
-        type="number"
-        name="reward"
-        onChange={onHandleChange}
-        value={task.reward}
-        minLength="3"
-        required
-        label="reward"
-      />
-      <button type="submit" className="registerBtn">
-        отправить
-      </button>
-    </form> */
