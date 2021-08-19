@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../cards/Card/Card';
+import Card from '../cards/card/Card';
 import Spinner from '../spinner/Spinner';
 import styles from './CurrentWeekRange.module.css';
 
