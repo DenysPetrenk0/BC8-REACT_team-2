@@ -16,7 +16,6 @@ const App = () => {
         <ContentSwitcher routes={mainRoutes} />
       </Suspense>
       {/* <Contacts /> */}
-      <CardList />
       <Footer />
     </div>
   );
