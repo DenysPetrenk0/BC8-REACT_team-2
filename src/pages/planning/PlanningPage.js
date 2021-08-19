@@ -6,6 +6,7 @@ const PlanningPage = () => {
       <h2>Planning</h2>
     </>
   );
+  return <h2>Planning</h2>;
 };
 
 export default PlanningPage;
