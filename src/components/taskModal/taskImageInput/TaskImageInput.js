@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styles from './TaskImageInput.module.css';
 import modalTaskIcon from '../modalTaskIcon.svg';
 
-const TaskImageInput = () => {
+const TaskImageInput = ({ onChange }) => {
   return (
     <label className={styles.inputImageLabel}>
-      <input className={styles.inputImage} type="file" />
+      <input
+        className={styles.inputImage}
+        type="file"
+        onChange={event => {
+          onChange(event.currentTarget.files[0]);
+        }}
+      />
+
       <svg className={styles.modalTaskIcon} width="20" height="18">
         <use href={modalTaskIcon + '#modal-task-icon'}></use>
       </svg>
