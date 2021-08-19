@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import {
   registerRequest,
   registerSuccess,
@@ -12,24 +12,24 @@ import {
   getUserInfoRequest,
   getUserInfoSuccess,
   getUserInfoError,
-} from "./authActions";
+} from './authActions';
 
-axios.defaults.baseURL = "https://kidslikev1.herokuapp.com";
+axios.defaults.baseURL = 'https://kidslikev1.herokuapp.com';
 
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
   unset() {
-    axios.defaults.headers.common.Authorization = "";
+    axios.defaults.headers.common.Authorization = '';
   },
 };
 
-export const register = (user) => async (dispatch) => {
-  console.log("register operation");
+export const register = user => async dispatch => {
+  console.log('register operation');
   dispatch(registerRequest());
   try {
-    const response = await axios.post("/auth/register", user);
+    const response = await axios.post('/auth/register', user);
     token.set(response.data.token);
     dispatch(registerSuccess(response.data));
   } catch (error) {
@@ -38,10 +38,10 @@ export const register = (user) => async (dispatch) => {
   }
 };
 
-export const login = (user) => async (dispatch) => {
+export const login = user => async dispatch => {
   dispatch(loginRequest());
   try {
-    const response = await axios.post("auth/login", user);
+    const response = await axios.post('auth/login', user);
     token.set(response.data.token);
     dispatch(loginSuccess(response.data));
   } catch (error) {
@@ -50,10 +50,10 @@ export const login = (user) => async (dispatch) => {
   }
 };
 
-export const logOut = () => async (dispatch) => {
+export const logOut = () => async dispatch => {
   dispatch(logoutRequest());
   try {
-    await axios.post("auth/logout");
+    await axios.post('auth/logout');
     token.unset();
     dispatch(logoutSuccess());
   } catch (error) {
@@ -74,8 +74,8 @@ export const getUserInfo = () => async (dispatch, getState) => {
   token.set(persistedToken);
   dispatch(getUserInfoRequest());
   try {
-    const response = await axios.get("/users/current");
-    dispatch(getUserInfoSuccess(response.data));
+    const response = await axios.get('/user/info');
+    dispatch(getUserInfoSuccess(response.data.user));
   } catch (error) {
     dispatch(getUserInfoError(error.message));
   }

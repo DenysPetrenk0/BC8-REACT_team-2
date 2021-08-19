@@ -3,6 +3,9 @@ import {
   createTaskRequest,
   createTaskSuccess,
   createTaskError,
+  patchActiveTaskRequest,
+  patchActiveTaskSuccess,
+  patchActiveTaskError,
 } from './tasksAction';
 
 const baseToken =
@@ -20,4 +23,23 @@ export const addTask = (title, reward) => dispatch => {
     })
     .then(({ data }) => dispatch(createTaskSuccess(data)))
     .catch(error => dispatch(createTaskError(error.message)));
+};
+
+export const patchActiveTask = (taskId, bodyData) => async dispatch => {
+  console.log('~ bodyData', bodyData);
+  console.log('~ taskId', taskId);
+
+  dispatch(patchActiveTaskRequest());
+  try {
+    const response = await axios.patch(
+      `/task/single-active/${taskId}`,
+      bodyData,
+      {
+        headers: { Authorization: `Bearer ${baseToken}` },
+      },
+    );
+    dispatch(patchActiveTaskSuccess(response.data));
+  } catch (error) {
+    dispatch(patchActiveTaskError(error.message));
+  }
 };

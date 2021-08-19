@@ -1,37 +1,37 @@
 [
   {
-    "name": "Пн",
-    "date": "2021-08-20",
-    "isChecked": false
+    "date": "2020-12-28",
+    "isActive": false,
+    "isCompleted": false
   },
   {
-    "name": "Вт",
-    "date": "2021-08-20",
-    "isChecked": false
+    "date": "2020-12-29",
+    "isActive": false,
+    "isCompleted": false
   },
   {
-    "name": "Ср",
-    "date": "2021-08-20",
-    "isChecked": false
+    "date": "2020-12-30",
+    "isActive": false,
+    "isCompleted": false
   },
   {
-    "name": "Чт",
-    "date": "2021-08-20",
-    "isChecked": false
+    "date": "2020-12-31",
+    "isActive": false,
+    "isCompleted": false
   },
   {
-    "name": "Пт",
-    "date": "2021-08-20",
-    "isChecked": false
+    "date": "2021-1-1",
+    "isActive": false,
+    "isCompleted": false
   },
   {
-    "name": "Сб",
-    "date": "2021-08-20",
-    "isChecked": false
+    "date": "2021-1-2",
+    "isActive": false,
+    "isCompleted": false
   },
   {
-    "name": "Вс",
-    "date": "2021-08-20",
-    "isChecked": false
+    "date": "2021-1-3",
+    "isActive": false,
+    "isCompleted": false
   }
 ]
