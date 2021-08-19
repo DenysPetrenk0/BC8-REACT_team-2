@@ -9,7 +9,7 @@ const Navigation = ({ routes, url = '', prevPathname = '' }) => {
   return (
     <ul className={styles.navigationList}>
       {routes.map(route => (
-        <li className={styles.navigationItem} key={route.path}>
+        <li className={styles.navigationItem} key={route.name}>
           <NavLink
             className="navigationLink"
             activeClassName="activNavigationLink"
