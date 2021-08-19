@@ -1,0 +1,19 @@
+.closeButton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  right: 10px;
+  top: 10px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* .closeIcon {
+  fill: #000;
+} */
