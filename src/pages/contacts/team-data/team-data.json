@@ -1,6 +1,5 @@
 [
   {
-    "foto": "../images/denis.webp",
     "name": "Денис Петренко",
     "id": "denis",
     "position": "Team Lead",
@@ -28,7 +27,6 @@
     ]
   },
   {
-    "foto": "../images/serhii.webp",
     "name": "Сергей Булынин",
     "id": "serhii",
     "position": "Scrum Master",
@@ -56,7 +54,6 @@
     ]
   },
   {
-    "foto": "images/alina.webp",
     "name": "Алина Акомпи",
     "id": "alina",
     "position": "Front-End Developer",
@@ -84,7 +81,6 @@
     ]
   },
   {
-    "foto": "../images/iryna.webp",
     "name": "Ирина Колесник",
     "id": "iryna",
     "position": "Front-End Developer",
@@ -113,7 +109,6 @@
   },
 
   {
-    "foto": "../images/julia.webp",
     "name": "Юлия Доброва",
     "id": "julia",
     "position": "Front-End Developer",
@@ -141,7 +136,6 @@
     ]
   },
   {
-    "foto": "../images/natalia.webp",
     "name": "Наталья Половинко",
     "id": "natalia",
     "position": "Front-End Developer",
@@ -169,7 +163,6 @@
     ]
   },
   {
-    "foto": "../images/anton.webp",
     "name": "Антон Шарудило",
     "id": "anton",
     "position": "Front-End Developer",
@@ -197,7 +190,6 @@
     ]
   },
   {
-    "foto": "../images/vlad.webp",
     "name": "Владислав Бочковский",
     "id": "vlad",
     "position": "Front-End Developer",
