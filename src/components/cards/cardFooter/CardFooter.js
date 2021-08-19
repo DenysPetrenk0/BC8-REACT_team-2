@@ -4,7 +4,6 @@ import PointAmount from '../pointAmount';
 import TaskState from '../taskState/TaskState';
 import TaskToggle from '../taskTogle/TaskTogle';
 import s from './CardFooter.module.css';
-import moment from 'moment';
 
 // ===========ЗНАЧЕННЯ для перевірки=============
 // const title = 'ЗАСТЕЛИТЬ КРОВАТЬ';
