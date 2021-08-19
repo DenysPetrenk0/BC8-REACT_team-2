@@ -13,7 +13,7 @@ import styles from './MainPage.module.css';
 const MainPage = () => {
   const dispatch = useDispatch();
   const numbers = useSelector(getWeekDate);
-  const tasks = useSelector(getCardsInfo);
+  const tasks = useSelector(getVisibleTasks);
 
   useEffect(() => {
     dispatch(getWeekOperation());

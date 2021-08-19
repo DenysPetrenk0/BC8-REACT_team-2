@@ -16,12 +16,14 @@ export const getWeekDate = state => {
   return dateArray;
 };
 
-export const getCardsInfo = state => state.weekInfo.info.tasks;
-const getFilter = state => state.weekInfo.filter;
+export const getCardsInfo = state => state.weekInfo?.info?.tasks || [];
+export const getFilterSelector = state => state.weekInfo.filter;
 
 export const getVisibleTasks = createSelector(
-  [getCardsInfo, getFilter],
+  [getCardsInfo, getFilterSelector],
   (tasks, filter) => {
-    return tasks.filter(task => task.days.date.includes(filter));
+    return tasks.filter(
+      ({ days }) => days.some(({ date, isActive }) => date === filter), // добавить isActive &&
+    );
   },
 );
