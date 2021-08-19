@@ -89,10 +89,18 @@ const AuthForm = ({ history }) => {
                 <div className="input-feedback">{formik.errors.password}</div>
               )}
             </div>
-            <button type="submit" className="btn btn-lg btn-primary btn-block">
+            <button
+              onClick={() => dispatch(login(formik.values))}
+              type="button"
+              className="btn btn-lg btn-primary btn-block"
+            >
               Login
             </button>
-            <button type="submit" className="btn btn-lg btn-primary btn-block">
+            <button
+              onClick={() => dispatch(register(formik.values))}
+              type="button"
+              className="btn btn-lg btn-primary btn-block"
+            >
               Register!
             </button>
           </form>
@@ -103,130 +111,3 @@ const AuthForm = ({ history }) => {
 };
 
 export default AuthForm;
-
-// import React, { useState, useCallback } from "react";
-// import { useDispatch } from "react-redux";
-// import { useRouteMatch } from "react-router-dom";
-// // import { error } from "@pnotify/core/dist/PNotify.js";
-
-// import TextField from "@material-ui/core/TextField";
-// import Button from "@material-ui/core/Button";
-// import { register, login } from "../redux/auth/authOperations";
-
-// const initialState = {
-//   email: "",
-//   password: "",
-// };
-
-// export default function AuthForm() {
-//   const [user, setUser] = useState(initialState);
-//   const dispatch = useDispatch();
-//   const match = useRouteMatch();
-//   //   const isError = useSelector(getErrorAuth);
-
-//   //   const [name, setName] = useState("");
-//   //   const [email, setEmail] = useState("");
-//   //   const [password, setPassword] = useState("");
-
-//   //   useEffect(() => {
-//   //     console.log("hi");
-//   //     return () => dispatch(resetError());
-//   //   }, [dispatch]);
-
-//   //   useEffect(() => {
-//   //     if (isError !== null)
-//   //       error({
-//   //         text: isError,
-//   //         delay: 1000,
-//   //       });
-//   //     // return () => dispatch(resetError());
-//   //   }, [isError, dispatch]);
-
-//   const onRegister = useCallback(
-//     ({ email, password }) => {
-//       dispatch(register({ email, password }));
-//     },
-//     [dispatch]
-//   );
-
-//   const onLogin = useCallback(
-//     ({ email, password }) => {
-//       dispatch(login({ email, password }));
-//     },
-//     [dispatch]
-//   );
-
-//   //   const onHandleChange = (event) => {
-//   //     const { name, value } = event.target;
-//   //     if (name === "name") setName(value);
-//   //     if (name === "email") setEmail(value);
-//   //     if (name === "password") setPassword(value);
-//   //     //   this.setState({ [name]: value });
-//   //   };
-
-//   const onHandleChange = (event) => {
-//     const { name, value } = event.target;
-//     setUser((prev) => ({ ...prev, [name]: value }));
-//   };
-
-//   //   const onHandleSubmit = useCallback(
-//   //     (event) => {
-//   //       event.preventDefault();
-//   //       match.url === "/register"
-//   //         ? onRegister(name, email, password)
-//   //         : onLogin(email, password);
-
-//   //       setName("");
-//   //       setEmail("");
-//   //       setPassword("");
-//   //     },
-//   //     [name, email, password, match.url, onRegister, onLogin]
-//   //   );
-
-//   const onHandleSubmit = useCallback(
-//     (event) => {
-//       event.preventDefault();
-//       match.url === "/auth/register" ? onRegister(user) : onLogin(user);
-//       setUser({ email: "", password: "" });
-//     },
-//     [user, match.url, onRegister, onLogin]
-//   );
-
-//   return (
-//     <div>
-//       <form onSubmit={onHandleSubmit} autoComplete="off">
-//         <TextField
-//           type="email"
-//           name="email"
-//           onChange={onHandleChange}
-//           value={user.email}
-//           minLength="3"
-//           required
-//           label="Email"
-//           variant="outlined"
-//           id="outlined-basic"
-//           className="marginRight"
-//         />
-//         <TextField
-//           type="password"
-//           name="password"
-//           value={user.password}
-//           onChange={onHandleChange}
-//           minLength="3"
-//           required
-//           label="Password"
-//           variant="outlined"
-//           id="outlined-basic"
-//         />
-//         <Button
-//           type="submit"
-//           className="registerBtn"
-//           variant="contained"
-//           color="primary"
-//         >
-//           {match.url === "/auth/register" ? "Sign up" : "Login"}
-//         </Button>
-//       </form>
-//     </div>
-//   );
-// }
