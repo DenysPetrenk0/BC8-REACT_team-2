@@ -4,7 +4,7 @@ import { createTaskSuccess, patchActiveTaskSuccess } from './tasksAction';
 
 const tasksReducer = createReducer([], {
   [createTaskSuccess]: (state, action) => [action.payload, ...state],
-  [patchActiveTaskSuccess]: (_, action) => [action.payload],
+  // [patchActiveTaskSuccess]: (state, action) => [action.payload, ...state],
 });
 
 export default tasksReducer;
