@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import awards from '../awardsOld.json';
+import sprite from './sprite.svg';
 import axios from 'axios';
 import styles from './awardsList.module.css';
 // import fetchAwards from '../../../redux/awards/awardsOperations';
@@ -32,7 +32,7 @@ class AwardsList extends Component {
 
   render() {
     const awards = this.state.awards;
-    console.log(`awards`, awards);
+    // console.log(`awards`, awards);
     return (
       <div className={styles.Awards__Container}>
         <ul className={styles.Awards__List}>
@@ -50,6 +50,43 @@ class AwardsList extends Component {
                     <p className={styles.Awards__ListText}>
                       {award.price} БАЛЛОВ
                     </p>
+                  </div>
+                  <div className={styles.Switch}>
+                    <svg className={styles.Switch__iconCheck}>
+                      <use
+                        href={sprite + '#icon-check'}
+                        aria-label="Иконка галочка"
+                        width="10"
+                        height="8"
+                      ></use>
+                    </svg>
+                    <div className={styles.Switch__control}>
+                      <input
+                        className={styles.Switch__toggle}
+                        type="checkbox"
+                        name="switch-toggle"
+                        id={award.id}
+                        aria-label="Переключить между выбрано и не выбрано"
+                      />
+                      <label
+                        aria-hidden="true"
+                        className={styles.Switch__track}
+                        for={award.id}
+                      ></label>
+                      <div
+                        aria-hidden="true"
+                        className={styles.Switch__marker}
+                      ></div>
+                    </div>
+                    <svg className={styles.Switch__iconSign}>
+                      <use
+                        href={sprite + '#icon-sign'}
+                        role="img"
+                        aria-label="Иконка внимание"
+                        width="5"
+                        heigth="18"
+                      ></use>
+                    </svg>
                   </div>
                 </div>
               </div>
