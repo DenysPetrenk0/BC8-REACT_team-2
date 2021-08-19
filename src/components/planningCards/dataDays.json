@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Пн",
+    "date": "2021-08-20",
+    "isChecked": false
+  },
+  {
+    "name": "Вт",
+    "date": "2021-08-20",
+    "isChecked": false
+  },
+  {
+    "name": "Ср",
+    "date": "2021-08-20",
+    "isChecked": false
+  },
+  {
+    "name": "Чт",
+    "date": "2021-08-20",
+    "isChecked": false
+  },
+  {
+    "name": "Пт",
+    "date": "2021-08-20",
+    "isChecked": false
+  },
+  {
+    "name": "Сб",
+    "date": "2021-08-20",
+    "isChecked": false
+  },
+  {
+    "name": "Вс",
+    "date": "2021-08-20",
+    "isChecked": false
+  }
+]
