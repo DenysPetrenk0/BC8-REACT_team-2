@@ -6,6 +6,7 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import ContentSwitcher from './contentSwitcher/ContentSwitcher';
 import { mainRoutes } from './routes/mainRoutes';
+import CardList from './components/cards/CardList/CardList';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <ContentSwitcher routes={mainRoutes} />
       </Suspense>
       {/* <Contacts /> */}
+      <CardList />
       <Footer />
     </div>
   );
