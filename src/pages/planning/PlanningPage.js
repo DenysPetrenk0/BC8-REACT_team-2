@@ -1,54 +1,24 @@
 import React, { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './Planning.module.css';
-import { getTasks } from './redux/selectors';
-import { addTask } from './redux/operation';
+import { getTasks } from '../../redux/tasks/tasksSelector';
+import { addTask } from '../../redux/tasks/tasksOperation';
 import PlanningPoints from '../../components/planningPoints/PlanningPoints';
 import PlanningCards from '../../components/planningCards/PlanningCards';
-
-const initialState = {
-  title: '',
-  reward: 0,
-  imageUrl: '',
-};
+import { useSelector } from 'react-redux';
+import FormTest from './FormTest';
 
 const PlanningPage = () => {
-  // create task for form
-  const [task, setTask] = useState(initialState);
-  console.log('~ task', task);
-
   const dispatch = useDispatch();
+  const tasks = useSelector(getTasks);
 
+  // create task for form
   const onAddTask = useCallback(
-    ({ title, reward }) => {
-      console.log('~ reward', reward);
-      console.log('~ title', title);
-
-      dispatch(addTask(title, reward));
+    ({ title, reward, imageUrl }) => {
+      dispatch(addTask(title, reward, imageUrl));
     },
     [dispatch],
   );
-
-  const onHandleChange = event => {
-    const { name, value } = event.target;
-    setTask(prev => ({ ...prev, [name]: value }));
-  };
-
-  const onHandleSubmit = useCallback(
-    event => {
-      event.preventDefault();
-      onAddTask(task);
-      setTask({ ...initialState });
-    },
-    [task, onAddTask],
-  );
-
-  // select week
-
-  // const selectDay = e => {
-  //   const week = e.target.value;
-  //   setWeek(date);
-  // };
 
   // get tasks
   // только активные или все таски?
@@ -58,14 +28,13 @@ const PlanningPage = () => {
       <div>
         <h2 className={styles.planningTitle}>План на неделю:</h2>
         <PlanningPoints />
+        <FormTest onAddTask={onAddTask} />
         <div>
-          <select>
-            <option>17-24</option>
-          </select>
+          <p>17-24.08</p>
         </div>
       </div>
-      <PlanningCards />
-      {/*<NewTaskModal />
+      <PlanningCards tasks={tasks} />
+      {/*<NewTaskModal onAddTask={onAddTask}/>
       <AddCustomTask /> */}
     </>
   );
@@ -80,27 +49,3 @@ export default PlanningPage;
     </option>
   ))}
 </select>; */
-
-/* <form onSubmit={onHandleSubmit} autoComplete="on">
-      <input
-        type="text"
-        name="title"
-        value={task.title}
-        minLength="3"
-        required
-        onChange={onHandleChange}
-        label="title"
-      />
-      <input
-        type="number"
-        name="reward"
-        onChange={onHandleChange}
-        value={task.reward}
-        minLength="3"
-        required
-        label="reward"
-      />
-      <button type="submit" className="registerBtn">
-        отправить
-      </button>
-    </form> */

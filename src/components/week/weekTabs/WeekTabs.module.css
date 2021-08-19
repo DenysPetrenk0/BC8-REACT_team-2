@@ -1,0 +1,41 @@
+.navWeekList {
+  background: #ffbc33;
+  width: 240px;
+  padding-top: 140px;
+}
+
+.navWeekItem {
+  margin-bottom: 6px;
+  text-align: end;
+}
+
+.navWeekBtn {
+  width: 190px;
+  height: 42px;
+  border-radius: 6px 0px 0px 6px;
+  border: none;
+  background: #f6da98;
+  /* opacity: 0.5; */
+}
+
+.navWeekBtnActive {
+  width: 190px;
+  height: 42px;
+  border-radius: 6px 0px 0px 6px;
+  border: none;
+  background: #ffffff;
+}
+
+.navWeekBtn:hover {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.navWeekBtnText {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
