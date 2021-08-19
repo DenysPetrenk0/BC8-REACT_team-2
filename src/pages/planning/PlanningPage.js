@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './Planning.module.css';
-import { getTasks } from './redux/selectors';
+// import { getTasks } from './redux/selectors';
 import { addTask } from '../../redux/tasks/tasksOperation';
 import PlanningPoints from '../../components/planningPoints/PlanningPoints';
 import PlanningCards from '../../components/planningCards/PlanningCards';
