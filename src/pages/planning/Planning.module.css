@@ -1,6 +1,18 @@
+.planForWeekContainer {
+  display: flex;
+}
 .planningTitle {
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: 0.04em;
   color: #000000;
+}
+
+.motivationalText {
+  font-weight: 500;
+  font-size: 1.25;
+  line-height: 15px;
+  letter-spacing: 0.04em;
+
+  color: #a6abb9;
 }
