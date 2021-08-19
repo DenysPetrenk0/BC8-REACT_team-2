@@ -1,29 +1,60 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import styles from './PlanningCards.module.css';
 import sprite from './image/symbol-defs.svg';
 import defaultImg from './image/calendar.webp';
 import dataDays from './dataDays.json';
+import { patchActiveTask } from '../../redux/tasks/tasksOperation';
 
 const initialState = {
   isVisible: false,
 };
 
+const daysName = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+
 const PlanningCards = ({ tasks }) => {
   const [state, setstate] = useState(initialState);
+  const [days, setDays] = useState(dataDays);
+  const dispatch = useDispatch();
 
   const toggleVisible = e => {
     setstate(({ isVisible }) => ({ isVisible: !isVisible }));
   };
 
   const onHandleChange = e => {
-    console.log(e);
+    const { name } = e.target;
+    setDays(
+      days.map(day =>
+        day.date === name ? { ...day, isActive: !day.isActive } : day,
+      ),
+    );
   };
+
+  const onAddActiveTask = useCallback(
+    (taskId, dataObj) => {
+      dispatch(patchActiveTask(taskId, dataObj));
+    },
+    [dispatch],
+  );
+
+  const onHandleSubmit = e => {
+    const taskId = e.target.id;
+    console.log('~ taskId', taskId);
+
+    console.log('~ на эвенте taskId', e.target.id);
+    const data = days.map(day => day.isActive);
+    const dataObj = { days: data };
+    console.log('~ dataObj', dataObj);
+    toggleVisible();
+    onAddActiveTask(taskId, dataObj);
+  };
+
   return (
     <div className={styles.cartContainer}>
       {tasks.length > 0 ? (
         <ul className={styles.cardList}>
           {tasks.map(task => (
-            <li className={styles.cardItem}>
+            <li className={styles.cardItem} key={task.id}>
               <img
                 className={styles.cardImg}
                 src={task.imageUrl}
@@ -34,35 +65,42 @@ const PlanningCards = ({ tasks }) => {
                   <p className={styles.cardName}>{task.title}</p>
                   <p className={styles.cardReward}>{task.reward} балла</p>
                 </div>
-                <button
-                  className={styles.buttonPluse}
-                  onClick={toggleVisible}
-                  type="button"
-                >
-                  {state.isVisible ? (
+                {state.isVisible ? (
+                  <button
+                    className={styles.buttonOk}
+                    onClick={onHandleSubmit}
+                    type="submit"
+                    id={task.id}
+                  >
                     <svg className={styles.okIcon} width="12" height="12">
                       <use href={sprite + '#icon-ok'}></use>
                     </svg>
-                  ) : (
+                  </button>
+                ) : (
+                  <button
+                    className={styles.buttonPluse}
+                    onClick={toggleVisible}
+                    type="button"
+                  >
                     <svg className={styles.plusIcon} width="12" height="12">
                       <use href={sprite + '#icon-plus'}></use>
                     </svg>
-                  )}
-                </button>
+                  </button>
+                )}
               </div>
               {state.isVisible && (
-                <ul>
-                  {dataDays.map(day => (
-                    <li key={day.name}>
-                      {day.name}
-                      <label>
+                <ul className={styles.daysCheckbox}>
+                  {days.map((day, idx) => (
+                    <li className={styles.daysCheckboxItem} key={day.date}>
+                      <label key={day.value} className={styles.checkboxLabel}>
                         <input
-                          name={day.name}
+                          name={day.date}
                           type="checkbox"
-                          value={day.date}
-                          checked={day.isChecked}
+                          checked={day.isActive}
                           onChange={onHandleChange}
+                          className={styles.checkboxInput}
                         />
+                        {daysName[idx]}
                       </label>
                     </li>
                   ))}

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './Planning.module.css';
 import { getTasks } from '../../redux/tasks/tasksSelector';
@@ -27,11 +27,11 @@ const PlanningPage = () => {
     <>
       <div>
         <h2 className={styles.planningTitle}>План на неделю:</h2>
-        <PlanningPoints />
-        <FormTest onAddTask={onAddTask} />
         <div>
           <p>17-24.08</p>
         </div>
+        <PlanningPoints />
+        <FormTest onAddTask={onAddTask} />
       </div>
       <PlanningCards tasks={tasks} />
       {/*<NewTaskModal onAddTask={onAddTask}/>
@@ -41,11 +41,3 @@ const PlanningPage = () => {
 };
 
 export default PlanningPage;
-
-/* <select value={week} onChange={selectweek}>
-  {weeks.list.map(lang => (
-    <option value={week} key={week}>
-      17-24
-    </option>
-  ))}
-</select>; */
