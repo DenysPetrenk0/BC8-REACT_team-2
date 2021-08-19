@@ -1,0 +1,7 @@
+import { createAction } from '@reduxjs/toolkit';
+
+export const fetchAwardsRequest = createAction('awards/fetchAwardsRequest');
+export const fetchAwardsSuccess = createAction('awards/fetchAwardsSuccess');
+export const fetchAwardsError = createAction('awards/fetchAwardsError');
+
+export const resetError = createAction('awards/resetError');

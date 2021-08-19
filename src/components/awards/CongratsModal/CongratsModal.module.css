@@ -1,0 +1,54 @@
+.CongratsModal__Wrapper {
+  width: 280px;
+  height: 484px;
+  background-color: white;
+}
+
+.CongratsModal__Title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+  width: 240px;
+  height: 44px;
+}
+
+.CongratsModal__Image {
+  /* width: 100vw;
+  height: 100vh; */
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 5px solid #ffbc33;
+}
+
+.CongratsModal__Text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #000000;
+
+  text-align: center;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+@media screen and (min-width: 580px) {
+  .CongratsModal__Wrapper {
+    width: 602px;
+    height: 390px;
+  }
+  .CongratsModal__Title {
+    width: 504px;
+    height: 36px;
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
