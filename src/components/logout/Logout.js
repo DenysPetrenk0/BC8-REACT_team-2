@@ -1,6 +1,6 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-// import operations from '../../redux/operation/index';
+import { connect } from 'react-redux';
+import { logOut } from '../../redux/auth/authOperations';
 import s from './Logout.module.css';
 
 const Logout = ( {onClose, onLogout}) => {
@@ -19,6 +19,5 @@ const Logout = ( {onClose, onLogout}) => {
     );
 }
 
-export default Logout;
+export default connect(null, { onLogout: logOut })(Logout);
 
-// connect(null, { onLogout: operations.logout.logout})
