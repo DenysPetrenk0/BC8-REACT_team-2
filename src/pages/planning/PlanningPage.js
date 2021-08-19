@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './Planning.module.css';
 import { getTasks } from './redux/selectors';
-import { addTask } from './redux/operation';
+import { addTask } from '../../redux/tasks/tasksOperation';
 import PlanningPoints from '../../components/planningPoints/PlanningPoints';
 import PlanningCards from '../../components/planningCards/PlanningCards';
 
@@ -13,34 +13,14 @@ const initialState = {
 };
 
 const PlanningPage = () => {
-  // create task for form
-  const [task, setTask] = useState(initialState);
-  console.log('~ task', task);
-
   const dispatch = useDispatch();
 
+  // create task for form
   const onAddTask = useCallback(
-    ({ title, reward }) => {
-      console.log('~ reward', reward);
-      console.log('~ title', title);
-
-      dispatch(addTask(title, reward));
+    ({ title, reward, imageUrl }) => {
+      dispatch(addTask(title, reward, imageUrl));
     },
     [dispatch],
-  );
-
-  const onHandleChange = event => {
-    const { name, value } = event.target;
-    setTask(prev => ({ ...prev, [name]: value }));
-  };
-
-  const onHandleSubmit = useCallback(
-    event => {
-      event.preventDefault();
-      onAddTask(task);
-      setTask({ ...initialState });
-    },
-    [task, onAddTask],
   );
 
   // select week
@@ -65,7 +45,7 @@ const PlanningPage = () => {
         </div>
       </div>
       <PlanningCards />
-      {/*<NewTaskModal />
+      {/*<NewTaskModal onAddTask={onAddTask}/>
       <AddCustomTask /> */}
     </>
   );
@@ -80,6 +60,20 @@ export default PlanningPage;
     </option>
   ))}
 </select>; */
+
+// const onHandleChange = event => {
+//   const { name, value } = event.target;
+//   setTask(prev => ({ ...prev, [name]: value }));
+// };
+
+// const onHandleSubmit = useCallback(
+//   event => {
+//     event.preventDefault();
+//     onAddTask(task);
+//     setTask({ ...initialState });
+//   },
+//   [task, onAddTask],
+// );
 
 /* <form onSubmit={onHandleSubmit} autoComplete="on">
       <input

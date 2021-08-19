@@ -1,9 +1,9 @@
 import { createReducer } from '@reduxjs/toolkit';
 // combineReducers,
-import { createTaskSuccess } from './actions';
+import { createTaskSuccess } from './tasksAction';
 
-const tasks = createReducer([], {
+const tasksReducer = createReducer([], {
   [createTaskSuccess]: (state, action) => [action.payload, ...state],
 });
 
-export default tasks;
+export default tasksReducer;

@@ -1,9 +1,17 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './PlanningCards.module.css';
 import sprite from './image/symbol-defs.svg';
 import defaultImg from './image/calendar.webp';
 
 const PlanningCards = ({ tasks }) => {
+  const [days, setDays] = useState();
+
+  const onHandleChange = e => {
+    days.forEach(day => {
+      if (day.value === e.target.value) day.isChecked = e.target.checked;
+    });
+    setDays(days);
+  };
   return (
     <div className={styles.cartContainer}>
       <ul className={styles.cardList}>
@@ -37,9 +45,18 @@ const PlanningCards = ({ tasks }) => {
               </svg>
             </button> */}
             {/* <form>
-              <input type="checkbox" />
-              <input type="checkbox" />
-              <input type="checkbox" />
+              {days.map(day => (
+                <li key={day.id}>
+                  <input
+                    name={day.name}
+                    type="checkbox"
+                    value={day.value}
+                    checked={day.checked}
+                    onChange={onHandleChange}
+                  />
+                  <p>{day.value}</p>
+                </li>
+              ))}
             </form> */}
           </div>
         </li>
