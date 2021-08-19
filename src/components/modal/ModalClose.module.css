@@ -3,17 +3,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
-  padding: 4px;
-  right: 10px;
-  top: 10px;
+  width: 25px;
+  height: 25px;
+  padding: 2px;
+  right: 8px;
+  top: 8px;
   background-color: white;
   border: none;
   cursor: pointer;
   z-index: 1;
 }
 
-/* .closeIcon {
+.closeIcon:hover {
   fill: #000;
-} */
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.closeIcon:hover {
+  fill: #ffbc33;
+}

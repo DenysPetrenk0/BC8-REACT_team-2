@@ -9,8 +9,8 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 const validationSchema = Yup.object().shape({
-  task: Yup.string().required('Task is required'),
-  points: Yup.number().required('Points is required'),
+  task: Yup.string().required('Это поле обязательно'),
+  points: Yup.number().required('Это поле обязательно'),
 });
 
 const NewTaskModal = ({ onClose }) => {
