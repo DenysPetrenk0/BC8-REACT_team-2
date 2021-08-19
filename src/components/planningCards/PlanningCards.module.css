@@ -3,8 +3,8 @@
 }
 
 .cardItem {
+  position: relative;
   width: 280px;
-
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
 }
 .cardImg {
@@ -42,6 +42,7 @@
 }
 
 .cadrFooter {
+  position: relative;
   display: flex;
   justify-content: space-between;
   padding: 14px 20px 17px 20px;
@@ -49,12 +50,23 @@
   border-radius: 0px 0px 6px 6px;
 }
 
+/* Button and iconButton */
+
 .buttonOk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
-  background-color: #ffffff;
-  padding: 5px 10px;
+  background-color: white;
+  padding: 4px 12px;
   border-radius: 50%;
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 250ms linear;
+  cursor: pointer;
+}
+.buttonOk:hover,
+.buttonOk:focus {
+  transform: scale(1.1);
 }
 
 .okIcon {
@@ -81,6 +93,36 @@
 
 .plusIcon {
   fill: #8ec63f;
+}
+
+/* Checkbox */
+
+.daysCheckbox {
+  position: absolute;
+  bottom: 71px;
+  right: 1px;
+  justify-content: space-between;
+  text-align: center;
+  padding: 13px 35px 9px 33px;
+  border-radius: 6px;
+  background-color: #3e7adc;
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.daysCheckboxItem:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.checkboxLabel {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.checkboxInput {
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 579px) {
