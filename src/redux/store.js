@@ -1,6 +1,10 @@
 /** @format */
 import { configureStore } from '@reduxjs/toolkit';
+import weekReducer from './weekTabs/weekReducer';
+import authReducer from './auth/authReducer';
+import tasksReducer from './tasks/tasksReducer';
 import logger from 'redux-logger';
+import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
   persistReducer,
@@ -11,8 +15,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import authReducer from './auth/authReducer';
 
 // const middleware = [
 //   ...getDefaultMiddleware({
@@ -38,6 +40,8 @@ const authPersistConfig = {
 const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
+    weekInfo: weekReducer,
+    tasks: tasksReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',
