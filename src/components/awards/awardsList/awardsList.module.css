@@ -181,3 +181,72 @@
 .is-hidden {
   display: none;
 }
+
+/* ===========RUNNING STRING============== */
+
+.running__string {
+  color: #ffbc33;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.presents {
+  animation-name: changeRunColor;
+  animation-duration: 10000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes changeRunColor {
+  0% {
+    color: orange;
+    text-shadow: grey;
+  }
+  10% {
+    color: red;
+    text-shadow: grey;
+  }
+
+  20% {
+    color: orange;
+    text-shadow: grey;
+  }
+
+  30% {
+    color: yellow;
+    text-shadow: grey;
+  }
+  40% {
+    color: yellowgreen;
+    text-shadow: grey;
+  }
+  50% {
+    color: red;
+    text-shadow: grey;
+  }
+
+  60% {
+    color: orange;
+    text-shadow: grey;
+  }
+
+  70% {
+    color: yellow;
+    text-shadow: grey;
+  }
+  80% {
+    color: yellowgreen;
+    text-shadow: grey;
+  }
+
+  90% {
+    color: rgba(86, 121, 215, 1);
+    text-shadow: grey;
+  }
+  100% {
+    color: orange;
+    text-shadow: grey;
+  }
+}

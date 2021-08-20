@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import s from "./Modal.module.css";
 
-const Modal = ({ children, handleCloseModal, modalName }) => {
+const Modal = ({ children, onClose }) => {
   useEffect(() => {
     window.addEventListener("keydown", handleEsc);
     const body = document.querySelector("body");
@@ -13,9 +13,9 @@ const Modal = ({ children, handleCloseModal, modalName }) => {
     };
   });
 
-  const handleEsc = (e) => e.code === "Escape" && handleCloseModal();
+  const handleEsc = (e) => e.code === "Escape" && onClose();
 
-  const handleClick = (e) => e.target === e.currentTarget && handleCloseModal();
+  const handleClick = (e) => e.target === e.currentTarget && onClose();
 
   return (
     <>
