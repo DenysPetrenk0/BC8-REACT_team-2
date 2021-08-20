@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import styles from './UserInfo.module.css';
 import sprite from '../../../images/header/symbol-defs.svg';
 import { useSelector } from 'react-redux';
