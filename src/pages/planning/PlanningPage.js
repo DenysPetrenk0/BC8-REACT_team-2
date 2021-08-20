@@ -7,6 +7,8 @@ import PlanningPoints from '../../components/planningPoints/PlanningPoints';
 import PlanningCards from '../../components/planningCards/PlanningCards';
 import { useSelector } from 'react-redux';
 import FormTest from './FormTest';
+import NewTaskModal from '../../components/taskModal/newTaskModal/NewTaskModal';
+import AddCustomTask from '../../components/addCustomTask/AddCustomTask';
 
 const PlanningPage = () => {
   const dispatch = useDispatch();
@@ -26,16 +28,18 @@ const PlanningPage = () => {
   return (
     <>
       <div>
-        <h2 className={styles.planningTitle}>План на неделю:</h2>
-        <div>
+        <div className={styles.planForWeekContainer}>
+          <h2 className={styles.planningTitle}>План на неделю:</h2>
           <p>17-24.08</p>
         </div>
-        <PlanningPoints />
-        <FormTest onAddTask={onAddTask} />
+        <PlanningPoints tasks={tasks} />
+        <p className={styles.motivationalText}>
+          Хочешь получить больше призов - добавь задачи :)
+        </p>
+        <NewTaskModal onAddTask={onAddTask} />
+        <AddCustomTask />
       </div>
       <PlanningCards tasks={tasks} />
-      {/*<NewTaskModal onAddTask={onAddTask}/>
-      <AddCustomTask /> */}
     </>
   );
 };
