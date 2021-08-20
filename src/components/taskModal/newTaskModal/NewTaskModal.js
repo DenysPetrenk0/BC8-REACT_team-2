@@ -16,7 +16,7 @@ const validationSchema = Yup.object().shape({
   reward: Yup.number().required('Это поле обязательно'),
 });
 
-const NewTaskModal = ({ onAddTask, onClose }) => {
+const NewTaskModal = ({ onAddTask, handleCloseModal, onClose }) => {
   const form = useFormik({
     initialValues: {
       imageUrl: '',
@@ -36,7 +36,7 @@ const NewTaskModal = ({ onAddTask, onClose }) => {
   );
 
   return (
-    <Modal onClose={onClose}>
+    <Modal handleCloseModal={onClose}>
       <ModalClose onClose={onClose} />
       <form
         onSubmit={form.handleSubmit}

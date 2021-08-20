@@ -27,3 +27,19 @@ export const getVisibleTasks = createSelector(
     );
   },
 );
+
+export const getCardsTotalPoints = createSelector(getCardsInfo, tasks => {
+  return tasks.reduce((acc, task) => {
+    return acc + task.reward * task.days.filter(day => day.isActive).length;
+  }, 0);
+});
+
+export const getCardsCompletedPoints = createSelector(getCardsInfo, tasks => {
+  return tasks.reduce((acc, task) => {
+    return (
+      acc +
+      task.reward *
+        task.days.filter(day => day.isActive && day.isCompleted).length
+    );
+  }, 0);
+});

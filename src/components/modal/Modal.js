@@ -1,28 +1,26 @@
 import React, { useEffect } from 'react';
-import s from "./Modal.module.css";
+import s from './Modal.module.css';
 
-const Modal = ({ children, handleCloseModal, modalName }) => {
+const Modal = ({ children, onClose }) => {
   useEffect(() => {
-    window.addEventListener("keydown", handleEsc);
-    const body = document.querySelector("body");
-    body.style.overflow = "hidden";
+    window.addEventListener('keydown', handleEsc);
+    const body = document.querySelector('body');
+    body.style.overflow = 'hidden';
     return () => {
-      window.removeEventListener("keydown", handleEsc);
-      const body = document.querySelector("body");
-      body.style.overflow = "auto";
+      window.removeEventListener('keydown', handleEsc);
+      const body = document.querySelector('body');
+      body.style.overflow = 'auto';
     };
   });
 
-  const handleEsc = (e) => e.code === "Escape" && handleCloseModal();
+  const handleEsc = e => e.code === 'Escape' && onClose();
 
-  const handleClick = (e) => e.target === e.currentTarget && handleCloseModal();
+  const handleClick = e => e.target === e.currentTarget && onClose();
 
   return (
     <>
       <div className={s.overlay} onClick={handleClick}>
-       <div className={s.modal}>
-        {children}
-        </div>
+        <div className={s.modal}>{children}</div>
       </div>
     </>
   );
