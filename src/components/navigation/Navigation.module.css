@@ -1,0 +1,7 @@
+.navigationList {
+  display: flex;
+}
+
+.navigationItem {
+  margin-right: 20px;
+}

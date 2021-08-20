@@ -1,0 +1,16 @@
+.addButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(180deg, #ffb532 0%, #ffd521 100%);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.addIcon {
+  fill: #fff;
+}
