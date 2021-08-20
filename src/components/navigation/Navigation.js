@@ -10,4 +10,5 @@ const Navigation = () => {
   const isLoggedIn = useSelector(getIsAuthenticated);
   return <>{isLoggedIn ? <AuthorizedBar /> : <UnAuthorizedBar />}</>;
 };
+
 export default Navigation;
