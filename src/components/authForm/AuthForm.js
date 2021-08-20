@@ -6,6 +6,7 @@ import { register, login } from '../../redux/auth/authOperations';
 // import { useRouteMatch } from "react-router-dom";
 import * as Yup from 'yup';
 import { getError } from '../../redux/auth/authSelectors';
+import styles from './AuthForm.module.css';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email().required('Email is Required.'),
@@ -55,19 +56,34 @@ const AuthForm = ({ history }) => {
 
   // console.log(`formik`, formik);
   return (
-    <div className="container">
-      <div className="row">
-        <div className="">
+    <div className={styles.container}>
+      <div className={styles.row}>
+        <h1 className={styles.authTitle}>
+          Выполняй задания, получи классные призы!
+        </h1>
+        <div className={styles.authForm}>
           <form noValidate onSubmit={formik.handleSubmit}>
-            <h1 className="h3 mb-3 font-weight-normal">Register</h1>
+            <p className={styles.authText}>
+              Вы можете авторизоваться с помощью Google Account:
+            </p>
 
-            <div className="form-group">
-              <label htmlFor="email">Email address</label>
+            <button className={styles.googleBtn} type="button">
+              Google
+            </button>
+            <p className={styles.authText}>
+              Или зайти с помощью e-mail и пароля, предварительно
+              зарегистрировавшись:
+            </p>
+
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="email">
+                <span className={styles.formLabelStar}>*</span>E-mail
+              </label>
               <input
                 type="email"
-                className="form-control"
+                className={styles.formInput}
                 name="email"
-                placeholder="Enter email"
+                placeholder="your@email.com"
                 value={formik.values.email}
                 onChange={formik.handleChange}
               />
@@ -75,13 +91,15 @@ const AuthForm = ({ history }) => {
                 <div className="input-feedback">{formik.errors.email}</div>
               )}
             </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="password">
+                <span className={styles.formLabelStar}>*</span>Пароль
+              </label>
               <input
                 type="password"
-                className="form-control"
+                className={styles.formInput}
                 name="password"
-                placeholder="Password"
+                placeholder="*********"
                 value={formik.values.password}
                 onChange={formik.handleChange}
               />
@@ -89,20 +107,22 @@ const AuthForm = ({ history }) => {
                 <div className="input-feedback">{formik.errors.password}</div>
               )}
             </div>
-            <button
-              onClick={() => dispatch(login(formik.values))}
-              type="button"
-              className="btn btn-lg btn-primary btn-block"
-            >
-              Login
-            </button>
-            <button
-              onClick={() => dispatch(register(formik.values))}
-              type="button"
-              className="btn btn-lg btn-primary btn-block"
-            >
-              Register!
-            </button>
+            <div className={styles.wrapperButton}>
+              <button
+                onClick={() => dispatch(login(formik.values))}
+                type="button"
+                className={styles.authButton}
+              >
+                Войти
+              </button>
+              <button
+                onClick={() => dispatch(register(formik.values))}
+                type="button"
+                className={styles.authButton}
+              >
+                Зарегистрироваться!
+              </button>
+            </div>
           </form>
         </div>
       </div>
