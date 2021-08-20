@@ -10,7 +10,7 @@ const TaskToggle = ({ id, onChange, value }) => {
         id={id}
         className={s.checkbox}
         type="checkbox"
-        checked={value}
+        // checked={value}
         onChange={onChange}
       />
       <span className={`${s.slider}`}>
