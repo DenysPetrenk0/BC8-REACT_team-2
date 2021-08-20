@@ -1,37 +1,23 @@
 [
   {
-    "date": "2020-12-28",
-    "isActive": false,
-    "isCompleted": false
+    "name": "monday"
   },
   {
-    "date": "2020-12-29",
-    "isActive": false,
-    "isCompleted": false
+    "name": "th"
   },
   {
-    "date": "2020-12-30",
-    "isActive": false,
-    "isCompleted": false
+    "name": "wen"
   },
   {
-    "date": "2020-12-31",
-    "isActive": false,
-    "isCompleted": false
+    "name": "th"
   },
   {
-    "date": "2021-1-1",
-    "isActive": false,
-    "isCompleted": false
+    "name": "friday"
   },
   {
-    "date": "2021-1-2",
-    "isActive": false,
-    "isCompleted": false
+    "name": "sut"
   },
   {
-    "date": "2021-1-3",
-    "isActive": false,
-    "isCompleted": false
+    "name": "sun"
   }
 ]

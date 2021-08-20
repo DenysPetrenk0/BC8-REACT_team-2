@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import styles from '../PlanningCards.module.css';
 import sprite from '../image/symbol-defs.svg';
 import dataDays from '../dataDays.json';
@@ -11,28 +11,31 @@ const daysName = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
 const PlanningCardItem = ({ onAddActiveTask, task }) => {
   console.log('~ task', task);
+  const daysActive = useMemo(
+    () => task.days.map(itemDay => itemDay.isActive),
+    [],
+  );
 
-  const [visible, setVisible] = useState(initialState);
-  const [days, setDays] = useState(dataDays);
+  const [visible, setVisible] = useState(initialState.isVisible);
+  const [checkDays, setCheckDays] = useState(daysActive);
 
   const toggleVisible = e => {
     setVisible(({ isVisible }) => ({ isVisible: !isVisible }));
   };
-  const onHandleChange = e => {
-    const { name } = e.target;
-    setDays(
-      days.map(day =>
-        day.date === name ? { ...day, isActive: !day.isActive } : day,
-      ),
-    );
+  const onHandleChange = index => {
+    const newCheckDays = checkDays.map((day, idx) => {
+      if (idx === index) {
+        return !day;
+      }
+      return day;
+    });
+    setCheckDays(newCheckDays);
   };
 
   const onHandleSubmit = e => {
-    const taskId = task.id;
-    const data = days.map(day => day.isActive);
-    const dataObj = { days: data };
+    const taskId = task._id;
     toggleVisible();
-    onAddActiveTask(taskId, dataObj);
+    onAddActiveTask(taskId, { days: checkDays });
   };
   return (
     <li className={styles.cardItem} key={task.id}>
@@ -67,14 +70,14 @@ const PlanningCardItem = ({ onAddActiveTask, task }) => {
       </div>
       {visible.isVisible && (
         <ul className={styles.daysCheckbox}>
-          {days.map((day, idx) => (
-            <li className={styles.daysCheckboxItem} key={day.date}>
-              <label key={day.value} className={styles.checkboxLabel}>
+          {checkDays.map((isCheck, idx) => (
+            <li className={styles.daysCheckboxItem} key={daysName[idx]}>
+              <label className={styles.checkboxLabel}>
                 <input
-                  name={day.date}
+                  name={dataDays[idx].name}
                   type="checkbox"
-                  checked={day.isActive}
-                  onChange={onHandleChange}
+                  checked={isCheck}
+                  onChange={() => onHandleChange(idx)}
                   className={styles.checkboxInput}
                 />
                 {daysName[idx]}

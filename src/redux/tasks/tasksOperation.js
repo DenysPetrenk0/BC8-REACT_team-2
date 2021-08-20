@@ -8,8 +8,8 @@ import {
   patchActiveTaskError,
 } from './tasksAction';
 
-const baseToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTFkMGVmNzU2MjBjZDAwMTdlOGU0NGQiLCJzaWQiOiI2MTFkMGVmNzU2MjBjZDAwMTdlOGU0NGUiLCJpYXQiOjE2MjkyOTQzMjd9.pOQBlPgoQLUz3RA-ywzNM1I-etuOhfGb8XHa-eajoHs';
+// const baseToken =
+//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTFkMGVmNzU2MjBjZDAwMTdlOGU0NGQiLCJzaWQiOiI2MTFkMGVmNzU2MjBjZDAwMTdlOGU0NGUiLCJpYXQiOjE2MjkyOTQzMjd9.pOQBlPgoQLUz3RA-ywzNM1I-etuOhfGb8XHa-eajoHs';
 
 export const addTask = (title, reward) => dispatch => {
   dispatch(createTaskRequest());
@@ -18,9 +18,7 @@ export const addTask = (title, reward) => dispatch => {
     reward,
   };
   axios
-    .post(`/task`, task, {
-      headers: { Authorization: `Bearer ${baseToken}` },
-    })
+    .post(`/task`, task)
     .then(({ data }) => dispatch(createTaskSuccess(data)))
     .catch(error => dispatch(createTaskError(error.message)));
 };
@@ -34,12 +32,18 @@ export const patchActiveTask = (taskId, bodyData) => async dispatch => {
     const response = await axios.patch(
       `/task/single-active/${taskId}`,
       bodyData,
-      {
-        headers: { Authorization: `Bearer ${baseToken}` },
-      },
     );
     dispatch(patchActiveTaskSuccess(response.data));
   } catch (error) {
     dispatch(patchActiveTaskError(error.message));
   }
 };
+
+// , {
+//       headers: { Authorization: `Bearer ${baseToken}` },
+//     }
+
+// ,
+//       {
+//         headers: { Authorization: `Bearer ${baseToken}` },
+//       },
