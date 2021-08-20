@@ -9,11 +9,10 @@
   position: absolute;
   cursor: pointer;
   top: 0;
-  left: 0;
+  left: -3px;
   right: 0;
   bottom: 0;
   background-color: #ff4965;
-  transition: 0.3;
   transition: 0.3s;
 }
 
