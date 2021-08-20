@@ -12,6 +12,7 @@ import {
 
 const itemsReducer = createReducer([], {
   [fetchAwardsSuccess]: (_, { payload }) => payload,
+
   [orderAwardSuccess]: (_, { payload }) => payload,
 });
 
@@ -19,6 +20,7 @@ const loadingReducer = createReducer(false, {
   [fetchAwardsRequest]: () => true,
   [fetchAwardsSuccess]: () => false,
   [fetchAwardsError]: () => false,
+
   [orderAwardRequest]: () => true,
   [orderAwardSuccess]: () => false,
   [orderAwardError]: () => false,

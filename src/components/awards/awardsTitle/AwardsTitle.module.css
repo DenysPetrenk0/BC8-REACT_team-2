@@ -12,6 +12,7 @@
   left: 0;
   width: 26px;
   height: 26px;
+
   animation-name: changePresentSize;
   animation-duration: 3000ms;
   animation-timing-function: linear;
@@ -44,6 +45,7 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-left: 45px;
+
   color: #000000;
   transition: transform 250ms linear;
 }
