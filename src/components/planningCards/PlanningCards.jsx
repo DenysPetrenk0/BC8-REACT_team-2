@@ -2,12 +2,14 @@ import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './PlanningCards.module.css';
 import defaultImg from './image/calendar.webp';
-
+import useWindowDimensions from '../../pages/planning/hooks/wirthHook';
 import { patchActiveTask } from '../../redux/tasks/tasksOperation';
 import PlanningCardItem from './planningCardItem/PlanningCardItem';
+import PlanningPoints from '../planningPoints/PlanningPoints';
 
 const PlanningCards = ({ tasks }) => {
   const dispatch = useDispatch();
+  const { width } = useWindowDimensions();
 
   const onAddActiveTask = useCallback(
     (taskId, dataObj) => {

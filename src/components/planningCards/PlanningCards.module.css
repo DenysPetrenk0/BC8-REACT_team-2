@@ -30,19 +30,19 @@
 .cardReward {
   display: inline-block;
   background-color: #5679d7;
-  padding: 3px 10px;
+  padding: 3px 10px 4px 10px;
   font-weight: 500;
   font-size: 10px;
   line-height: 1.2;
   text-align: center;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  border-radius: 3px;
 
   color: #ffffff;
 }
 
 .cadrFooter {
-  position: relative;
   display: flex;
   justify-content: space-between;
   padding: 14px 20px 17px 20px;

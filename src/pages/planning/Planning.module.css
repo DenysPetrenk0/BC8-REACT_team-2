@@ -1,5 +1,8 @@
+.planningPageContainer {
+  padding-top: 20px;
+}
 .planForWeekContainer {
-  display: flex;
+  text-align: center;
 }
 .planningTitle {
   font-size: 18px;
@@ -15,4 +18,27 @@
   letter-spacing: 0.04em;
 
   color: #a6abb9;
+}
+
+@media screen and (min-width: 580px) {
+  .planningPageContainer {
+    padding-top: 40px;
+  }
+  .planForWeekContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .planningPageContainer {
+    padding-top: 67px;
+  }
+  .planForWeekContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
 }
