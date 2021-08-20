@@ -10,7 +10,7 @@ const UserInfo = ({ onLogout }) => {
     <>
       <div className={styles.user__name_container}>
         <span className={styles.upp__letter}>
-          <p className={styles.letter}>U</p>
+          <p className={styles.letter}>{userEmail.toUpperCase().slice(0, 1)}</p>
         </span>
         <p className={styles.user__name}>{userEmail}</p>
         <button onClick={onLogout} className={styles.user__logout_btn}>
