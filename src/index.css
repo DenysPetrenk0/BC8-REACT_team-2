@@ -1,5 +1,8 @@
 html {
   box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 *,
@@ -13,6 +16,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.2;
   letter-spacing: 0.03em;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 h1,

@@ -1,0 +1,42 @@
+.user__name_container {
+  display: flex;
+  align-items: center;
+}
+
+.upp__letter {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #2196f3;
+  margin-right: 10px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.letter {
+  position: relative;
+  top: 50%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.user__name {
+  font-size: 12px;
+  font-family: 700;
+  color: #858598;
+  border-right: 1px solid #858598;
+  padding-right: 15px;
+}
+
+.user__logout_btn {
+  float: right;
+  border: none;
+  background-color: transparent;
+  margin-left: 30px;
+}
+
+.svg {
+  width: 18px;
+  height: 18px;
+}
