@@ -26,18 +26,22 @@ const PlanningPage = () => {
   return (
     <>
       <div className={styles.planningPageContainer}>
-        <div className={styles.planForWeekContainer}>
-          <h2 className={styles.planningTitle}>План на неделю:</h2>
-          <p>17-24.08</p>
+        <div className={styles.planningHeaderContainer}>
+          <div className={styles.planForWeekContainer}>
+            <h2 className={styles.planningTitle}>План на неделю:</h2>
+            <p>17-24.08</p>
+          </div>
+          <PlanningPoints tasks={tasks} />
+          <div className={styles.addTaskContainer}>
+            {width > 579 && (
+              <p className={styles.motivationalText}>
+                Хочешь получить больше призов - добавь задачи :)
+              </p>
+            )}
+            <NewTaskModal onAddTask={onAddTask} />
+            <AddCustomTask />
+          </div>
         </div>
-        <PlanningPoints tasks={tasks} />
-        {width > 579 && (
-          <p className={styles.motivationalText}>
-            Хочешь получить больше призов - добавь задачи :)
-          </p>
-        )}
-        <NewTaskModal onAddTask={onAddTask} />
-        <AddCustomTask />
       </div>
       <PlanningCards tasks={tasks} />
     </>

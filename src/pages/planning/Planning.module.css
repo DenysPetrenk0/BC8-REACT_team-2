@@ -1,6 +1,10 @@
 .planningPageContainer {
   padding-top: 20px;
 }
+.planningHeaderContainer {
+  text-align: center;
+  margin-bottom: 30px;
+}
 .planForWeekContainer {
   text-align: center;
 }
@@ -11,11 +15,18 @@
   color: #000000;
 }
 
+.addTaskContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .motivationalText {
   font-weight: 500;
   font-size: 1.25;
   line-height: 15px;
   letter-spacing: 0.04em;
+  margin-right: 20px;
 
   color: #a6abb9;
 }
@@ -24,6 +35,10 @@
   .planningPageContainer {
     padding-top: 40px;
   }
+  .planningHeaderContainer {
+    margin-bottom: 40px;
+  }
+
   .planForWeekContainer {
     display: flex;
     justify-content: center;
@@ -35,6 +50,12 @@
 @media screen and (min-width: 1180px) {
   .planningPageContainer {
     padding-top: 67px;
+  }
+  .planningHeaderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 27px;
   }
   .planForWeekContainer {
     display: flex;
