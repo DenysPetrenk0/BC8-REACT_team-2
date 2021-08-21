@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import NewTaskModal from '../../components/taskModal/newTaskModal/NewTaskModal';
 import AddCustomTask from '../../components/addCustomTask/AddCustomTask';
 import useWindowDimensions from './hooks/wirthHook';
+import CurrentWeek from '../../components/currentInfo/currentWeek/CurrentWeek';
 
 const PlanningPage = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,8 @@ const PlanningPage = () => {
         <div className={styles.planningHeaderContainer}>
           <div className={styles.planForWeekContainer}>
             <h2 className={styles.planningTitle}>План на неделю:</h2>
-            <p>17-24.08</p>
+            {/* <p>17-24.08</p> */}
+            <CurrentWeek />
           </div>
           <PlanningPoints tasks={tasks} />
           <div className={styles.addTaskContainer}>
