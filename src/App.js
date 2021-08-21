@@ -17,13 +17,15 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="container">
+    // <div className="container">
+    <>
       <Header />
       <Suspense fallback={<Spinner />}>
         <ContentSwitcher routes={mainRoutes} />
       </Suspense>
-      <Footer />
-    </div>
+      {/* <Footer /> */}
+    </>
+    // </div>
   );
 };
 

@@ -1,4 +1,31 @@
 .taskList {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .taskList {
+    flex-wrap: wrap;
+    margin-left: 100px;
+    flex-direction: row;
+  }
+
+  .taskItem {
+    flex-basis: calc((100% - 40px) / 2);
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .taskList {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+  }
+
+  .taskItem {
+    flex-basis: calc((100% - 40px) / 3);
+    box-sizing: border-box;
+  }
 }

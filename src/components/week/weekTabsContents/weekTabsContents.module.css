@@ -1,0 +1,10 @@
+@media screen and (min-width: 1280px) {
+  .week {
+    padding-top: 40px;
+  }
+
+  .weekInfo {
+    margin-bottom: 40px;
+    margin-left: 100px;
+  }
+}

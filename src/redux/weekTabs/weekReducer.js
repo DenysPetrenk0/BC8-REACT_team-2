@@ -1,6 +1,11 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
-import { filterTabs, getWeekError, getWeekSuccess } from './weekActions';
+import {
+  currentDay,
+  filterTabs,
+  getWeekError,
+  getWeekSuccess,
+} from './weekActions';
 
 const currentDate = () => {
   const date = new Date();
@@ -11,6 +16,21 @@ const currentDate = () => {
 
   return `${year}-${month}-${day}`;
 };
+
+const weekDays = [
+  'Восресенье',
+  'Понедельник',
+  'Вторник',
+  'Среда',
+  'Четверг',
+  'Пятница',
+  'Суббота',
+];
+
+function getWeekDay() {
+  const date = new Date();
+  return weekDays[date.getDay()];
+}
 
 const infoWeekReduser = createReducer([], {
   [getWeekSuccess]: (_, { payload }) => payload.week,
@@ -24,10 +44,15 @@ const filterWeekTabs = createReducer(currentDate(), {
   [filterTabs]: (_, { payload }) => payload,
 });
 
+const currentDayReduser = createReducer(getWeekDay(), {
+  [currentDay]: (_, { payload }) => payload,
+});
+
 const weekReducer = combineReducers({
   info: infoWeekReduser,
   error: errorWeekReduser,
   filter: filterWeekTabs,
+  day: currentDayReduser,
 });
 
 export default weekReducer;
