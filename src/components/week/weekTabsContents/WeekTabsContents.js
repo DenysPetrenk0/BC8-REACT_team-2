@@ -1,15 +1,24 @@
 import React from 'react';
 import CurrentWeekRange from '../../currentWeekRange/CurrentWeekRange';
+import CurrentDays from '../../currentInfo/currentDays/CurrentDays';
+import styles from './weekTabsContents.module.css';
+import CurrentWeek from '../../currentInfo/currentWeek/CurrentWeek';
+import NoCurrentWeekRange from '../../noCurrentWeekRange/NoCurrentWeekRange';
+import Footer from '../../footer/Footer';
 
 const WeekTabsContents = ({ tasks }) => {
   return (
-    <div>
-      <h2>Неделя:</h2>
-      <p>Мoи задачи:</p>
-      <p>ВТОРНИК, 22-12-2020</p>
-      <p>Заработано баллов за эту неделю:</p>
-      <p>Запланировано баллов на эту неделю:</p>
-      <CurrentWeekRange tasks={tasks} />
+    <div className={styles.week}>
+      <div className={styles.weekInfo}>
+        <CurrentWeek />
+        <CurrentDays />
+      </div>
+      {tasks.length > 0 ? (
+        <CurrentWeekRange tasks={tasks} />
+      ) : (
+        <NoCurrentWeekRange />
+      )}
+      <Footer />
     </div>
   );
 };

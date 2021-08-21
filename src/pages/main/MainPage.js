@@ -4,7 +4,6 @@ import WeekTabs from '../../components/week/weekTabs/WeekTabs';
 import WeekTabsContents from '../../components/week/weekTabsContents/WeekTabsContents';
 import { getWeekOperation } from '../../redux/weekTabs/weekOperation';
 import {
-  getCardsInfo,
   getVisibleTasks,
   getWeekDate,
 } from '../../redux/weekTabs/weekSelectors';
@@ -22,7 +21,7 @@ const MainPage = () => {
 
   return (
     <div className={styles.main}>
-      <WeekTabs numbers={numbers} className={styles.weekTabs} />
+      <WeekTabs numbers={numbers} />
       <WeekTabsContents tasks={tasks} />
       <ProgressBar />
     </div>

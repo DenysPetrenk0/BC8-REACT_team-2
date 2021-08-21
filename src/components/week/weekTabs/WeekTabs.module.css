@@ -1,29 +1,27 @@
 .navWeekList {
-  background: #ffbc33;
-  width: 240px;
-  padding-top: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navWeekItem {
-  margin-bottom: 6px;
-  text-align: end;
+  margin-right: 4px;
 }
 
 .navWeekBtn {
-  width: 190px;
-  height: 42px;
-  border-radius: 6px 0px 0px 6px;
+  width: 35px;
+  height: 24px;
+  border-radius: 4px;
   border: none;
   background: #f6da98;
-  /* opacity: 0.5; */
 }
 
 .navWeekBtnActive {
-  width: 190px;
-  height: 42px;
-  border-radius: 6px 0px 0px 6px;
+  width: 35px;
+  height: 24px;
+  border-radius: 4px;
   border: none;
-  background: #ffffff;
+  background: #ffbc33;
 }
 
 .navWeekBtn:hover {
@@ -34,8 +32,78 @@
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 12px;
+  line-height: 1.25;
   letter-spacing: 0.04em;
   color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+  .navWeekList {
+    background: #ffbc33;
+    min-width: 768px;
+    min-height: 70px;
+    padding-left: 294px;
+  }
+
+  .navWeekItem {
+    margin-right: 16px;
+  }
+
+  .navWeekBtn {
+    width: 40px;
+    height: 26px;
+    border-radius: 4px;
+    border: none;
+    background: #f6da98;
+  }
+
+  .navWeekBtnActive {
+    width: 40px;
+    height: 26px;
+    border-radius: 4px;
+    border: none;
+    background: #ffffff;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .navWeekList {
+    display: block;
+    padding-top: 140px;
+    padding-left: 50px;
+    min-height: 796px;
+    min-width: 240px;
+  }
+
+  .navWeekItem {
+    margin-bottom: 6px;
+    margin-right: auto;
+  }
+
+  .navWeekBtn {
+    width: 190px;
+    height: 42px;
+    border-radius: 6px 0px 0px 6px;
+    border: none;
+    background: #f6da98;
+    /* opacity: 0.5; */
+  }
+
+  .navWeekBtnActive {
+    width: 190px;
+    height: 42px;
+    border-radius: 6px 0px 0px 6px;
+    border: none;
+    background: #ffffff;
+  }
+
+  .navWeekBtn:hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  .navWeekBtnText {
+    font-size: 14px;
+    line-height: 1.21;
+  }
 }
