@@ -6,6 +6,8 @@ import {
   logoutSuccess,
   registerError,
   getUserInfoSuccess,
+  loginError,
+  getUserInfoError,
 } from './authActions';
 
 const initialUserState = {
@@ -17,7 +19,7 @@ const user = createReducer(initialUserState, {
   [registerSuccess]: (_, action) => action.payload.user,
   [loginSuccess]: (_, action) => action.payload.user,
   [logoutSuccess]: () => initialUserState,
-  [getUserInfoSuccess]: (_, action) => action.payload,
+  [getUserInfoSuccess]: (_, action) => action.payload.user,
 });
 
 const token = createReducer(null, {
@@ -30,8 +32,19 @@ const error = createReducer(null, {
   [registerError]: (_, action) => action.payload,
 });
 
+const isAuthenticated = createReducer(false, {
+  [registerSuccess]: () => true,
+  [loginSuccess]: () => true,
+  [getUserInfoSuccess]: () => true,
+  [registerError]: () => false,
+  [loginError]: () => false,
+  [getUserInfoError]: () => false,
+  [logoutSuccess]: () => false,
+});
+
 export default combineReducers({
   user,
   token,
   error,
+  isAuthenticated,
 });

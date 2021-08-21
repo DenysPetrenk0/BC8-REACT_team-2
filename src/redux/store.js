@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import weekReducer from './weekTabs/weekReducer';
 import authReducer from './auth/authReducer';
 import tasksReducer from './tasks/tasksReducer';
+import awardsReducer from './awards/awardsReducer';
 import taskModalReducer from './taskModal/taskModalReducer';
 import logger from 'redux-logger';
 import storage from 'redux-persist/lib/storage';
@@ -44,6 +45,7 @@ const store = configureStore({
     weekInfo: weekReducer,
     tasks: tasksReducer,
     taskModal: taskModalReducer,
+    awards: awardsReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

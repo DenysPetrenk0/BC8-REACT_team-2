@@ -1,0 +1,13 @@
+.svg {
+  width: 22px;
+  height: 14px;
+  color: #858598;
+}
+
+.user__name {
+  font-size: 12px;
+  font-family: 700;
+  color: white;
+  border-right: 1px solid #858598;
+  padding-right: 15px;
+}

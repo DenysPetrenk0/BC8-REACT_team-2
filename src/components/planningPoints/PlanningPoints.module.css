@@ -1,0 +1,55 @@
+.pointsContainer {
+  position: absolute;
+  /* bottom: 0; */
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.points {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  color: #a6abb9;
+}
+
+.sumPoints {
+  width: 40px;
+  height: 40px;
+  margin-right: 6px;
+  margin-left: 6px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 7px 7px;
+  background-color: #8ec63f;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+
+  color: #ffffff;
+
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 579px) {
+  .points {
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (min-width: 580px) {
+  .pointsContainer {
+    position: static;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: transparent;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+}

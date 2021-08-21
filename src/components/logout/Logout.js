@@ -1,9 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logOut } from '../../redux/auth/authOperations';
 import s from './Logout.module.css';
 
-const Logout = ( {onClose, onLogout}) => {
+const Logout = ( {onClose}) => {
+    const dispatch = useDispatch();
+    const onLogout = () => {
+        // console.log(`hello`);
+        dispatch(logOut())};
+
     return (
         <>
         <div className={s.logoutContainer}>
@@ -19,5 +24,5 @@ const Logout = ( {onClose, onLogout}) => {
     );
 }
 
-export default connect(null, { onLogout: logOut })(Logout);
+export default Logout;
 

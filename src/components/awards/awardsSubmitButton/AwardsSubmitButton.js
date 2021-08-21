@@ -1,28 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
+// import React, { useState, useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { orderAward } from '../../../redux/awards/awardsOperations';
 import styles from './AwardsSubmitButton.module.css';
 
-class AwardsSubmitButton extends Component {
-  state = {
-    showModal: false,
-  };
-
-  onHandleSubmit = () => {
-    this.setState({ showModal: true });
-  };
-
-  render() {
-    return (
-      <div className={styles.AwardsSubmitButtonWrapper}>
-        <button
-          type="submit"
-          className={styles.AwardsSubmitButton}
-          onClick={this.onHandleSubmit}
-        >
-          Подтвердить
-        </button>
-      </div>
-    );
-  }
+export default function AwardsSubmitButton({ onHandleSubmit }) {
+  return (
+    <div className={styles.AwardsSubmitButtonWrapper}>
+      <button
+        type="submit"
+        className={styles.AwardsSubmitButton}
+        onClick={onHandleSubmit}
+      >
+        Подтвердить
+      </button>
+    </div>
+  );
 }
-
-export default AwardsSubmitButton;

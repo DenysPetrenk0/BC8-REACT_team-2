@@ -1,0 +1,20 @@
+@media screen and (min-width: 768px) {
+  .container {
+    margin-right: 40px;
+  }
+  .nav__link_item {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #858598;
+  }
+  .nav__link_item:not(:last-child) {
+    margin-right: 30px;
+    border-right: 1px solid #858598;
+    padding-right: 15px;
+  }
+}
+
+.nav__link_item_active {
+  color: #000000;
+}
