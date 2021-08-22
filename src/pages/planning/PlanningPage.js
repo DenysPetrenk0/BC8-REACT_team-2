@@ -9,7 +9,9 @@ import { useSelector } from 'react-redux';
 import NewTaskModal from '../../components/taskModal/newTaskModal/NewTaskModal';
 import AddCustomTask from '../../components/addCustomTask/AddCustomTask';
 import useWindowDimensions from './hooks/wirthHook';
+import Footer from '../../components/footer/Footer';
 import { weekInfo } from '../../redux/weekTabs/weekSelectors';
+
 
 const PlanningPage = () => {
   const dispatch = useDispatch();
@@ -30,8 +32,10 @@ const PlanningPage = () => {
       <div className={styles.planningPageContainer}>
         <div className={styles.planningHeaderContainer}>
           <div className={styles.planForWeekContainer}>
+
             <h2 className={styles.planningTitle}>План на неделю:{weekDate}</h2>
-            {/* <p>17-24.08</p> */}
+            
+
           </div>
           <PlanningPoints tasks={tasks} />
           <div className={styles.addTaskContainer}>
@@ -40,12 +44,15 @@ const PlanningPage = () => {
                 Хочешь получить больше призов - добавь задачи :)
               </p>
             )}
-            <NewTaskModal onAddTask={onAddTask} />
-            <AddCustomTask />
+            <div className={styles.modalContainer}>
+              <NewTaskModal onAddTask={onAddTask} />
+              <AddCustomTask />
+            </div>
           </div>
         </div>
       </div>
       <PlanningCards tasks={tasks} />
+      <Footer />
     </>
   );
 };
