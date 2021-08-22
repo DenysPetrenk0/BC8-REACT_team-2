@@ -8,7 +8,7 @@ import {
   getWeekDate,
 } from '../../redux/weekTabs/weekSelectors';
 import styles from './MainPage.module.css';
-import ProgressBar from '../../components/progressBar/ProgressBar';
+// import ProgressBar from '../../components/progressBar/ProgressBar';
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const MainPage = () => {
     <div className={styles.main}>
       <WeekTabs numbers={numbers} />
       <WeekTabsContents tasks={tasks} />
-      <ProgressBar />
+      {/* <ProgressBar /> */}
     </div>
   );
 };

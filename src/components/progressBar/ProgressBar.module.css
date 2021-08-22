@@ -1,5 +1,6 @@
 .progressBarContainer {
   font-family: 'Montserrat', sans-serif;
+  display: none;
 }
 
 .currentPointsTitle,
@@ -10,12 +11,6 @@
   line-height: 15px;
   letter-spacing: 0.04em;
   color: #a6abb9;
-}
-
-.hideTitle,
-.commonPointsTitle,
-.points {
-  display: none;
 }
 
 .progressContainer {
@@ -39,17 +34,15 @@
 
 @media screen and (min-width: 580px) {
   .progressBarContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
   }
   .currentPointsTitle,
   .commonPointsTitle {
     margin-bottom: 10px;
-  }
-
-  .hideTitle,
-  .commonPointsTitle,
-  .points {
-    display: inline-block;
   }
 
   .points {
@@ -68,6 +61,7 @@
 
 @media screen and (min-width: 1180px) {
   .progressBarContainer {
+    display: inline-block;
     text-align: end;
   }
 
