@@ -1,7 +1,3 @@
-.cartContainer {
-  padding-bottom: 40px;
-}
-
 .cardItem {
   position: relative;
   width: 280px;
@@ -131,6 +127,13 @@
 
 .checkboxInput {
   margin-right: 10px;
+}
+
+/* create list habits text*/
+
+.createListHabits {
+  text-align: center;
+  font-size: 40px;
 }
 
 @media screen and (max-width: 579px) {

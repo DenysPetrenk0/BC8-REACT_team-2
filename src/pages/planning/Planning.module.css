@@ -9,6 +9,7 @@
   text-align: center;
 }
 .planningTitle {
+  margin-bottom: 10px;
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: 0.04em;
@@ -31,11 +32,17 @@
   color: #a6abb9;
 }
 
-@media screen and (max-width: 580px) {
-  .modalContainer {
-    position: absolute;
-  }
+/*points mobile container*/
+.pointsMobileContainer {
+  position: relative;
+  display: flex;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background-color: #f1f1f1;
 }
+
+/* @media screen and (max-width: 579px) {
+} */
 
 @media screen and (min-width: 580px) {
   .planningPageContainer {
@@ -43,6 +50,11 @@
   }
   .planningHeaderContainer {
     margin-bottom: 40px;
+  }
+
+  .planningTitle {
+    margin-right: 10px;
+    margin-bottom: 0;
   }
 
   .planForWeekContainer {

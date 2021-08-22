@@ -15,3 +15,11 @@
 .addIcon {
   fill: #fff;
 }
+
+@media screen and (max-width: 579px) {
+  .addButton {
+    position: absolute;
+    top: -16px;
+    right: 15px;
+  }
+}
