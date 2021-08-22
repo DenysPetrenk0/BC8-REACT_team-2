@@ -12,7 +12,6 @@ import useWindowDimensions from './hooks/wirthHook';
 import Footer from '../../components/footer/Footer';
 import { weekInfo } from '../../redux/weekTabs/weekSelectors';
 
-
 const PlanningPage = () => {
   const dispatch = useDispatch();
   const tasks = useSelector(getTasks);
@@ -29,30 +28,42 @@ const PlanningPage = () => {
 
   return (
     <>
-      <div className={styles.planningPageContainer}>
-        <div className={styles.planningHeaderContainer}>
-          <div className={styles.planForWeekContainer}>
-
-            <h2 className={styles.planningTitle}>План на неделю:{weekDate}</h2>
-            
-
-          </div>
-          <PlanningPoints tasks={tasks} />
-          <div className={styles.addTaskContainer}>
-            {width > 579 && (
-              <p className={styles.motivationalText}>
-                Хочешь получить больше призов - добавь задачи :)
-              </p>
-            )}
-            <div className={styles.modalContainer}>
-              <NewTaskModal onAddTask={onAddTask} />
-              <AddCustomTask />
+      <div className="container">
+        <div className={styles.planningPageContainer}>
+          <div className={styles.planningHeaderContainer}>
+            <div className={styles.planForWeekContainer}>
+              <p className={styles.planningTitle}>План на неделю:</p>
+              <h2>{weekDate}</h2>
+            </div>
+            {width > 579 && <PlanningPoints tasks={tasks} />}
+            <div className={styles.addTaskContainer}>
+              {width > 579 && (
+                <p className={styles.motivationalText}>
+                  Хочешь получить больше призов - добавь задачи :)
+                </p>
+              )}
+              {width > 579 && (
+                <>
+                  <NewTaskModal onAddTask={onAddTask} />
+                  <AddCustomTask />
+                </>
+              )}
             </div>
           </div>
         </div>
+        <PlanningCards tasks={tasks} />
+        <Footer />
       </div>
-      <PlanningCards tasks={tasks} />
-      <Footer />
+
+      {width < 580 && (
+        <div className={styles.pointsMobileContainer}>
+          <div className="container">
+            <PlanningPoints tasks={tasks} />
+            <NewTaskModal onAddTask={onAddTask} />
+            <AddCustomTask />
+          </div>
+        </div>
+      )}
     </>
   );
 };
