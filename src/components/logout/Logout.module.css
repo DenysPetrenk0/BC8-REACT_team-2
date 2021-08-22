@@ -1,31 +1,33 @@
 .logoutContainer {
-    padding: 25px;
-    border: 1px solid red;
-    width: 400px;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-  }
+  padding: 25px;
+  border: 1px solid red;
+  width: 400px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
 
-  .logoutText {
-    font-size: 22px;
-    margin-bottom: 24px;
-  }
+.logoutText {
+  font-size: 22px;
+  margin-bottom: 24px;
+}
 
-  .logoutBtn {
-    width: 60px;
-    height: 30px;
-    font-size: 15px;
-    border: 1px solid #2ca108;
-    color: #fff;
-    border-radius: 10px;
-    background-color: #52e734;
-    margin-bottom: 15px;
-  }
+.logoutBtn {
+  width: 60px;
+  height: 30px;
+  font-size: 15px;
+  border: 1px solid #2ca108;
+  color: #fff;
+  border-radius: 10px;
+  background-color: #52e734;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
 
-  .logoutBtn:hover, .logoutBtn:focus {
-    background-color: #ff2d26;
-    color: #fff;
-  }
+.logoutBtn:hover,
+.logoutBtn:focus {
+  background-color: #ff2d26;
+  color: #fff;
+}

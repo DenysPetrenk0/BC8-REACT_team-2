@@ -13,7 +13,6 @@ class AwardsPage extends Component {
       <>
         <AwardsTitle />
         <AwardsList />
-
         {/* <CongratsModal /> */}
       </>
     );

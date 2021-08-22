@@ -13,7 +13,7 @@ const PlanningCardItem = ({ onAddActiveTask, task }) => {
   console.log('~ task', task);
   const daysActive = useMemo(
     () => task.days.map(itemDay => itemDay.isActive),
-    [],
+    [task.days],
   );
 
   const [visible, setVisible] = useState(initialState.isVisible);

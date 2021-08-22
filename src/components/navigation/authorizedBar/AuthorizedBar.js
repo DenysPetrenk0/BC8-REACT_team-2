@@ -6,9 +6,10 @@ import UserMenu from '../userMenu/UserMenu';
 import styles from './AuthorizedBar.module.css';
 
 const AuthorizedBar = () => {
+  let width = window.innerWidth;
   return (
     <div className={styles.container}>
-      {window.screen.width > 1280 && <NavigationList />}
+      {width > 1280 && <NavigationList />}
       <UserMenu />
     </div>
   );
