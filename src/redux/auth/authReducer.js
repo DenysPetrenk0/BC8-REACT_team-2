@@ -8,6 +8,7 @@ import {
   getUserInfoSuccess,
   loginError,
   getUserInfoError,
+  getUserInfoRequest,
 } from './authActions';
 
 const initialUserState = {

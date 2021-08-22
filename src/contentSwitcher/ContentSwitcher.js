@@ -1,19 +1,20 @@
 /** @format */
 
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import PrivateRoute from '../routes/PrivatRoutes';
+import PublicRoute from '../routes/PublicRoutes';
 
-const ContentSwitcher = ({ routes, path = '' }) => {
+const ContentSwitcher = ({ routes }) => {
   return (
     <Switch>
-      {routes.map(route => (
-        <Route
-          path={path + route.path}
-          component={route.component}
-          exact={route.exact}
-          key={route.path}
-        />
-      ))}
+      {routes.map(route =>
+        route.isPrivate ? (
+          <PrivateRoute {...route} key={route.path} />
+        ) : (
+          <PublicRoute {...route} key={route.path} />
+        ),
+      )}
     </Switch>
   );
 };
