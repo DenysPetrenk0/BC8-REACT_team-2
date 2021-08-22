@@ -4,12 +4,11 @@ import WeekTabs from '../../components/week/weekTabs/WeekTabs';
 import WeekTabsContents from '../../components/week/weekTabsContents/WeekTabsContents';
 import { getWeekOperation } from '../../redux/weekTabs/weekOperation';
 import {
-  getCardsInfo,
   getVisibleTasks,
   getWeekDate,
 } from '../../redux/weekTabs/weekSelectors';
 import styles from './MainPage.module.css';
-import ProgressBar from '../../components/progressBar/ProgressBar';
+// import ProgressBar from '../../components/progressBar/ProgressBar';
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -22,9 +21,9 @@ const MainPage = () => {
 
   return (
     <div className={styles.main}>
-      <WeekTabs numbers={numbers} className={styles.weekTabs} />
+      <WeekTabs numbers={numbers} />
       <WeekTabsContents tasks={tasks} />
-      <ProgressBar />
+      {/* <ProgressBar /> */}
     </div>
   );
 };
