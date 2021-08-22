@@ -1,10 +1,24 @@
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 580px) {
   .week {
     padding-top: 40px;
   }
 
   .weekInfo {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .weekInfo {
+    margin-top: 0;
     margin-bottom: 40px;
     margin-left: 100px;
+  }
+
+  .weekProgressBar {
+    display: flex;
+    justify-content: space-between;
+    width: 940px;
+    padding-right: 50px;
   }
 }

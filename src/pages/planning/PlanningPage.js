@@ -9,12 +9,14 @@ import { useSelector } from 'react-redux';
 import NewTaskModal from '../../components/taskModal/newTaskModal/NewTaskModal';
 import AddCustomTask from '../../components/addCustomTask/AddCustomTask';
 import useWindowDimensions from './hooks/wirthHook';
-import CurrentWeek from '../../components/currentInfo/currentWeek/CurrentWeek';
 import Footer from '../../components/footer/Footer';
+import { weekInfo } from '../../redux/weekTabs/weekSelectors';
+
 
 const PlanningPage = () => {
   const dispatch = useDispatch();
   const tasks = useSelector(getTasks);
+  const weekDate = useSelector(weekInfo);
   const { width } = useWindowDimensions();
 
   // create task for form
@@ -30,8 +32,10 @@ const PlanningPage = () => {
       <div className={styles.planningPageContainer}>
         <div className={styles.planningHeaderContainer}>
           <div className={styles.planForWeekContainer}>
-            <h2 className={styles.planningTitle}>План на неделю:</h2>
-            <CurrentWeek />
+
+            <h2 className={styles.planningTitle}>План на неделю:{weekDate}</h2>
+            
+
           </div>
           <PlanningPoints tasks={tasks} />
           <div className={styles.addTaskContainer}>
