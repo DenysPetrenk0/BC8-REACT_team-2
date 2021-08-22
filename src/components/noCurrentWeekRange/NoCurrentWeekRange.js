@@ -5,6 +5,7 @@ import img_tab from './images/planer-tab.png';
 import img_mob from './images/planer-mob.png';
 
 import styles from './NoCurrentWeekRange.module.css';
+import { Link } from 'react-router-dom';
 
 const initialState = {
   width: window.innerWidth,
@@ -29,9 +30,9 @@ const NoCurrentWeekRange = () => {
   return (
     <>
       <p className={styles.text}>На этот день задач нет</p>
-      <button type="button" className={styles.btn}>
+      <Link to="/planing" className={styles.btn}>
         Запланировать задачи
-      </button>
+      </Link>
       {(state.startBreakPoint > state.width && (
         <img src={img_mob} alt="childrens" width="320" />
       )) ||
