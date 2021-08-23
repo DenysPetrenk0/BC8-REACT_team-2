@@ -1,4 +1,4 @@
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 580px) {
   .container {
     display: flex;
     align-items: center;
@@ -11,7 +11,7 @@
   background-color: #fff;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 580px) {
   .user__burger_menu_btn {
     margin-right: 41px;
   }
