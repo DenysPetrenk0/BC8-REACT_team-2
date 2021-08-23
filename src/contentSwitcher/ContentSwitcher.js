@@ -10,9 +10,17 @@ const ContentSwitcher = ({ routes }) => {
     <Switch>
       {routes.map(route =>
         route.isPrivate ? (
-          <PrivateRoute {...route} key={route.path} />
+          <PrivateRoute
+            {...route}
+            key={route.path}
+            isLoggedIn={route.isLoggedIn}
+          />
         ) : (
-          <PublicRoute {...route} key={route.path} />
+          <PublicRoute
+            {...route}
+            key={route.path}
+            isLoggedIn={route.isLoggedIn}
+          />
         ),
       )}
     </Switch>
