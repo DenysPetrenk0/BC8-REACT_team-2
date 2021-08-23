@@ -1,3 +1,13 @@
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  width: 280px;
+}
+
 .authTitle {
   font-weight: 600;
   font-size: 18px;
@@ -71,6 +81,11 @@
   margin-right: 10px;
 }
 
+.authButton:hover,
+.authButton:focus {
+  transform: scale(1.05);
+}
+
 @media screen and (min-width: 580px) {
   .container {
     padding-left: 40px;
@@ -111,6 +126,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    padding-right: 130px;
     padding-bottom: 130px;
   }
   .authTitle {
