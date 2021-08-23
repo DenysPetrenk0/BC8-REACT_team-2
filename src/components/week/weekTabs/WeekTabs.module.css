@@ -1,3 +1,7 @@
+.weekBox {
+  padding-top: 20px;
+}
+
 .navWeekList {
   display: flex;
   justify-content: center;
@@ -38,15 +42,22 @@
   color: #000000;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 580px) {
   .navWeekList {
-    background: #ffbc33;
-    min-width: 768px;
-    min-height: 70px;
-    padding-left: 294px;
+    justify-content: flex-end;
+    padding-top: 0px;
   }
 
-  .navWeekItem {
+  .weekBox {
+    display: flex;
+    align-items: center;
+    background: #ffbc33;
+    width: 100%;
+    height: 70px;
+    padding-top: 0;
+  }
+
+  .navWeekItem:not(:last-child) {
     margin-right: 16px;
   }
 
@@ -67,13 +78,24 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1180px) {
+  .container {
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .weekBox {
+    display: block;
+    background: #ffbc33;
+    height: 796px;
+    width: 240px;
+  }
+
   .navWeekList {
     display: block;
     padding-top: 140px;
     padding-left: 50px;
-    min-height: 796px;
-    min-width: 240px;
   }
 
   .navWeekItem {
@@ -87,7 +109,6 @@
     border-radius: 6px 0px 0px 6px;
     border: none;
     background: #f6da98;
-    /* opacity: 0.5; */
   }
 
   .navWeekBtnActive {

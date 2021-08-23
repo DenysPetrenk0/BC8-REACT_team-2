@@ -10,7 +10,6 @@ export const mainRoutes = [
     exact: true,
     restricted: false,
     isPrivate: false,
-    redirectTo: '/login',
   },
   {
     name: 'Авторизация',
@@ -35,7 +34,6 @@ export const mainRoutes = [
     exact: true,
     restricted: false,
     isPrivate: false,
-    redirectTo: '/',
   },
   {
     name: 'Планирование',

@@ -105,14 +105,13 @@ export default function AwardsList({ completedPoints }) {
                       type="checkbox"
                       name={award.id}
                       id={award.id}
-                      isChecked={award.isSelected}
                       aria-label="Переключить между выбрано и не выбрано"
                       onChange={setSelected}
                     />
                     <label
                       aria-hidden="true"
                       className={styles.Switch__track}
-                      for={award.id}
+                      htmlFor={award.id}
                     ></label>
                     <div
                       aria-hidden="true"

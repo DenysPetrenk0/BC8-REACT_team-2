@@ -24,7 +24,7 @@ const CongratsModal = ({ onClose }) => {
         <ul className={styles.CongratsModal__List}>
           {awards.map(award => (
             <li className={styles.CongratsModal__ListItem} key={award.id}>
-              <image
+              <img
                 className={styles.CongratsModal__Image}
                 src={award.imageUrl}
                 alt={award.title}

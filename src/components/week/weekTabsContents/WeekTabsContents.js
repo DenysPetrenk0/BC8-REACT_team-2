@@ -9,7 +9,9 @@ import ProgressBar from '../../progressBar/ProgressBar';
 
 const initialState = {
   width: window.innerWidth,
-  breakPoint: 768,
+  breakPoint: 580,
+  startBreakPoint: 321,
+  endBreakPoint: 1180,
 };
 
 const WeekTabsContents = ({ tasks }) => {
@@ -29,23 +31,21 @@ const WeekTabsContents = ({ tasks }) => {
   return (
     <div className={styles.week}>
       <div className={styles.weekProgressBar}>
-        {state.width > state.breakPoint ? (
-          <>
-            <div className={styles.weekInfo}>
-              <CurrentWeek styles={styles} />
-              <CurrentDays />
-            </div>
-            <ProgressBar />
-          </>
-        ) : (
-          <>
-            <ProgressBar />
-            <div className={styles.weekInfo}>
-              <CurrentWeek styles={styles} />
-              <CurrentDays />
-            </div>
-          </>
+        {state.width < state.breakPoint && (
+          <div className={styles.weekInfo}>
+            <CurrentWeek />
+            <CurrentDays />
+          </div>
         )}
+        {state.width > state.endBreakPoint && (
+          <div className={styles.weekInfo}>
+            <CurrentWeek />
+            <CurrentDays />
+          </div>
+        )}
+        {state.width > state.startBreakPoint && <ProgressBar />}
+        {state.width < state.endBreakPoint &&
+          state.width > state.breakPoint && <CurrentDays />}
       </div>
       {tasks.length > 0 ? (
         <CurrentWeekRange tasks={tasks} />

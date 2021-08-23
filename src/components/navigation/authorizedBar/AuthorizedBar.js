@@ -9,7 +9,7 @@ const AuthorizedBar = () => {
   let width = window.innerWidth;
   return (
     <div className={styles.container}>
-      {width > 1280 && <NavigationList />}
+      {width > 1180 && <NavigationList />}
       <UserMenu />
     </div>
   );
