@@ -5,7 +5,7 @@ import authReducer from './auth/authReducer';
 import tasksReducer from './tasks/tasksReducer';
 import awardsReducer from './awards/awardsReducer';
 import taskModalReducer from './taskModal/taskModalReducer';
-import logger from 'redux-logger';
+
 import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
@@ -31,7 +31,7 @@ const middleware = getDefaultMiddleware =>
     serializableCheck: {
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
-  }).concat(logger);
+  });
 
 const authPersistConfig = {
   key: 'auth',
