@@ -2,7 +2,7 @@ import React from 'react';
 import CardTitle from '../cardTitle';
 import PointAmount from '../pointAmount';
 import TaskState from '../taskState/TaskState';
-import TaskToggle from '../taskTogle/TaskTogle';
+import TaskToggle from '../taskToggle/TaskToggle';
 import s from './CardFooter.module.css';
 
 // ===========ЗНАЧЕННЯ для перевірки=============

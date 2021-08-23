@@ -6,6 +6,9 @@ import {
   patchActiveTaskRequest,
   patchActiveTaskSuccess,
   patchActiveTaskError,
+  toggleTaskRequest,
+  toggleTaskSuccess,
+  toggleTaskError,
 } from './tasksAction';
 
 // const baseToken =
@@ -38,6 +41,26 @@ export const patchActiveTask = (taskId, bodyData) => async dispatch => {
     dispatch(patchActiveTaskError(error.message));
   }
 };
+
+export const toggleTask = async ({ taskId, date }) => {
+  try {
+    return await axios.patch(`/task/switch/${taskId}`, date);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const toggleTaskOperation =
+  ({ taskId, date }) =>
+  async (dispatch) => {
+    try {
+      dispatch(toggleTaskRequest());
+      const res = await toggleTask({ taskId, date });
+      dispatch(toggleTaskSuccess(res.data));
+    } catch (error) {
+      dispatch(toggleTaskError(error.message));
+    }
+  };
 
 // , {
 //       headers: { Authorization: `Bearer ${baseToken}` },

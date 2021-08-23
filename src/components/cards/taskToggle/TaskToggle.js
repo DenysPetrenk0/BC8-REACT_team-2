@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./TaskTogle.module.css";
+import s from "./TaskToggle.module.css";
 import { ReactComponent as CheckIcon } from "../cardsIcons/taskTogle_check.svg";
 import { ReactComponent as AttentionIcon } from "../cardsIcons/taskTogle_attention.svg";
 
