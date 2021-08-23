@@ -11,3 +11,7 @@ export const patchActiveTaskSuccess = createAction(
   'task/patchActiveTaskSuccess',
 );
 export const patchActiveTaskError = createAction('task/patchActiveTaskError');
+
+export const toggleTaskRequest = createAction("tasks/toggleTaskRequest");
+export const toggleTaskSuccess = createAction("tasks/toggleTaskSuccess");
+export const toggleTaskError = createAction("tasks/toggleTaskError");
