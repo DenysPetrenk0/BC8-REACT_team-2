@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentDay, filterTabs } from '../../../redux/weekTabs/weekActions';
 import { getFilterSelector } from '../../../redux/weekTabs/weekSelectors';
+import CurrentWeek from '../../currentInfo/currentWeek/CurrentWeek';
 import styles from './WeekTabs.module.css';
 
 const weekDays = [
@@ -14,7 +15,12 @@ const weekDays = [
   'Восресенье',
 ];
 const shortWeekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
-const initialState = { width: window.innerWidth, breakPoint: 1280 };
+const initialState = {
+  width: window.innerWidth,
+  startBreakPoint: 1180,
+  breakPoint: 580,
+  endBreakPoint: 321,
+};
 
 const WeekTabs = ({ numbers }) => {
   const [state, setState] = useState(initialState);
@@ -41,8 +47,11 @@ const WeekTabs = ({ numbers }) => {
 
   return (
     <div className={styles.weekBox}>
+      {state.startBreakPoint > state.width &&
+        state.width > state.breakPoint && <CurrentWeek styles={styles} />}
+
       <ul className={styles.navWeekList}>
-        {(state.width > state.breakPoint ? weekDays : shortWeekDays).map(
+        {(state.width > state.startBreakPoint ? weekDays : shortWeekDays).map(
           (day, idx) => (
             <li
               className={styles.navWeekItem}
