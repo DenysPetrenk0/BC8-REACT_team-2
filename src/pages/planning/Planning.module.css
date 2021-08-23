@@ -15,6 +15,11 @@
   letter-spacing: 0.04em;
   color: #000000;
 }
+.planningWeek {
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.2em;
+}
 
 .addTaskContainer {
   display: flex;
@@ -60,7 +65,7 @@
   .planForWeekContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 30px;
   }
 }
@@ -78,6 +83,7 @@
   .planForWeekContainer {
     display: flex;
     justify-content: flex-start;
+    align-items: baseline;
     margin-bottom: 0;
   }
 }
