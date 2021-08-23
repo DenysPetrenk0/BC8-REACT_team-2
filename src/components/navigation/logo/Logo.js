@@ -21,6 +21,7 @@ export default function Logo() {
       </NavLink>
       {location.pathname === '/' && <BalanceBar />}
       {location.pathname === '/awards' && <BalanceBar />}
+      {location.pathname === '/planing' && <BalanceBar />}
     </div>
   );
 }
