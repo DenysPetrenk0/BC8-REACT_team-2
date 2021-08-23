@@ -12,6 +12,6 @@ export const patchActiveTaskSuccess = createAction(
 );
 export const patchActiveTaskError = createAction('task/patchActiveTaskError');
 
-export const toggleTaskRequest = createAction("tasks/toggleTaskRequest");
-export const toggleTaskSuccess = createAction("tasks/toggleTaskSuccess");
-export const toggleTaskError = createAction("tasks/toggleTaskError");
+export const addBalanceTaskRequest = createAction('addBalanceTaskTaskRequest');
+export const addBalanceTaskSuccess = createAction('addBalanceTaskSuccess');
+export const addBalanceTaskError = createAction('addBalanceTaskError');
