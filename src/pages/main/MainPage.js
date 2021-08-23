@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import WeekTabs from '../../components/week/weekTabs/WeekTabs';
 import WeekTabsContents from '../../components/week/weekTabsContents/WeekTabsContents';
@@ -8,22 +8,41 @@ import {
   getWeekDate,
 } from '../../redux/weekTabs/weekSelectors';
 import styles from './MainPage.module.css';
-// import ProgressBar from '../../components/progressBar/ProgressBar';
+import ProgressBar from '../../components/progressBar/ProgressBar';
+
+const initialState = {
+  width: window.innerWidth,
+  breakPoint: 321,
+};
 
 const MainPage = () => {
+  const [state, setState] = useState(initialState);
+
   const dispatch = useDispatch();
   const numbers = useSelector(getWeekDate);
   const tasks = useSelector(getVisibleTasks);
+  const hendleResizeWindow = () => {
+    setState(prev => ({ ...prev, width: window.innerWidth }));
+  };
 
   useEffect(() => {
     dispatch(getWeekOperation());
   }, [dispatch]);
 
+  useEffect(() => {
+    window.addEventListener('resize', hendleResizeWindow);
+    return () => {
+      window.addEventListener('resize', hendleResizeWindow);
+    };
+  }, []);
+
   return (
-    <div className={styles.main}>
-      <WeekTabs numbers={numbers} />
-      <WeekTabsContents tasks={tasks} />
-      {/* <ProgressBar /> */}
+    <div className={styles.container}>
+      <div className={styles.main}>
+        <WeekTabs numbers={numbers} />
+        <WeekTabsContents tasks={tasks} />
+        {state.width < state.breakPoint && <ProgressBar />}
+      </div>
     </div>
   );
 };

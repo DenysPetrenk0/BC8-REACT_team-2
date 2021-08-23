@@ -2,7 +2,6 @@
 
 import React, { Suspense, useEffect } from 'react';
 import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
 import ContentSwitcher from './contentSwitcher/ContentSwitcher';
 import { mainRoutes } from './routes/mainRoutes';
 import { getUserInfo } from './redux/auth/authOperations';

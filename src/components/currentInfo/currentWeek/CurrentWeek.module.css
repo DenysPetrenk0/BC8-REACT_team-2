@@ -15,16 +15,13 @@
   text-align: center;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 580px) {
   .tabsWeekInfo {
-    position: absolute;
-    top: 27px;
-    left: 94px;
-    margin: 0;
+    margin: 0 28px 0 0;
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1180px) {
   .tabsTasksInfo {
     display: flex;
   }
@@ -33,6 +30,7 @@
     position: static;
     font-size: 18px;
     line-height: 1.22;
+    margin-right: 0;
     margin-bottom: 30px;
     text-align: start;
   }
