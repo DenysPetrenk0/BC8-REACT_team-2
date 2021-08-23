@@ -23,7 +23,7 @@ export default function AwardsList() {
   const onFetchAwards = () => dispatch(fetchAwards());
   useEffect(() => {
     onFetchAwards();
-  }, [onFetchAwards]);
+  }, []);
 
   useEffect(() => {
     setGifts(awards);

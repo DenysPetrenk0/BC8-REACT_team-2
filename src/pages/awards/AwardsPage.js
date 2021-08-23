@@ -10,11 +10,11 @@ class AwardsPage extends Component {
   state = {};
   render() {
     return (
-      <>
+      <div className="container">
         <AwardsTitle />
         <AwardsList />
         {/* <CongratsModal /> */}
-      </>
+      </div>
     );
   }
 }
