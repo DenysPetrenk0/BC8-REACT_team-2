@@ -4,7 +4,7 @@ import { patchTaskSwitch } from '../../../redux/tasks/tasksOperation';
 import { getFilterSelector } from '../../../redux/weekTabs/weekSelectors';
 import CardTitle from '../cardTitle';
 import PointAmount from '../pointAmount';
-import TaskToggle from '../taskTogle/TaskTogle';
+import TaskToggle from '../taskToggle/TaskToggle';
 import s from './CardFooter.module.css';
 
 // ===========ЗНАЧЕННЯ для перевірки=============

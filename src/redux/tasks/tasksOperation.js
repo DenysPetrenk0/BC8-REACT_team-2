@@ -11,9 +11,6 @@ import {
   addBalanceTaskError,
 } from './tasksAction';
 
-// const baseToken =
-//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTFkMGVmNzU2MjBjZDAwMTdlOGU0NGQiLCJzaWQiOiI2MTFkMGVmNzU2MjBjZDAwMTdlOGU0NGUiLCJpYXQiOjE2MjkyOTQzMjd9.pOQBlPgoQLUz3RA-ywzNM1I-etuOhfGb8XHa-eajoHs';
-
 export const addTask = (title, reward) => dispatch => {
   dispatch(createTaskRequest());
   const task = {
@@ -48,12 +45,3 @@ export const patchTaskSwitch = (taskId, date) => async dispatch => {
     dispatch(addBalanceTaskError(error.message));
   }
 };
-
-// , {
-//       headers: { Authorization: `Bearer ${baseToken}` },
-//     }
-
-// ,
-//       {
-//         headers: { Authorization: `Bearer ${baseToken}` },
-//       },

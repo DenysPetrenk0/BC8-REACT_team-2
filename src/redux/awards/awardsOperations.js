@@ -35,7 +35,7 @@ export const orderAward = giftIds => async (dispatch, getState) => {
         },
       },
     );
-    // console.log(`res`, res);
+    console.log(`res`, res);
     dispatch(orderAwardSuccess({ giftsIds: res }));
   } catch (error) {
     dispatch(orderAwardError(error.message));

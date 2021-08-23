@@ -1,22 +1,35 @@
-import React, { Component } from 'react';
-import AwardsList from '../../components/awards/awardsList/AwardsList';
-
-// import AwardsSubmitButton from '../../components/awards/awardsSubmitButton/AwardsSubmitButton';
-
+import React from 'react';
+// import { useSelector } from 'react-redux';
+// import { getCardsCompletedPoints } from '../../redux/weekTabs/weekSelectors';
 import AwardsTitle from '../../components/awards/awardsTitle/AwardsTitle';
-// import CongratsModal from '../../components/awards/CongratsModal/CongratsModal';
+import AwardsList from '../../components/awards/awardsList/AwardsList';
+import ProgressBar from '../../components/progressBar/ProgressBar';
+import styles from './AwardsPage.module.css';
 
-class AwardsPage extends Component {
-  state = {};
-  render() {
-    return (
-      <div className="container">
-        <AwardsTitle />
-        <AwardsList />
-        {/* <CongratsModal /> */}
-      </div>
-    );
-  }
+import useWindowDimensions from '../../pages/planning/hooks/wirthHook';
+
+export default function AwardsPage() {
+  // const completedPoints = useSelector(getCardsCompletedPoints);
+  const { width } = useWindowDimensions();
+
+  return (
+    <>
+      {width > 579 && (
+        <div className="container">
+          <div className={styles.AwardsTitleWrapper}>
+            <AwardsTitle />
+            <ProgressBar />
+          </div>
+          <AwardsList />
+        </div>
+      )}
+      {width < 580 && (
+        <div className="container">
+          <AwardsTitle />
+          <AwardsList />
+          <ProgressBar />
+        </div>
+      )}
+    </>
+  );
 }
-
-export default AwardsPage;
