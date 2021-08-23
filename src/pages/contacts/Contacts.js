@@ -8,7 +8,7 @@ import Footer from '../../components/footer/Footer';
 
 const Contacts = () => {
   return (
-    <>
+    <div className="container">
       <div className={styles.container}>
         <h2 className={styles.title}>Наша команда</h2>
         <p className={styles.slogan}>Всегда готовы к новым вызовам!</p>
@@ -49,7 +49,7 @@ const Contacts = () => {
         </ul>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

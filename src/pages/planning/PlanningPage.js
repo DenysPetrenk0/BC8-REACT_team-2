@@ -33,7 +33,7 @@ const PlanningPage = () => {
           <div className={styles.planningHeaderContainer}>
             <div className={styles.planForWeekContainer}>
               <p className={styles.planningTitle}>План на неделю:</p>
-              <h2>{weekDate}</h2>
+              <h2 className={styles.planningWeek}>{weekDate}</h2>
             </div>
             {width > 579 && <PlanningPoints tasks={tasks} />}
             <div className={styles.addTaskContainer}>
