@@ -1,12 +1,3 @@
-.pointsContainer {
-  /* position: absolute;
-  bottom: 0;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  background-color: #f1f1f1;
-  text-align: center; */
-}
-
 .points {
   font-weight: 500;
   font-size: 12px;
@@ -41,15 +32,3 @@
     text-transform: uppercase;
   }
 }
-
-/* @media screen and (min-width: 580px) {
-  .pointsContainer {
-    position: static;
-    padding-top: 0;
-    padding-bottom: 0;
-    background-color: transparent;
-  }
-}
-
-@media screen and (min-width: 1180px) {
-} */

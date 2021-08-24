@@ -1,5 +1,5 @@
 import styles from './PlanningPoints.module.css';
-import useWindowDimensions from '../../pages/planning/hooks/wirthHook';
+import useWindowDimensions from '../../pages/planning/hooks/widthHook';
 
 const PlanningPoints = ({ tasks }) => {
   const { width } = useWindowDimensions();
