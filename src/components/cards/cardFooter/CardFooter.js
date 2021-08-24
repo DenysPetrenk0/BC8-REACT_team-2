@@ -1,8 +1,10 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { patchTaskSwitch } from '../../../redux/tasks/tasksOperation';
+import { getFilterSelector } from '../../../redux/weekTabs/weekSelectors';
 import CardTitle from '../cardTitle';
 import PointAmount from '../pointAmount';
-import TaskState from '../taskState/TaskState';
-import TaskToggle from '../taskTogle/TaskTogle';
+import TaskToggle from '../taskToggle/TaskToggle';
 import s from './CardFooter.module.css';
 
 // ===========ЗНАЧЕННЯ для перевірки=============
@@ -10,24 +12,27 @@ import s from './CardFooter.module.css';
 // const taskPoints = 10;
 // ==============================================
 const CardFooter = ({ ...data }) => {
-  console.log(data.days);
+  const dispatch = useDispatch();
+  const filterDate = useSelector(getFilterSelector);
   const {
     title,
     reward,
-    days: [{ date, isCompleted, isActive }],
+    days: [{ date }],
   } = data;
 
-  let parseDate = new Date(Date.parse(date));
-  console.log(parseDate);
-  // ==========================================================
-  const curentTime = new Date();
+  const taskCompleted = id => {
+    dispatch(patchTaskSwitch(id, { date: filterDate }));
+  };
 
-  let sameDay =
-    curentTime.getFullYear() === parseDate.getFullYear() &&
-    curentTime.getMonth() === parseDate.getMonth() &&
-    curentTime.getDate() === parseDate.getDate();
+  // let parseDate = new Date(Date.parse(date));
+  // // ==========================================================
+  // const curentTime = new Date();
 
-  console.log(sameDay);
+  // let sameDay =
+  //   curentTime.getFullYear() === parseDate.getFullYear() &&
+  //   curentTime.getMonth() === parseDate.getMonth() &&
+  //   curentTime.getDate() === parseDate.getDate();
+
   // ============================================================
 
   // ============================================================
@@ -37,8 +42,7 @@ const CardFooter = ({ ...data }) => {
         <CardTitle title={title} />
         <PointAmount reward={reward} />
       </div>
-      <TaskToggle value={isCompleted} />
-      {/* <TaskState taskState={taskState} /> */}
+      <TaskToggle id={data._id} taskCompleted={taskCompleted} />
     </div>
   );
 };
