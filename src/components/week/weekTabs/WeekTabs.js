@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { currentDay, filterTabs } from '../../../redux/weekTabs/weekActions';
 import { getFilterSelector } from '../../../redux/weekTabs/weekSelectors';
 import CurrentWeek from '../../currentInfo/currentWeek/CurrentWeek';
 import styles from './WeekTabs.module.css';
 
 const weekDays = [
-  'Понедельник',
-  'Вторник',
-  'Среда',
-  'Четверг',
-  'Пятница',
-  'Суббота',
-  'Восресенье',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
 ];
-const shortWeekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+const shortWeekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 const initialState = {
   width: window.innerWidth,
   startBreakPoint: 1180,
@@ -37,6 +38,8 @@ const WeekTabs = ({ numbers }) => {
       window.addEventListener('resize', hendleResizeWindow);
     };
   }, []);
+
+  const { t } = useTranslation();
 
   const getCurrentInfo = e => {
     const id = e.currentTarget.id;
@@ -68,7 +71,7 @@ const WeekTabs = ({ numbers }) => {
                   : styles.navWeekBtn
               }
             >
-              <p className={styles.navWeekBtnText}>{day}</p>
+              <p className={styles.navWeekBtnText}>{t(day)}</p>
             </button>
           </li>
         ))}

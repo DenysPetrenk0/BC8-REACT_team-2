@@ -1,22 +1,23 @@
 import React, { useCallback, useMemo } from 'react';
-import TaskImageInput from '../taskImageInput/TaskImageInput';
-import TaskInput from '../taskInput/TaskInput';
 import { useDispatch, useSelector } from 'react-redux';
-import Modal from '../../modal/Modal';
-import styles from './NewTaskModal.module.css';
-import image from '../modalTaskImg.webp';
-import ModalClose from '../../modal/ModalClose';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useTranslation } from 'react-i18next';
 import { getTaskModalVisible } from '../../../redux/taskModal/taskModalSelector';
 import { hideTaskModal } from '../../../redux/taskModal/taskModalAction';
+import TaskImageInput from '../taskImageInput/TaskImageInput';
+import TaskInput from '../taskInput/TaskInput';
+import Modal from '../../modal/Modal';
+import ModalClose from '../../modal/ModalClose';
+import image from '../modalTaskImg.webp';
+import styles from './NewTaskModal.module.css';
 
 const validationSchema = Yup.object().shape({
-  title: Yup.string().required('Это поле обязательно'),
-  reward: Yup.number().required('Это поле обязательно'),
+  title: Yup.string().required('Task is required'),
+  reward: Yup.number().required('Points is required'),
 });
 
-const NewTaskModal = ({ onAddTask, handleCloseModal, onClose }) => {
+const NewTaskModal = ({ onAddTask, onClose }) => {
   const form = useFormik({
     initialValues: {
       imageUrl: '',
@@ -34,6 +35,8 @@ const NewTaskModal = ({ onAddTask, handleCloseModal, onClose }) => {
       !form.values.imageUrl ? '' : URL.createObjectURL(form.values.imageUrl),
     [form.values.imageUrl],
   );
+
+  const { t } = useTranslation();
 
   return (
     <Modal handleCloseModal={onClose}>
@@ -55,7 +58,7 @@ const NewTaskModal = ({ onAddTask, handleCloseModal, onClose }) => {
           onChange={form.handleChange}
           type="text"
           placeholder={
-            (form.touched.title && form.errors.title) || 'Добавить задание...'
+            (form.touched.title && t(form.errors.title)) || t('Add task')
           }
           hasError={form.errors.title && form.touched.title}
         />
@@ -65,13 +68,13 @@ const NewTaskModal = ({ onAddTask, handleCloseModal, onClose }) => {
           onChange={form.handleChange}
           type="number"
           placeholder={
-            (form.touched.reward && form.errors.reward) || 'Добавить баллы...'
+            (form.touched.reward && t(form.errors.reward)) || t('Add points')
           }
           hasError={form.errors.reward && form.touched.reward}
         />
         <div className={styles.taskButtonContainer}>
           <button type="submit" className={styles.taskButton}>
-            Ок
+            {t('Ok')}
           </button>
         </div>
       </form>
