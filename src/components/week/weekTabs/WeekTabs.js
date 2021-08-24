@@ -15,7 +15,15 @@ const weekDays = [
   'Saturday',
   'Sunday',
 ];
-const shortWeekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const shortWeekDays = {
+  Monday: 'Mon',
+  Tuesday: 'Tue',
+  Wednesday: 'Wed',
+  Thursday: 'Thu',
+  Friday: 'Fri',
+  Saturday: 'Sat',
+  Sunday: 'Sun',
+};
 const initialState = {
   width: window.innerWidth,
   startBreakPoint: 1180,
@@ -43,7 +51,7 @@ const WeekTabs = ({ numbers }) => {
 
   const getCurrentInfo = e => {
     const id = e.currentTarget.id;
-    const name = e.target.textContent;
+    const name = e.currentTarget.dataset.day;
     dispatch(filterTabs(id));
     dispatch(currentDay(name));
   };
@@ -54,15 +62,13 @@ const WeekTabs = ({ numbers }) => {
         measure.width > measure.breakPoint && <CurrentWeek styles={styles} />}
 
       <ul className={styles.navWeekList}>
-        {(measure.width > measure.startBreakPoint
-          ? weekDays
-          : shortWeekDays
-        ).map((day, idx) => (
+        {weekDays.map((day, idx) => (
           <li
             className={styles.navWeekItem}
             key={day}
             onClick={getCurrentInfo}
             id={numbers[idx]}
+            data-day={day}
           >
             <button
               className={
@@ -71,7 +77,13 @@ const WeekTabs = ({ numbers }) => {
                   : styles.navWeekBtn
               }
             >
-              <p className={styles.navWeekBtnText}>{t(day)}</p>
+              <p className={styles.navWeekBtnText}>
+                {t(
+                  measure.width > measure.startBreakPoint
+                    ? day
+                    : shortWeekDays[day],
+                )}
+              </p>
             </button>
           </li>
         ))}

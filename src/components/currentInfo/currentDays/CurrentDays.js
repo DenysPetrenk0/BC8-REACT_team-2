@@ -15,7 +15,7 @@ const CurrentDays = () => {
     <div className={styles.tabsTasksInfo}>
       <p className={styles.tabsTasksTitle}>{t('My tasks')}</p>
       <p className={styles.tabsTasksText}>
-        {day}, {date}
+        {t(day)}, {date}
       </p>
     </div>
   );

@@ -39,7 +39,7 @@ const NewTaskModal = ({ onAddTask, onClose }) => {
   const { t } = useTranslation();
 
   return (
-    <Modal handleCloseModal={onClose}>
+    <Modal onClose={onClose}>
       <ModalClose onClose={onClose} />
       <form
         onSubmit={form.handleSubmit}

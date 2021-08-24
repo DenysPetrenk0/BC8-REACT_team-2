@@ -16,28 +16,46 @@ export const getWeekDate = state => {
   return dateArray;
 };
 
+// const month = [
+//   'Января',
+//   'Февраля',
+//   'Марта',
+//   'Апреля',
+//   'Майя',
+//   'Июня',
+//   'Июля',
+//   'Августа',
+//   'Сентября',
+//   'Ноября',
+//   'Декабря',
+// ];
+
 const month = [
-  'Января',
-  'Февраля',
-  'Марта',
-  'Апреля',
-  'Майя',
-  'Июня',
-  'Июля',
-  'Августа',
-  'Сентября',
-  'Ноября',
-  'Декабря',
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ];
 
 export const weekInfo = state => {
+  if (!state.weekInfo.info.startWeekDate || !state.weekInfo.info.endWeekDate) {
+    return {};
+  }
   const startNum = new Date(state.weekInfo.info.startWeekDate);
   const endNum = new Date(state.weekInfo.info.endWeekDate);
   const startDate = startNum.getDate();
   const endDate = endNum.getDate();
   const currentMonth = month[endNum.getMonth()];
 
-  return `${startDate}-${endDate} ${currentMonth}`;
+  return { dates: `${startDate}-${endDate}`, month: currentMonth };
 };
 
 export const getCardsInfo = state => state.weekInfo?.info?.tasks || [];
