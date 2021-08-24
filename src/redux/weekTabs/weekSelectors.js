@@ -65,12 +65,13 @@ export const currentDateInfo = state => {
 };
 
 export const getWeekInfo = state => state.weekInfo?.info;
+
 export const getCardsTotalPoints = createSelector(
   getWeekInfo,
-  week => week?.rewardsGained || 0,
+  week => week?.rewardsPlanned || 0,
 );
 
 export const getCardsCompletedPoints = createSelector(
   getWeekInfo,
-  week => week?.rewardsPlanned || 0,
+  week => week?.rewardsGained || 0,
 );
