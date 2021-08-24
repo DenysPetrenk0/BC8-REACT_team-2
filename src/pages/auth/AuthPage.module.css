@@ -18,7 +18,6 @@
 @media screen and (min-width: 580px) {
   .container {
     padding: 0;
-    padding-bottom: 263px;
     background-image: url(./images/bg_2_tablet@1x.jpg),
       url(./images/bg_3_tablet@1x.jpg), url(./images/bg_1_tablet@1x.jpg);
     background-repeat: no-repeat, no-repeat, no-repeat;
@@ -37,8 +36,6 @@
 
 @media screen and (min-width: 1180px) {
   .container {
-    padding-right: 50px;
-    padding-bottom: 0;
     background-image: url(./images/bg_4_desktop@1x.png),
       url(./images/bg_3_desktop@1x.png), url(./images/bg_2_desktop@1x.png),
       url(./images/bg_1_desktop@1x.png);
@@ -56,8 +53,4 @@
         url(./images/bg_3_desktop@2x.png),
       url(./images/bg_2_desktop@2x.png), url(./images/bg_1_desktop@2x.png);
   }
-}
-
-.authFooter {
-  background-color: #000;
 }

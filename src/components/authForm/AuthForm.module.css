@@ -90,7 +90,7 @@
   .container {
     padding-left: 40px;
     padding-top: 72px;
-    padding-bottom: 0px;
+    padding-bottom: 306px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,8 +126,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding-right: 80px;
-    padding-bottom: 52px;
+    padding-right: 130px;
+    padding-bottom: 130px;
   }
   .authTitle {
     font-weight: 600;

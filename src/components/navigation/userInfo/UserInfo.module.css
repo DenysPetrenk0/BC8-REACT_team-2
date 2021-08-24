@@ -25,6 +25,10 @@
   color: #858598;
   border-right: 1px solid #858598;
   padding-right: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 85px;
 }
 
 .user__logout_btn {
