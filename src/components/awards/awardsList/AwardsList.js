@@ -12,19 +12,13 @@ import sprite from './sprite.svg';
 import styles from './awardsList.module.css';
 import AwardsSubmitButton from '../awardsSubmitButton/AwardsSubmitButton';
 import Loader from 'react-loader-spinner';
-import CongratsModal from '../CongratsModal/CongratsModal';
-// import {getUserBalance} from "../../../redux/auth/authSelectors"
 
-export default function AwardsList({ completedPoints }) {
+export default function AwardsList() {
   const dispatch = useDispatch();
   const isLoadingAwards = useSelector(getLoading);
   const awards = useSelector(getAllAwards);
-  // const totalBalance = useSelector(getUserBalance);
-  // const totalBalance = 200;
-
-  // console.log(`awards`, awards);
+  console.log(`awards`, awards);
   const [gifts, setGifts] = useState(awards);
-  const [showModal, setShowModal] = useState(false);
 
   const onFetchAwards = () => dispatch(fetchAwards());
   useEffect(() => {
@@ -35,21 +29,11 @@ export default function AwardsList({ completedPoints }) {
     setGifts(awards);
   }, [awards]);
 
-  const onClose = () => {
-    setShowModal(false);
-  };
-
-  useEffect(() => {
-    showModal && dispatch(orderAward());
-    return dispatch(orderAward());
-  }, [showModal, dispatch]);
-
   const onHandleSubmit = () => {
-    setShowModal(true);
     const data = gifts
       .filter(gift => gift.isSelected)
       .map(gift => Number(gift.id));
-    // console.log(`data`, data);
+    console.log(`data`, data);
     dispatch(
       orderAward({
         giftIds: data,
@@ -59,7 +43,7 @@ export default function AwardsList({ completedPoints }) {
 
   const setSelected = event => {
     const { name } = event.target;
-    // console.log(`name`, name);
+    console.log(`name`, name);
     setGifts(prev =>
       prev.map(gift =>
         Number(gift.id) === Number(name)
@@ -111,7 +95,7 @@ export default function AwardsList({ completedPoints }) {
                     <label
                       aria-hidden="true"
                       className={styles.Switch__track}
-                      htmlFor={award.id}
+                      for={award.id}
                     ></label>
                     <div
                       aria-hidden="true"
@@ -134,7 +118,6 @@ export default function AwardsList({ completedPoints }) {
         ))}
       </ul>
       <AwardsSubmitButton onHandleSubmit={onHandleSubmit} />
-      {showModal && <CongratsModal onClose={onClose} />}
       <marquee
         className={styles.running__string}
         direction="left"

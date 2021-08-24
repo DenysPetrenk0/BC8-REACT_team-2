@@ -1,12 +1,11 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
-// import BurgerMenu from '../burgerMenu/BurgerMenu';
 import NavigationList from '../navigationList/NavigationList';
 import UserMenu from '../userMenu/UserMenu';
 import styles from './AuthorizedBar.module.css';
+import useWindowDimensions from '../../../pages/planning/hooks/wirthHook';
 
 const AuthorizedBar = () => {
-  let width = window.innerWidth;
+  const { width } = useWindowDimensions();
   return (
     <div className={styles.container}>
       {width > 1180 && <NavigationList />}
