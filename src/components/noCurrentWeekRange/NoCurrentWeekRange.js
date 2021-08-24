@@ -15,11 +15,12 @@ const initialState = {
 };
 
 const NoCurrentWeekRange = () => {
-  const [state, setState] = useState(initialState);
   const { t } = useTranslation();
 
+  const [measure, setMeasure] = useState(initialState);
+
   const hendleResizeWindow = () => {
-    setState(prev => ({ ...prev, width: window.innerWidth }));
+    setMeasure(prev => ({ ...prev, width: window.innerWidth }));
   };
 
   useEffect(() => {
@@ -35,13 +36,13 @@ const NoCurrentWeekRange = () => {
       <Link to="/planing" className={styles.btn}>
         {t('Plan tasks')}
       </Link>
-      {(state.startBreakPoint > state.width && (
+      {(measure.startBreakPoint > measure.width && (
         <img src={img_mob} alt="childrens" width="320" />
       )) ||
-        (state.width > state.endBreakPoint && (
+        (measure.width > measure.endBreakPoint && (
           <img src={img_des} alt="childrens" width="1040" />
         )) ||
-        (state.startBreakPoint < state.width < state.endBreakPoint && (
+        (measure.startBreakPoint < measure.width < measure.endBreakPoint && (
           <img src={img_tab} alt="childrens" width="768" />
         ))}
     </>

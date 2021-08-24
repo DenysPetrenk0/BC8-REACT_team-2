@@ -8,9 +8,10 @@ import ModalCloseBurger from '../modalBurger/ModalCloseBurger';
 import BurgerMenu from '../burgerMenuIcon/BurgerMenuIcon';
 import styles from './UnAuthorizedBar.module.css';
 import BurgerMenuUnAuth from '../burgerMenuUnAuth/BurgerMenuUnAuth';
-// import Modal from '../../modal/Modal';
+import useWindowDimensions from '../../../pages/planning/hooks/widthHook';
 
 const UnAuthorizatedBar = () => {
+  const { width } = useWindowDimensions();
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = useCallback(() => {
@@ -20,7 +21,7 @@ const UnAuthorizatedBar = () => {
   const { t } = useTranslation();
   return (
     <>
-      {window.screen.width < 768 ? (
+      {width < 580 ? (
         <button className={styles.burger__modal_btn} onClick={toggleModal}>
           <BurgerMenu />
         </button>

@@ -10,7 +10,6 @@ const initialState = {
 const daysName = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
 const PlanningCardItem = ({ onAddActiveTask, task }) => {
-  console.log('~ task', task);
   const daysActive = useMemo(
     () => task.days.map(itemDay => itemDay.isActive),
     [task.days],

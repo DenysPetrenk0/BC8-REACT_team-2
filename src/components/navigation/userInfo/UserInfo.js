@@ -3,13 +3,15 @@ import styles from './UserInfo.module.css';
 import sprite from '../../../images/header/symbol-defs.svg';
 import { useSelector } from 'react-redux';
 import { getUserEmail } from '../../../redux/auth/authSelectors';
+import useWindowDimensions from '../../../pages/planning/hooks/widthHook';
 
 const UserInfo = ({ toggleModalLogout }) => {
   const userEmail = useSelector(getUserEmail);
+  const { width } = useWindowDimensions();
 
   return (
     <>
-      {window.screen.width > 768 && (
+      {width > 580 && (
         <div className={styles.user__name_container}>
           <span className={styles.upp__letter}>
             <p className={styles.letter}>

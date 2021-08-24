@@ -10,8 +10,10 @@ import ModalCloseBurger from '../modalBurger/ModalCloseBurger';
 import UserInfo from '../userInfo/UserInfo';
 import { logOut } from '../../../redux/auth/authOperations';
 import { useDispatch } from 'react-redux';
+import useWindowDimensions from '../../../pages/planning/hooks/widthHook';
 
 const UserMenu = () => {
+  const { width } = useWindowDimensions();
   const [showModalLogout, setShowModalLogout] = useState(false);
   const [showModalBurgerMenu, setShowModalBurgerMenu] = useState(false);
   const dispatch = useDispatch();
@@ -30,7 +32,7 @@ const UserMenu = () => {
 
   return (
     <>
-      {window.screen.width < 1280 && (
+      {width < 1180 && (
         <button
           onClick={toggleModalBurgerMenu}
           className={styles.user__burger_menu_btn}

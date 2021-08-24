@@ -64,18 +64,14 @@ export const currentDateInfo = state => {
   return `${day}-${month}-${year}`;
 };
 
-export const getCardsTotalPoints = createSelector(getCardsInfo, tasks => {
-  return tasks.reduce((acc, task) => {
-    return acc + task.reward * task.days.filter(day => day.isActive).length;
-  }, 0);
-});
+export const getWeekInfo = state => state.weekInfo?.info;
 
-export const getCardsCompletedPoints = createSelector(getCardsInfo, tasks => {
-  return tasks.reduce((acc, task) => {
-    return (
-      acc +
-      task.reward *
-        task.days.filter(day => day.isActive && day.isCompleted).length
-    );
-  }, 0);
-});
+export const getCardsTotalPoints = createSelector(
+  getWeekInfo,
+  week => week?.rewardsPlanned || 0,
+);
+
+export const getCardsCompletedPoints = createSelector(
+  getWeekInfo,
+  week => week?.rewardsGained || 0,
+);
