@@ -5,12 +5,18 @@ import { weekInfo } from '../../../redux/weekTabs/weekSelectors';
 import styles from './CurrentWeek.module.css';
 
 const CurrentWeek = () => {
-  const weekDate = useSelector(weekInfo);
+  const { dates, month } = useSelector(weekInfo);
   const { t } = useTranslation();
   return (
     <div className={styles.tabsInfo}>
       <p className={styles.tabsWeekInfo}>
-        {t('Week')} {weekDate}
+        {dates && month ? (
+          <>
+            {t('Week')} {dates} {t(month)}
+          </>
+        ) : (
+          ''
+        )}
       </p>
     </div>
   );

@@ -18,13 +18,13 @@ const currentDate = () => {
 };
 
 const weekDays = [
-  'Восресенье',
-  'Понедельник',
-  'Вторник',
-  'Среда',
-  'Четверг',
-  'Пятница',
-  'Суббота',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
 ];
 
 function getWeekDay() {

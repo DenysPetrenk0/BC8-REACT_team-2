@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import styles from './Planning.module.css';
@@ -12,12 +12,17 @@ import AddCustomTask from '../../components/addCustomTask/AddCustomTask';
 import useWindowDimensions from './hooks/widthHook';
 import Footer from '../../components/footer/Footer';
 import { weekInfo } from '../../redux/weekTabs/weekSelectors';
+import { getWeekOperation } from '../../redux/weekTabs/weekOperation';
 
 const PlanningPage = () => {
   const dispatch = useDispatch();
   const tasks = useSelector(getTasks);
-  const weekDate = useSelector(weekInfo);
+  const { dates, month } = useSelector(weekInfo);
   const { width } = useWindowDimensions();
+
+  useEffect(() => {
+    dispatch(getWeekOperation());
+  }, [dispatch]);
 
   // create task for form
   const onAddTask = useCallback(
@@ -35,7 +40,11 @@ const PlanningPage = () => {
           <div className={styles.planningHeaderContainer}>
             <div className={styles.planForWeekContainer}>
               <p className={styles.planningTitle}>{t('Plan for the week')}</p>
-              <h2 className={styles.planningWeek}>{weekDate}</h2>
+              {dates && month ? (
+                <h2 className={styles.planningWeek}>
+                  {dates} {t(month)}
+                </h2>
+              ) : null}
             </div>
             {width > 579 && <PlanningPoints tasks={tasks} />}
             <div className={styles.addTaskContainer}>

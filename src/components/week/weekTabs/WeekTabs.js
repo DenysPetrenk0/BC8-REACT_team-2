@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { currentDay, filterTabs } from '../../../redux/weekTabs/weekActions';
 import { getFilterSelector } from '../../../redux/weekTabs/weekSelectors';
 import CurrentWeek from '../../currentInfo/currentWeek/CurrentWeek';
 import styles from './WeekTabs.module.css';
 
 const weekDays = [
-  'Понедельник',
-  'Вторник',
-  'Среда',
-  'Четверг',
-  'Пятница',
-  'Суббота',
-  'Восресенье',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
 ];
-const shortWeekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+const shortWeekDays = {
+  Monday: 'Mon',
+  Tuesday: 'Tue',
+  Wednesday: 'Wed',
+  Thursday: 'Thu',
+  Friday: 'Fri',
+  Saturday: 'Sat',
+  Sunday: 'Sun',
+};
 const initialState = {
   width: window.innerWidth,
   startBreakPoint: 1180,
@@ -38,9 +47,11 @@ const WeekTabs = ({ numbers }) => {
     };
   }, []);
 
+  const { t } = useTranslation();
+
   const getCurrentInfo = e => {
     const id = e.currentTarget.id;
-    const name = e.target.textContent;
+    const name = e.currentTarget.dataset.day;
     dispatch(filterTabs(id));
     dispatch(currentDay(name));
   };
@@ -51,15 +62,13 @@ const WeekTabs = ({ numbers }) => {
         measure.width > measure.breakPoint && <CurrentWeek styles={styles} />}
 
       <ul className={styles.navWeekList}>
-        {(measure.width > measure.startBreakPoint
-          ? weekDays
-          : shortWeekDays
-        ).map((day, idx) => (
+        {weekDays.map((day, idx) => (
           <li
             className={styles.navWeekItem}
             key={day}
             onClick={getCurrentInfo}
             id={numbers[idx]}
+            data-day={day}
           >
             <button
               className={
@@ -68,7 +77,13 @@ const WeekTabs = ({ numbers }) => {
                   : styles.navWeekBtn
               }
             >
-              <p className={styles.navWeekBtnText}>{day}</p>
+              <p className={styles.navWeekBtnText}>
+                {t(
+                  measure.width > measure.startBreakPoint
+                    ? day
+                    : shortWeekDays[day],
+                )}
+              </p>
             </button>
           </li>
         ))}

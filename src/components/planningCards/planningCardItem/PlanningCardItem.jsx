@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from '../PlanningCards.module.css';
 import sprite from '../image/symbol-defs.svg';
 import dataDays from '../dataDays.json';
@@ -7,16 +8,17 @@ const initialState = {
   isVisible: false,
 };
 
-const daysName = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+const daysName = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 const PlanningCardItem = ({ onAddActiveTask, task }) => {
-  const daysActive = useMemo(
-    () => task.days.map(itemDay => itemDay.isActive),
-    [task.days],
-  );
+  const daysActive = useMemo(() => task.days.map(itemDay => itemDay.isActive), [
+    task.days,
+  ]);
 
   const [visible, setVisible] = useState(initialState.isVisible);
   const [checkDays, setCheckDays] = useState(daysActive);
+
+  const { t } = useTranslation();
 
   const toggleVisible = e => {
     setVisible(({ isVisible }) => ({ isVisible: !isVisible }));
@@ -79,7 +81,7 @@ const PlanningCardItem = ({ onAddActiveTask, task }) => {
                   onChange={() => onHandleChange(idx)}
                   className={styles.checkboxInput}
                 />
-                {daysName[idx]}
+                {t(daysName[idx])}
               </label>
             </li>
           ))}
