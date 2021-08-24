@@ -11,9 +11,12 @@ import {
 } from './awardsActions';
 
 const itemsReducer = createReducer([], {
-  [fetchAwardsSuccess]: (_, { payload }) => payload,
+  [fetchAwardsSuccess]: (_, action) => action.payload,
+  // [orderAwardSuccess]: (_, action) => action.payload,
+});
 
-  [orderAwardSuccess]: (_, { payload }) => payload,
+const giftsIdReducer = createReducer([], {
+  [orderAwardSuccess]: (_, action) => action.payload,
 });
 
 const loadingReducer = createReducer(false, {
@@ -34,6 +37,7 @@ const errorReducer = createReducer(null, {
 
 const awardsReducer = combineReducers({
   items: itemsReducer,
+  giftsId: giftsIdReducer,
   loading: loadingReducer,
   error: errorReducer,
 });
