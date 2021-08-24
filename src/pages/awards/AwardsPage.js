@@ -6,7 +6,7 @@ import AwardsList from '../../components/awards/awardsList/AwardsList';
 import ProgressBar from '../../components/progressBar/ProgressBar';
 import styles from './AwardsPage.module.css';
 
-import useWindowDimensions from '../../pages/planning/hooks/wirthHook';
+import useWindowDimensions from '../../pages/planning/hooks/widthHook';
 
 export default function AwardsPage() {
   // const completedPoints = useSelector(getCardsCompletedPoints);

@@ -8,7 +8,7 @@ import PlanningCards from '../../components/planningCards/PlanningCards';
 import { useSelector } from 'react-redux';
 import NewTaskModal from '../../components/taskModal/newTaskModal/NewTaskModal';
 import AddCustomTask from '../../components/addCustomTask/AddCustomTask';
-import useWindowDimensions from './hooks/wirthHook';
+import useWindowDimensions from './hooks/widthHook';
 import Footer from '../../components/footer/Footer';
 import { weekInfo } from '../../redux/weekTabs/weekSelectors';
 
