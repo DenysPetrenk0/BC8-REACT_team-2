@@ -6,20 +6,23 @@ const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
   return (
-    <div>
-      <button
-        className={styles.languageButton}
-        onClick={() => i18n.changeLanguage('ru')}
-      >
-        RU
-      </button>
-      <button
-        className={styles.languageButton}
-        onClick={() => i18n.changeLanguage('en')}
-      >
-        EN
-      </button>
-    </div>
+    <>
+      {i18n.language === 'en' ? (
+        <button
+          className={styles.languageButton}
+          onClick={() => i18n.changeLanguage('ru')}
+        >
+          RU
+        </button>
+      ) : (
+        <button
+          className={styles.languageButton}
+          onClick={() => i18n.changeLanguage('en')}
+        >
+          EN
+        </button>
+      )}
+    </>
   );
 };
 
