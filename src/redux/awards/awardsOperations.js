@@ -16,7 +16,6 @@ export const fetchAwards = () => async dispatch => {
         Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTFkMTNlMTU2MjBjZDAwMTdlOGU0OWEiLCJzaWQiOiI2MTFkMTNlMTU2MjBjZDAwMTdlOGU0OWIiLCJpYXQiOjE2MjkyOTU1ODV9.dri2dzlsnubjeNl6DKWKQR87cVihgWaVRrfxODq5QI0`,
       },
     });
-    // console.log(`data`, data.data.ruGifts);
     dispatch(fetchAwardsSuccess(data.data.ruGifts));
   } catch (error) {
     dispatch(fetchAwardsError(error.message));

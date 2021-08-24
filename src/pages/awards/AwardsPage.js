@@ -1,23 +1,34 @@
-import React, { Component } from 'react';
-import AwardsList from '../../components/awards/awardsList/AwardsList';
-import useWindowDimensions from '../../pages/planning/hooks/widthHook';
-// import AwardsSubmitButton from '../../components/awards/awardsSubmitButton/AwardsSubmitButton';
-
-
+import React from 'react';
 import AwardsTitle from '../../components/awards/awardsTitle/AwardsTitle';
-// import CongratsModal from '../../components/awards/CongratsModal/CongratsModal';
+import AwardsList from '../../components/awards/awardsList/AwardsList';
+import ProgressBar from '../../components/progressBar/ProgressBar';
+import useWindowDimensions from '../../pages/planning/hooks/widthHook';
+import styles from './AwardsPage.module.css';
+import Footer from '../../components/footer/Footer';
 
-class AwardsPage extends Component {
-  state = {};
-  render() {
-    return (
-      <div className="container">
-        <AwardsTitle />
-        <AwardsList />
-        {/* <CongratsModal /> */}
-      </div>
-    );
-  }
+export default function AwardsPage() {
+  const { width } = useWindowDimensions();
+
+  return (
+    <>
+      {width > 579 && (
+        <div className="container">
+          <div className={styles.AwardsTitleWrapper}>
+            <AwardsTitle />
+            <ProgressBar />
+          </div>
+          <AwardsList />
+          <Footer />
+        </div>
+      )}
+      {width < 580 && (
+        <div className="container">
+          <AwardsTitle />
+          <AwardsList />
+          <Footer />
+          <ProgressBar />
+        </div>
+      )}
+    </>
+  );
 }
-
-export default AwardsPage;
