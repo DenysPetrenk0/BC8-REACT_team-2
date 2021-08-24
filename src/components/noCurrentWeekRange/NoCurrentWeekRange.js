@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import img_des from './images/planer-des.png';
 import img_tab from './images/planer-tab.png';
 import img_mob from './images/planer-mob.png';
@@ -14,6 +15,8 @@ const initialState = {
 };
 
 const NoCurrentWeekRange = () => {
+  const { t } = useTranslation();
+
   const [measure, setMeasure] = useState(initialState);
 
   const hendleResizeWindow = () => {
@@ -29,9 +32,9 @@ const NoCurrentWeekRange = () => {
 
   return (
     <>
-      <p className={styles.text}>На этот день задач нет</p>
+      <p className={styles.text}>{t('No tasks for that day')}</p>
       <Link to="/planing" className={styles.btn}>
-        Запланировать задачи
+        {t('Plan tasks')}
       </Link>
       {(measure.startBreakPoint > measure.width && (
         <img src={img_mob} alt="childrens" width="320" />

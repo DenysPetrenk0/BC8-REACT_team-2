@@ -16,13 +16,13 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <Suspense fallback={<Spinner />}>
       <Header />
       <Suspense fallback={<Spinner />}>
         <ContentSwitcher routes={mainRoutes} />
       </Suspense>
       {/* <Footer /> */}
-    </>
+    </Suspense>
   );
 };
 

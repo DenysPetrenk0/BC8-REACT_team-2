@@ -2,6 +2,7 @@
 
 import React, { useCallback, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ModalBurger from '../modalBurger/ModalBurger';
 import ModalCloseBurger from '../modalBurger/ModalCloseBurger';
 import BurgerMenu from '../burgerMenuIcon/BurgerMenuIcon';
@@ -16,6 +17,8 @@ const UnAuthorizatedBar = () => {
   const toggleModal = useCallback(() => {
     setShowModal(prevShowModal => !prevShowModal);
   }, []);
+
+  const { t } = useTranslation();
   return (
     <>
       {width < 580 ? (
@@ -30,7 +33,7 @@ const UnAuthorizatedBar = () => {
             to="/auth"
             exact
           >
-            Авторизация
+            {t('Authorization')}
           </NavLink>
           <NavLink
             className={styles.nav__link_item}
@@ -38,7 +41,7 @@ const UnAuthorizatedBar = () => {
             to="/contacts-us"
             exact
           >
-            Контакты
+            {t('Contacts')}
           </NavLink>
         </nav>
       )}

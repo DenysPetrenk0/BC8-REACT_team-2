@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
+import { useTranslation } from 'react-i18next';
 // import { error} from
 import { register, login } from '../../redux/auth/authOperations';
 // import { useRouteMatch } from "react-router-dom";
@@ -19,6 +20,7 @@ const validationSchema = Yup.object().shape({
 const AuthForm = ({ history }) => {
   const dispatch = useDispatch();
   const error = useSelector(getError);
+  const { t } = useTranslation();
   // const match = useRouteMatch();
 
   // const login = useCallback(
@@ -59,20 +61,21 @@ const AuthForm = ({ history }) => {
     <div className={styles.container}>
       <div className={styles.row}>
         <h1 className={styles.authTitle}>
-          Выполняй задания, получи классные призы!
+          {t('Complete tasks and get the best gifts')}
         </h1>
         <div className={styles.authForm}>
           <form noValidate onSubmit={formik.handleSubmit}>
             <p className={styles.authText}>
-              Вы можете авторизоваться с помощью Google Account:
+              {t('You can log in with your Google Account')}
             </p>
 
             <button className={styles.googleBtn} type="button">
               Google
             </button>
             <p className={styles.authText}>
-              Или зайти с помощью e-mail и пароля, предварительно
-              зарегистрировавшись:
+              {t(
+                'Also you can log in with your e-mail and password register in advance',
+              )}
             </p>
 
             <div className={styles.formGroup}>
@@ -93,7 +96,8 @@ const AuthForm = ({ history }) => {
             </div>
             <div className={styles.formGroup}>
               <label className={styles.formLabel} htmlFor="password">
-                <span className={styles.formLabelStar}>*</span>Пароль
+                <span className={styles.formLabelStar}>*</span>
+                {t('Password')}
               </label>
               <input
                 type="password"
@@ -113,14 +117,14 @@ const AuthForm = ({ history }) => {
                 type="button"
                 className={styles.authButton}
               >
-                Войти
+                {t('Log in')}
               </button>
               <button
                 onClick={() => dispatch(register(formik.values))}
                 type="button"
                 className={styles.authButton}
               >
-                Зарегистрироваться!
+                {t('Register')}
               </button>
             </div>
           </form>
