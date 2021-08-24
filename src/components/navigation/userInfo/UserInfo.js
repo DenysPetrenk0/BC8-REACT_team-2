@@ -3,7 +3,7 @@ import styles from './UserInfo.module.css';
 import sprite from '../../../images/header/symbol-defs.svg';
 import { useSelector } from 'react-redux';
 import { getUserEmail } from '../../../redux/auth/authSelectors';
-import useWindowDimensions from '../../../pages/planning/hooks/wirthHook';
+import useWindowDimensions from '../../../pages/planning/hooks/widthHook';
 
 const UserInfo = ({ toggleModalLogout }) => {
   const userEmail = useSelector(getUserEmail);

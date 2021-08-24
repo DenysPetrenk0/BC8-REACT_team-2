@@ -10,7 +10,7 @@ import ModalCloseBurger from '../modalBurger/ModalCloseBurger';
 import UserInfo from '../userInfo/UserInfo';
 import { logOut } from '../../../redux/auth/authOperations';
 import { useDispatch } from 'react-redux';
-import useWindowDimensions from '../../../pages/planning/hooks/wirthHook';
+import useWindowDimensions from '../../../pages/planning/hooks/widthHook';
 
 const UserMenu = () => {
   const { width } = useWindowDimensions();

@@ -7,7 +7,7 @@ import ModalCloseBurger from '../modalBurger/ModalCloseBurger';
 import BurgerMenu from '../burgerMenuIcon/BurgerMenuIcon';
 import styles from './UnAuthorizedBar.module.css';
 import BurgerMenuUnAuth from '../burgerMenuUnAuth/BurgerMenuUnAuth';
-import useWindowDimensions from '../../../pages/planning/hooks/wirthHook';
+import useWindowDimensions from '../../../pages/planning/hooks/widthHook';
 
 const UnAuthorizatedBar = () => {
   const { width } = useWindowDimensions();
