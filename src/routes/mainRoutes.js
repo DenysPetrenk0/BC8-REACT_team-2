@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+
 import { lazy } from 'react';
 
 export const mainRoutes = [
@@ -10,6 +12,7 @@ export const mainRoutes = [
     exact: true,
     restricted: false,
     isPrivate: false,
+    redirectTo: '/auth',
   },
   {
     name: 'Авторизация',
@@ -20,7 +23,7 @@ export const mainRoutes = [
     exact: true,
     restricted: true,
     isPrivate: false,
-    redirectTo: '/',
+    redirectTo: location.pathname,
   },
   {
     name: 'Контакты',
