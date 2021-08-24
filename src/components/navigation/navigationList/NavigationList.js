@@ -1,10 +1,12 @@
 /** @format */
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import styles from './NavigationList.module.css';
 
 const NavigationList = () => {
+  const { t } = useTranslation();
   return (
     <div className={styles.container}>
       <NavLink
@@ -13,7 +15,7 @@ const NavigationList = () => {
         to="/"
         exact
       >
-        Главная
+        {t('Home')}
       </NavLink>
       <NavLink
         className={styles.nav__link_item}
@@ -21,7 +23,7 @@ const NavigationList = () => {
         to="/planing"
         exact
       >
-        Планирование
+        {t('Planning')}
       </NavLink>
       <NavLink
         className={styles.nav__link_item}
@@ -29,7 +31,7 @@ const NavigationList = () => {
         to="/awards"
         exact
       >
-        Награды
+        {t('Awards')}
       </NavLink>
       <NavLink
         className={styles.nav__link_item}
@@ -37,7 +39,7 @@ const NavigationList = () => {
         to="/contacts-us"
         exact
       >
-        Контакты
+        {t('Contacts')}
       </NavLink>
     </div>
   );

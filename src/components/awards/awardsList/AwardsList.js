@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import {
   fetchAwards,
   orderAward,
@@ -28,6 +29,8 @@ export default function AwardsList() {
   useEffect(() => {
     setGifts(awards);
   }, [awards]);
+
+  const { t } = useTranslation();
 
   const onHandleSubmit = () => {
     const data = gifts
@@ -71,7 +74,7 @@ export default function AwardsList() {
                 <h3 className={styles.Awards__ListName}>{award.title}</h3>
                 <div className={styles.Awards__ListTextWrapper}>
                   <p className={styles.Awards__ListText}>
-                    {award.price} БАЛЛОВ
+                    {award.price} {t('POINTS')}
                   </p>
                 </div>
                 <div className={styles.Switch}>
@@ -123,7 +126,8 @@ export default function AwardsList() {
         direction="left"
         behavior="scroll"
       >
-        Забирай свои <span className={styles.presents}>ПОДАРКИ</span> поскорее!
+        {t('Take your')} <span className={styles.presents}>{t('GIFTS')} </span>
+        {t('now')}
       </marquee>
     </div>
   );
