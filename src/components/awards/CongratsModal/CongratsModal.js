@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Modal from '../../modal/Modal';
 import ModalClose from '../../modal/ModalClose';
 import styles from './CongratsModal.module.css';
@@ -7,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { getAllAwards } from '../../../redux/awards/awardsSelectors';
 
 const CongratsModal = ({ onClose }) => {
+  const { t } = useTranslation();
   const awards = useSelector(getAllAwards);
   return (
     <Modal onClose={onClose}>
@@ -18,7 +20,7 @@ const CongratsModal = ({ onClose }) => {
           alt="cat"
         />
         <h3 className={styles.CongratsModal__Title}>
-          Поздравляем! Ты получаешь:
+          {t('Congratulations You get')}
         </h3>
         <ul className={styles.CongratsModal__List}>
           {awards.map(award => (

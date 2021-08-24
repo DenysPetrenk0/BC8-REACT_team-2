@@ -24,7 +24,7 @@ const Contacts = () => {
                 width="280"
                 height="246"
               />
-              <h3 className={styles.itemTitle}>{data.name}</h3>
+              <h3 className={styles.itemTitle}>{t(data.name)}</h3>
               <p className={styles.itemPosition}>{data.position}</p>
               <ul className={styles.socialList}>
                 {data.links.map(link => (

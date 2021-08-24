@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import styles from './Planning.module.css';
 import { getTasks } from '../../redux/tasks/tasksSelector';
 import { addTask } from '../../redux/tasks/tasksOperation';
@@ -25,6 +26,7 @@ const PlanningPage = () => {
     },
     [dispatch],
   );
+  const { t } = useTranslation();
 
   return (
     <>
@@ -32,14 +34,14 @@ const PlanningPage = () => {
         <div className={styles.planningPageContainer}>
           <div className={styles.planningHeaderContainer}>
             <div className={styles.planForWeekContainer}>
-              <p className={styles.planningTitle}>План на неделю:</p>
+              <p className={styles.planningTitle}>{t('Plan for the week')}</p>
               <h2 className={styles.planningWeek}>{weekDate}</h2>
             </div>
             {width > 579 && <PlanningPoints tasks={tasks} />}
             <div className={styles.addTaskContainer}>
               {width > 579 && (
                 <p className={styles.motivationalText}>
-                  Хочешь получить больше призов - добавь задачи :)
+                  {t('Want to get gifts add tasks')}
                 </p>
               )}
               {width > 579 && (
