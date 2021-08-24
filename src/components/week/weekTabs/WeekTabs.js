@@ -23,12 +23,12 @@ const initialState = {
 };
 
 const WeekTabs = ({ numbers }) => {
-  const [state, setState] = useState(initialState);
+  const [measure, setMeasure] = useState(initialState);
 
   const dispatch = useDispatch();
   const filter = useSelector(getFilterSelector);
   const hendleResizeWindow = () => {
-    setState(prev => ({ ...prev, width: window.innerWidth }));
+    setMeasure(prev => ({ ...prev, width: window.innerWidth }));
   };
 
   useEffect(() => {
@@ -47,30 +47,31 @@ const WeekTabs = ({ numbers }) => {
 
   return (
     <div className={styles.weekBox}>
-      {state.startBreakPoint > state.width &&
-        state.width > state.breakPoint && <CurrentWeek styles={styles} />}
+      {measure.startBreakPoint > measure.width &&
+        measure.width > measure.breakPoint && <CurrentWeek styles={styles} />}
 
       <ul className={styles.navWeekList}>
-        {(state.width > state.startBreakPoint ? weekDays : shortWeekDays).map(
-          (day, idx) => (
-            <li
-              className={styles.navWeekItem}
-              key={day}
-              onClick={getCurrentInfo}
-              id={numbers[idx]}
+        {(measure.width > measure.startBreakPoint
+          ? weekDays
+          : shortWeekDays
+        ).map((day, idx) => (
+          <li
+            className={styles.navWeekItem}
+            key={day}
+            onClick={getCurrentInfo}
+            id={numbers[idx]}
+          >
+            <button
+              className={
+                numbers[idx] === filter
+                  ? styles.navWeekBtnActive
+                  : styles.navWeekBtn
+              }
             >
-              <button
-                className={
-                  numbers[idx] === filter
-                    ? styles.navWeekBtnActive
-                    : styles.navWeekBtn
-                }
-              >
-                <p className={styles.navWeekBtnText}>{day}</p>
-              </button>
-            </li>
-          ),
-        )}
+              <p className={styles.navWeekBtnText}>{day}</p>
+            </button>
+          </li>
+        ))}
       </ul>
     </div>
   );
