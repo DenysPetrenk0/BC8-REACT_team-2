@@ -1,7 +1,18 @@
 .CongratsModal__Wrapper {
+  position: relative;
+  padding: 60px 20px 20px 20px;
   width: 280px;
-  height: 484px;
+  min-height: 300px;
   background-color: white;
+}
+
+.CongratsModal__CatImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130px;
+  height: 150px;
+  transform: translate(65%, -50%);
 }
 
 .CongratsModal__Title {
@@ -13,12 +24,27 @@
   text-align: center;
   color: #000000;
   width: 240px;
-  height: 44px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.CongratsModal__List {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: -35px;
+}
+
+.CongratsModal__ListItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 2);
+  margin-bottom: 35px;
 }
 
 .CongratsModal__Image {
-  /* width: 100vw;
-  height: 100vh; */
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -26,6 +52,7 @@
 }
 
 .CongratsModal__Text {
+  margin-top: 5px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
@@ -34,21 +61,31 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #000000;
-
   text-align: center;
-  /* margin-left: auto;
-  margin-right: auto; */
 }
 
 @media screen and (min-width: 580px) {
   .CongratsModal__Wrapper {
     width: 602px;
-    height: 390px;
+    padding: 100px 40px 40px 40px;
   }
   .CongratsModal__Title {
     width: 504px;
     height: 36px;
     font-size: 30px;
     line-height: 37px;
+    padding-bottom: 60px;
+  }
+  .CongratsModal__CatImage {
+    width: 200px;
+    height: 230px;
+    transform: translate(100%, -50%);
+  }
+  .CongratsModal__List {
+    margin-right: -25px;
+  }
+  .CongratsModal__ListItem {
+    margin: 0 25px 25px 0;
+    width: calc((100% / 4) - 25px);
   }
 }
