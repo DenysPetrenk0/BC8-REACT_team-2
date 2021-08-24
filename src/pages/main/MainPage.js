@@ -16,13 +16,13 @@ const initialState = {
 };
 
 const MainPage = () => {
-  const [state, setState] = useState(initialState);
+  const [measure, setMeasure] = useState(initialState);
 
   const dispatch = useDispatch();
   const numbers = useSelector(getWeekDate);
   const tasks = useSelector(getVisibleTasks);
   const hendleResizeWindow = () => {
-    setState(prev => ({ ...prev, width: window.innerWidth }));
+    setMeasure(prev => ({ ...prev, width: window.innerWidth }));
   };
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const MainPage = () => {
       <div className={styles.main}>
         <WeekTabs numbers={numbers} />
         <WeekTabsContents tasks={tasks} />
-        {state.width < state.breakPoint && <ProgressBar />}
+        {measure.width < measure.breakPoint && <ProgressBar />}
       </div>
     </div>
   );

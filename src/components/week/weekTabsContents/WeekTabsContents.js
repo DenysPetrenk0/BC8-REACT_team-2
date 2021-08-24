@@ -15,10 +15,10 @@ const initialState = {
 };
 
 const WeekTabsContents = ({ tasks }) => {
-  const [state, setState] = useState(initialState);
+  const [measure, setMeasure] = useState(initialState);
 
   const hendleResizeWindow = () => {
-    setState(prev => ({ ...prev, width: window.innerWidth }));
+    setMeasure(prev => ({ ...prev, width: window.innerWidth }));
   };
 
   useEffect(() => {
@@ -31,21 +31,21 @@ const WeekTabsContents = ({ tasks }) => {
   return (
     <div className={styles.week}>
       <div className={styles.weekProgressBar}>
-        {state.width < state.breakPoint && (
+        {measure.width < measure.breakPoint && (
           <div className={styles.weekInfo}>
             <CurrentWeek />
             <CurrentDays />
           </div>
         )}
-        {state.width > state.endBreakPoint && (
+        {measure.width > measure.endBreakPoint && (
           <div className={styles.weekInfo}>
             <CurrentWeek />
             <CurrentDays />
           </div>
         )}
-        {state.width > state.startBreakPoint && <ProgressBar />}
-        {state.width < state.endBreakPoint &&
-          state.width > state.breakPoint && <CurrentDays />}
+        {measure.width > measure.startBreakPoint && <ProgressBar />}
+        {measure.width < measure.endBreakPoint &&
+          measure.width > measure.breakPoint && <CurrentDays />}
       </div>
       {tasks.length > 0 ? (
         <CurrentWeekRange tasks={tasks} />
