@@ -1,8 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './Footer.module.css';
 import footerIcon from './footerIcon.svg';
 
-const footer = () => {
+const Footer = () => {
+  const { t } = useTranslation();
   return (
     <div className={styles.footerContainer}>
       <div className={styles.footerTitleContainer}>
@@ -12,11 +14,11 @@ const footer = () => {
         </svg>
       </div>
       <p className={styles.footerSlogan}>
-        Делаем жизнь родителей и детей изи :)
+        {t('Making the life of parents and their children easy')}
       </p>
       <p className={styles.footerDate}>2020</p>
     </div>
   );
 };
 
-export default footer;
+export default Footer;
