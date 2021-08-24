@@ -2,7 +2,7 @@ import React from 'react';
 import ModalNavListAuth from '../modalNavListAuth/ModalNavListAuth';
 import UserInfoModal from '../userInfoModal/UserInfoModal';
 import styles from './BurgerMenuAuth.module.css';
-import useWindowDimensions from '../../../pages/planning/hooks/wirthHook';
+import useWindowDimensions from '../../../pages/planning/hooks/widthHook';
 
 const BurgerMenuAuth = ({ onLogout }) => {
   const { width } = useWindowDimensions();
