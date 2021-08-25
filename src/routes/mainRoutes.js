@@ -11,7 +11,7 @@ export const mainRoutes = [
     ),
     exact: true,
     restricted: false,
-    isPrivate: false,
+    isPrivate: true,
     redirectTo: '/auth',
   },
   {
@@ -23,7 +23,7 @@ export const mainRoutes = [
     exact: true,
     restricted: true,
     isPrivate: false,
-    redirectTo: location.pathname,
+    redirectTo: '/',
   },
   {
     name: 'Контакты',

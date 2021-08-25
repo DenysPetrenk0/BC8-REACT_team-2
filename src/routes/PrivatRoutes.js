@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect, Route } from 'react-router-dom';
-import { getAuthenticated } from '../redux/auth/authSelectors';
+import { getToken } from '../redux/auth/authSelectors';
 
 export default function PrivateRoute({
   component: Component,
@@ -11,7 +11,7 @@ export default function PrivateRoute({
   key,
   ...routeProps
 }) {
-  const isLoggedIn = useSelector(getAuthenticated);
+  const isLoggedIn = useSelector(getToken);
   return (
     <Route {...routeProps}>
       {isLoggedIn ? (
