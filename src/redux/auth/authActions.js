@@ -1,4 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
+export const setUserToken = createAction('auth/tokenSucess');
+
+export const loginGoogle = createAction('auth/loginGoogleSuccess');
 
 export const registerRequest = createAction('auth/registerRequest');
 export const registerSuccess = createAction('auth/registerSuccess');

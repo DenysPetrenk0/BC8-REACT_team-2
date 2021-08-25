@@ -7,9 +7,20 @@ import { mainRoutes } from './routes/mainRoutes';
 import { getUserInfo } from './redux/auth/authOperations';
 import { useDispatch } from 'react-redux';
 import Spinner from './components/spinner/Spinner';
+import { useLocation } from 'react-router-dom';
+import { setUserToken } from './redux/auth/authActions';
+const queryString = require('query-string');
 
 const App = () => {
   const dispatch = useDispatch();
+  const { search } = useLocation();
+
+  useEffect(() => {
+    if (search) {
+      const token = queryString.parse(search);
+      dispatch(setUserToken(token));
+    }
+  }, [search, dispatch]);
 
   useEffect(() => {
     dispatch(getUserInfo());
