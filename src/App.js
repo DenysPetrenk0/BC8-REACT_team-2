@@ -25,7 +25,6 @@ const App = () => {
   }, [search, dispatch]);
 
   useEffect(() => {
-    console.log(token);
     if (token) {
       dispatch(getUserInfo());
     }

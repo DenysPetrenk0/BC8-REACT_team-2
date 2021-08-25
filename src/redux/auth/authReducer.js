@@ -8,7 +8,7 @@ import {
   getUserInfoSuccess,
   loginError,
   getUserInfoError,
-  getUserInfoRequest,
+  // getUserInfoRequest,
   loginGoogle,
   setUserToken,
 } from './authActions';
