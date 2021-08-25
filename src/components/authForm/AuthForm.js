@@ -8,6 +8,8 @@ import { register, login } from '../../redux/auth/authOperations';
 import * as Yup from 'yup';
 import { getError } from '../../redux/auth/authSelectors';
 import styles from './AuthForm.module.css';
+import { loginGoogle } from '../../redux/auth/authActions';
+import axios from 'axios';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email().required('Email is Required.'),
@@ -29,6 +31,17 @@ const AuthForm = ({ history }) => {
   //   },
   //   [dispatch]
   // );
+  const responseGoogle = async response => {
+    axios.defaults.headers.common.Authorization = `Bearer ${response.accessToken}`;
+    console.log(`response`, response);
+    dispatch(
+      loginGoogle({
+        email: response.profileObj.email,
+        // tokenId: response.tokenObj.id_token,
+        tokenId: response.accessToken,
+      }),
+    );
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -69,9 +82,18 @@ const AuthForm = ({ history }) => {
               {t('You can log in with your Google Account')}
             </p>
 
-            <button className={styles.googleBtn} type="button">
+            <a href="https://kidslikev1.herokuapp.com/auth/google">
+              {/* <GoogleLogin
+                className={styles.googleBtn}
+                clientId="551259095016-urgqjvcdnufatornmrupmab9ove5qhvs.apps.googleusercontent.com"
+                buttonText="Google"
+                isSignedIn={true}
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+              /> */}
               Google
-            </button>
+            </a>
             <p className={styles.authText}>
               {t(
                 'Also you can log in with your e-mail and password register in advance',
@@ -89,6 +111,7 @@ const AuthForm = ({ history }) => {
                 placeholder="your@email.com"
                 value={formik.values.email}
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
               {formik.errors.email && formik.touched.email && (
                 <div className="input-feedback">{formik.errors.email}</div>
@@ -106,6 +129,7 @@ const AuthForm = ({ history }) => {
                 placeholder="*********"
                 value={formik.values.password}
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
               {formik.errors.password && formik.touched.password && (
                 <div className="input-feedback">{formik.errors.password}</div>

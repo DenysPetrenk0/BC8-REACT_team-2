@@ -9,7 +9,11 @@ import {
   loginError,
   getUserInfoError,
   getUserInfoRequest,
+  loginGoogle,
+  setUserToken,
+
 } from './authActions';
+import { addBalanceTaskSuccess } from '../tasks/tasksAction';
 
 const initialUserState = {
   name: '',
@@ -19,13 +23,21 @@ const initialUserState = {
 };
 
 const user = createReducer(initialUserState, {
+  [loginGoogle]: (_, action) => action.payload.email,
   [registerSuccess]: (_, action) => action.payload.user,
   [loginSuccess]: (_, action) => action.payload.user,
   [logoutSuccess]: () => initialUserState,
   [getUserInfoSuccess]: (_, action) => action.payload.user,
+  [addBalanceTaskSuccess]: (state, {payload}) => {
+    return {
+      ...state, balance: payload.updatedBalance,
+    }
+  }
 });
 
 const token = createReducer(null, {
+  [setUserToken]: (_, action) => action.payload.token,
+  [loginGoogle]: (_, action) => action.payload.tokenId,
   [registerSuccess]: (_, action) => action.payload.token,
   [loginSuccess]: (_, action) => action.payload.token,
   [logoutSuccess]: () => null,
