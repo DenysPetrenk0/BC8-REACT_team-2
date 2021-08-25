@@ -5,7 +5,7 @@ import {
   registerSuccess,
 } from '../auth/authActions';
 // combineReducers,
-import { createTaskSuccess, patchActiveTaskSuccess } from './tasksAction';
+import { addBalanceTaskSuccess, createTaskSuccess, patchActiveTaskSuccess } from './tasksAction';
 
 const tasksReducer = createReducer([], {
   [createTaskSuccess]: (state, action) => [action.payload, ...state],
@@ -17,6 +17,11 @@ const tasksReducer = createReducer([], {
       if (item._id === payload.id) return payload;
       return item;
     }),
+    [addBalanceTaskSuccess]: (state, {payload}) => 
+    state.map(day => {
+      if (day._id === payload.id) return payload.updatedTask.days;
+      return day;
+    })
 });
 
 export default tasksReducer;
