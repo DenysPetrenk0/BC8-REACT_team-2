@@ -12,9 +12,7 @@ const Footer = () => {
 
   return (
     <>
-      <div
-        className={cx(styles.footerContainer, styles[theme.colors.background])}
-      >
+      <div className={styles.footerContainer}>
         <div className={styles.footerTitleContainer}>
           <h2 className={cx(styles.footerTitle, styles[theme.colors.text])}>
             KidsLike
@@ -26,7 +24,7 @@ const Footer = () => {
         <p className={cx(styles.footerSlogan, styles[theme.colors.text])}>
           {t('Making the life of parents and their children easy')}
         </p>
-        <p className={styles.footerDate}>2020</p>
+        <p className={cx(styles.footerDate, styles[theme.colors.text])}>2020</p>
         <ThemeSwitcher />
       </div>
     </>
