@@ -12,13 +12,13 @@
   .weekInfo {
     margin-top: 0;
     margin-bottom: 40px;
-    margin-left: 100px;
+    margin-left: 60px;
   }
 
   .weekProgressBar {
     display: flex;
     justify-content: space-between;
     width: 940px;
-    padding-right: 50px;
+    padding-right: 40px;
   }
 }

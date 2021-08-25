@@ -4,7 +4,7 @@ import CardFooter from '../cardFooter';
 import styles from './Card.module.css';
 
 const Card = ({ data }) => {
-  const { title, reward, imageUrl } = data;
+  const { title, imageUrl } = data;
   return (
     <div className={styles.cardContainer}>
       <CardBody imageUrl={imageUrl} title={title} />
