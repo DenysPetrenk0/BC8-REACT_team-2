@@ -14,7 +14,6 @@ const CongratsModal = ({ onClose }) => {
   const { t } = useTranslation();
   const awards = useSelector(getAllAwards);
   const selectedAwardsId = useSelector(getGiftIds);
-  console.log(`selectedAwardsId`, selectedAwardsId);
 
   const congratsAwards = awards.filter(({ id }) =>
     selectedAwardsId.includes(id),
@@ -33,9 +32,7 @@ const CongratsModal = ({ onClose }) => {
           {t('Congratulations You get')}
         </h3>
         <ul className={styles.CongratsModal__List}>
-          {console.log(`congratsAwards`, congratsAwards)}
           {congratsAwards.map(award => (
-            // award => console.log(`award`, award)
             <li className={styles.CongratsModal__ListItem} key={award.id}>
               <img
                 className={styles.CongratsModal__Image}

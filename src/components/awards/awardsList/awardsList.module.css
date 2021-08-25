@@ -1,5 +1,14 @@
+.Awards__LoaderContainer {
+  height: 52px;
+}
+/* @media screen and (min-width: 580px) {
+  .Awards__LoaderContainer {
+    height: 52px;
+  }
+} */
+
 .Awards__List {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
