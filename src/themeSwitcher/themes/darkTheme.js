@@ -3,6 +3,8 @@ const dark = {
   colors: {
     background: 'darkBg',
     text: 'themeDarkText',
+    cardBg: 'darkCardBg',
+    iconFill: 'darkIconFill',
     on: '#FFBC33',
     off: '#FFBC33',
   },
@@ -10,10 +12,13 @@ const dark = {
 
 export default dark;
 
+// cardBg: 'darkCardBg'
 // .darkBg {
 //   background-color: rgba(82, 82, 100, 0.541);
 // }
-
 // .themeDarkText {
 //   color: #fff;
+// }
+// .darkCardBg {
+//   background-color: rgba(184, 184, 211, 0.541);
 // }

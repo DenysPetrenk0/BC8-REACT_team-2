@@ -12,9 +12,7 @@ const Footer = () => {
 
   return (
     <>
-      <div
-        className={cx(styles.footerContainer, styles[theme.colors.background])}
-      >
+      <div className={styles.footerContainer}>
         <div className={styles.footerTitleContainer}>
           <h2 className={cx(styles.footerTitle, styles[theme.colors.text])}>
             KidsLike
