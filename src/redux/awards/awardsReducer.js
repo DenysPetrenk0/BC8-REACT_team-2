@@ -15,8 +15,8 @@ const itemsReducer = createReducer([], {
   // [orderAwardSuccess]: (_, action) => action.payload,
 });
 
-const giftsIdReducer = createReducer([], {
-  [orderAwardSuccess]: (_, action) => action.payload,
+const giftIdsReducer = createReducer([], {
+  [orderAwardSuccess]: (_, action) => action.payload.giftIds,
 });
 
 const loadingReducer = createReducer(false, {
@@ -37,7 +37,7 @@ const errorReducer = createReducer(null, {
 
 const awardsReducer = combineReducers({
   items: itemsReducer,
-  giftsId: giftsIdReducer,
+  giftIds: giftIdsReducer,
   loading: loadingReducer,
   error: errorReducer,
 });

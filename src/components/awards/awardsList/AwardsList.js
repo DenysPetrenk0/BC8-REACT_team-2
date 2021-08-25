@@ -14,7 +14,9 @@ import styles from './awardsList.module.css';
 import AwardsSubmitButton from '../awardsSubmitButton/AwardsSubmitButton';
 import Loader from 'react-loader-spinner';
 import CongratsModal from '../CongratsModal/CongratsModal';
-// import {getUserBalance} from "../../../redux/auth/authSelectors"
+// ==================================================================
+// import { getUserBalance } from '../../../redux/auth/authSelectors';
+// import { getAwardsPrice } from '../../../redux/awards/awardsSelectors';
 
 export default function AwardsList() {
   const dispatch = useDispatch();
@@ -33,12 +35,6 @@ export default function AwardsList() {
   useEffect(() => {
     setGifts(awards);
   }, [awards]);
-
-  // useEffect(() => {
-  //   showModal && dispatch(orderAward());
-  //   return;
-  //   // dispatch(orderAward());
-  // }, [showModal, dispatch]);
 
   const onClose = () => {
     setShowModal(false);
@@ -68,6 +64,20 @@ export default function AwardsList() {
       ),
     );
   };
+
+  // const setSelected = event => {
+  //   const { name } = event.target;
+  //   if (getUserBalance > getAwardsPrice) {
+  //     setGifts(prev =>
+  //       prev.map(gift =>
+  //         Number(gift.id) === Number(name)
+  //           ? { ...gift, isSelected: !gift.isSelected }
+  //           : gift,
+  //       ),
+  //     );
+  //   }
+  //   return;
+  // };
 
   return (
     <div className={styles.Awards__Container}>
