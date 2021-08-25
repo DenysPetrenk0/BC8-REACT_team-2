@@ -11,9 +11,10 @@ const initialState = {
 const daysName = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 const PlanningCardItem = ({ onAddActiveTask, task }) => {
-  const daysActive = useMemo(() => task.days.map(itemDay => itemDay.isActive), [
-    task.days,
-  ]);
+  const daysActive = useMemo(
+    () => task.days.map(itemDay => itemDay.isActive),
+    [task.days],
+  );
 
   const [visible, setVisible] = useState(initialState.isVisible);
   const [checkDays, setCheckDays] = useState(daysActive);
@@ -38,8 +39,9 @@ const PlanningCardItem = ({ onAddActiveTask, task }) => {
     toggleVisible();
     onAddActiveTask(taskId, { days: checkDays });
   };
+
   return (
-    <li className={styles.cardItem} key={task.id}>
+    <li className={styles.cardItem}>
       <img className={styles.cardImg} src={task.imageUrl} alt={task.title} />
       <div className={styles.cadrFooter}>
         <div>
