@@ -24,9 +24,9 @@
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
-border: none;
   margin-bottom: 15px;
   cursor: pointer;
+  border: none;
 }
 
 .logoutBtn:hover,

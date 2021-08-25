@@ -3,14 +3,12 @@ import ProgressIndicator from './progressIndicator/ProgressIndicator';
 import { useTranslation } from 'react-i18next';
 import styles from './ProgressBar.module.css';
 import { useSelector } from 'react-redux';
-import {
-  getCardsTotalPoints,
-  getCardsCompletedPoints,
-} from '../../redux/weekTabs/weekSelectors';
+import { getCardsTotalPoints } from '../../redux/weekTabs/weekSelectors';
+import { getUserBalance } from '../../redux/auth/authSelectors';
 
 const ProgressBar = () => {
   const rewardsPlanned = useSelector(getCardsTotalPoints);
-  const rewardsGained = useSelector(getCardsCompletedPoints);
+  const rewardsGained = useSelector(getUserBalance);
   const { t } = useTranslation();
 
   const currentProgress =

@@ -24,7 +24,7 @@ const WeekTabsContents = ({ tasks }) => {
   useEffect(() => {
     window.addEventListener('resize', hendleResizeWindow);
     return () => {
-      window.addEventListener('resize', hendleResizeWindow);
+      window.removeEventListener('resize', hendleResizeWindow);
     };
   }, []);
 
