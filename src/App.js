@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect, createContext } from 'react';
 import Header from './components/header/Header';
 import ContentSwitcher from './contentSwitcher/ContentSwitcher';
 import { mainRoutes } from './routes/mainRoutes';
@@ -10,9 +10,13 @@ import Spinner from './components/spinner/Spinner';
 import { useLocation } from 'react-router-dom';
 import { setUserToken } from './redux/auth/authActions';
 import { getToken } from './redux/auth/authSelectors';
+import usePersistedTheme from './themeSwitcher/hook/usePersistedTheme';
 const queryString = require('query-string');
 
+export const ThemeContext = createContext();
+
 const App = () => {
+  const [theme, changeTheme] = usePersistedTheme();
   const dispatch = useDispatch();
   const { search } = useLocation();
   const token = useSelector(getToken);
@@ -31,13 +35,14 @@ const App = () => {
   }, [dispatch, token]);
 
   return (
-    <Suspense fallback={<Spinner />}>
-      <Header />
+    <ThemeContext.Provider value={{ theme, changeTheme }}>
       <Suspense fallback={<Spinner />}>
-        <ContentSwitcher routes={mainRoutes} />
+        <Header />
+        <Suspense fallback={<Spinner />}>
+          <ContentSwitcher routes={mainRoutes} />
+        </Suspense>
       </Suspense>
-      {/* <Footer /> */}
-    </Suspense>
+    </ThemeContext.Provider>
   );
 };
 
