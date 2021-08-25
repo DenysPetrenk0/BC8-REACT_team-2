@@ -29,7 +29,7 @@ const MainPage = () => {
     dispatch(getWeekOperation());
     window.addEventListener('resize', hendleResizeWindow);
     return () => {
-      window.addEventListener('resize', hendleResizeWindow);
+      window.removeEventListener('resize', hendleResizeWindow);
     };
   }, [dispatch]);
 
