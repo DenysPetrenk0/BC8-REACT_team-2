@@ -12,8 +12,10 @@ import {
 } from './authActions';
 
 const initialUserState = {
-  name: null,
-  email: null,
+  name: '',
+  email: '',
+  balance: 0,
+  id: '',
 };
 
 const user = createReducer(initialUserState, {

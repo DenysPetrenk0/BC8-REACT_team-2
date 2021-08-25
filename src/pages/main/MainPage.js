@@ -27,14 +27,11 @@ const MainPage = () => {
 
   useEffect(() => {
     dispatch(getWeekOperation());
-  }, [dispatch]);
-
-  useEffect(() => {
     window.addEventListener('resize', hendleResizeWindow);
     return () => {
       window.addEventListener('resize', hendleResizeWindow);
     };
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={styles.container}>
