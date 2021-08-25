@@ -94,7 +94,7 @@ export default function AwardsList() {
                 className={styles.Awards__ListImage}
               />
               <div className={styles.Awards__ListFooter}>
-                <h3 className={styles.Awards__ListName}>{award.title}</h3>
+                <h3 className={styles.Awards__ListName}>{t(award.title)}</h3>
                 <div className={styles.Awards__ListTextWrapper}>
                   <p className={styles.Awards__ListText}>
                     {award.price} {t('POINTS')}
