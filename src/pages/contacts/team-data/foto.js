@@ -7,4 +7,5 @@ import julia from '../images/julia.webp';
 import serhii from '../images/serhii.webp';
 import natalia from '../images/natalia.webp';
 
-export default { alina, denis, iryna, anton, vlad, julia, serhii, natalia };
+const foto = { alina, denis, iryna, anton, vlad, julia, serhii, natalia };
+export default foto;

@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './Contacts.module.css';
 import teamDatas from './team-data/team-data.json';
-// import alina from './images/alina.webp';
 import foto from './team-data/foto';
 import sprite from './images/sprite.svg';
 import Footer from '../../components/footer/Footer';
@@ -56,5 +55,3 @@ const Contacts = () => {
 };
 
 export default Contacts;
-
-// {images.alina.webp}
