@@ -62,3 +62,11 @@
     padding-top: 50px;
   }
 }
+
+.darkBg {
+  background-color: rgba(82, 82, 100, 0.541);
+}
+
+.themeDarkText {
+  color: #fff;
+}
