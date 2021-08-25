@@ -9,6 +9,8 @@ import {
   loginError,
   getUserInfoError,
   getUserInfoRequest,
+  loginGoogle,
+  setUserToken,
 } from './authActions';
 
 const initialUserState = {
@@ -19,6 +21,7 @@ const initialUserState = {
 };
 
 const user = createReducer(initialUserState, {
+  [loginGoogle]: (_, action) => action.payload.email,
   [registerSuccess]: (_, action) => action.payload.user,
   [loginSuccess]: (_, action) => action.payload.user,
   [logoutSuccess]: () => initialUserState,
@@ -26,6 +29,8 @@ const user = createReducer(initialUserState, {
 });
 
 const token = createReducer(null, {
+  [setUserToken]: (_, action) => action.payload.token,
+  [loginGoogle]: (_, action) => action.payload.tokenId,
   [registerSuccess]: (_, action) => action.payload.token,
   [loginSuccess]: (_, action) => action.payload.token,
   [logoutSuccess]: () => null,
