@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { addBalanceTaskSuccess } from '../tasks/tasksAction';
 import {
   fetchAwardsRequest,
   fetchAwardsSuccess,
@@ -37,8 +38,10 @@ export const orderAward = giftIds => async (dispatch, getState) => {
       //   },
       // },
     );
-    // console.log(`res`, res);
     dispatch(orderAwardSuccess({ giftIds: res.data.purchasedGiftIds }));
+    dispatch(
+      addBalanceTaskSuccess({ updatedBalance: res.data.updatedBalance }),
+    );
   } catch (error) {
     dispatch(orderAwardError(error.message));
   }

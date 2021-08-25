@@ -11,7 +11,6 @@ import {
   getUserInfoRequest,
   loginGoogle,
   setUserToken,
-
 } from './authActions';
 import { addBalanceTaskSuccess } from '../tasks/tasksAction';
 
@@ -28,11 +27,12 @@ const user = createReducer(initialUserState, {
   [loginSuccess]: (_, action) => action.payload.user,
   [logoutSuccess]: () => initialUserState,
   [getUserInfoSuccess]: (_, action) => action.payload.user,
-  [addBalanceTaskSuccess]: (state, {payload}) => {
+  [addBalanceTaskSuccess]: (state, { payload }) => {
     return {
-      ...state, balance: payload.updatedBalance,
-    }
-  }
+      ...state,
+      balance: payload.updatedBalance,
+    };
+  },
 });
 
 const token = createReducer(null, {
