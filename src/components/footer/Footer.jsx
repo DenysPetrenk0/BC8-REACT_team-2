@@ -24,7 +24,7 @@ const Footer = () => {
         <p className={cx(styles.footerSlogan, styles[theme.colors.text])}>
           {t('Making the life of parents and their children easy')}
         </p>
-        <p className={styles.footerDate}>2020</p>
+        <p className={cx(styles.footerDate, styles[theme.colors.text])}>2020</p>
         <ThemeSwitcher />
       </div>
     </>

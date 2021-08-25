@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import styles from './Planning.module.css';
@@ -13,8 +13,11 @@ import useWindowDimensions from './hooks/widthHook';
 import Footer from '../../components/footer/Footer';
 import { weekInfo } from '../../redux/weekTabs/weekSelectors';
 import { getWeekOperation } from '../../redux/weekTabs/weekOperation';
+import { ThemeContext } from '../../App';
+import cx from 'classnames';
 
 const PlanningPage = () => {
+  const { theme } = useContext(ThemeContext);
   const dispatch = useDispatch();
   const tasks = useSelector(getTasks);
   const { dates, month } = useSelector(weekInfo);
@@ -34,14 +37,20 @@ const PlanningPage = () => {
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className={styles[theme.colors.background]}>
       <div className="container">
         <div className={styles.planningPageContainer}>
           <div className={styles.planningHeaderContainer}>
             <div className={styles.planForWeekContainer}>
-              <p className={styles.planningTitle}>{t('Plan for the week')}</p>
+              <p
+                className={cx(styles.planningTitle, styles[theme.colors.text])}
+              >
+                {t('Plan for the week')}
+              </p>
               {dates && month ? (
-                <h2 className={styles.planningWeek}>
+                <h2
+                  className={cx(styles.planningWeek, styles[theme.colors.text])}
+                >
                   {dates} {t(month)}
                 </h2>
               ) : null}
@@ -49,7 +58,12 @@ const PlanningPage = () => {
             {width > 579 && <PlanningPoints tasks={tasks} />}
             <div className={styles.addTaskContainer}>
               {width > 579 && (
-                <p className={styles.motivationalText}>
+                <p
+                  className={cx(
+                    styles.motivationalText,
+                    styles[theme.colors.text],
+                  )}
+                >
                   {t('Want to get gifts add tasks')}
                 </p>
               )}
@@ -67,7 +81,12 @@ const PlanningPage = () => {
       </div>
 
       {width < 580 && (
-        <div className={styles.pointsMobileContainer}>
+        <div
+          className={cx(
+            styles.pointsMobileContainer,
+            styles[theme.colors.cardBg],
+          )}
+        >
           <div className="container">
             <PlanningPoints tasks={tasks} />
             <NewTaskModal onAddTask={onAddTask} />
@@ -75,7 +94,7 @@ const PlanningPage = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

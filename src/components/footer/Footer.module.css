@@ -31,11 +31,15 @@
   margin-bottom: 10px;
 }
 
+.footerDate {
+  margin-bottom: 20px;
+}
+
 @media screen and (min-width: 580px) {
   .footerContainer {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     padding-bottom: 30px;
     padding-top: 60px;
   }
@@ -50,6 +54,10 @@
     padding-right: 10px;
     margin-right: 10px;
     border-right: 1px solid #e3e2e7;
+    margin-bottom: 0;
+  }
+  .footerDate {
+    margin-right: 40px;
     margin-bottom: 0;
   }
 }

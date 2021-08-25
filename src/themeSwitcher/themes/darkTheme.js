@@ -6,7 +6,7 @@ const dark = {
     cardBg: 'darkCardBg',
     iconFill: 'darkIconFill',
     on: '#FFBC33',
-    off: '#FFBC33',
+    off: '#5679D7',
   },
 };
 
