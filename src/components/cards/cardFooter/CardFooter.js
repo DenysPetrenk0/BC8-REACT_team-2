@@ -14,7 +14,7 @@ const CardFooter = ({ ...data }) => {
   const {
     title,
     reward,
-    days: [{ date, isCompleted, isActive }],
+    
   } = data;
 
   const dispatch = useDispatch();
