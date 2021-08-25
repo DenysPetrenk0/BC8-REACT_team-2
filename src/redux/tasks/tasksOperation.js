@@ -44,7 +44,7 @@ export const patchTaskSwitch = (taskId, date) => async dispatch => {
   try {
     const { data } = await axios.patch(`/task/switch/${taskId}`, date);
     dispatch(addBalanceTaskSuccess(data));
-    console.log(data);
+    // console.log(data);
   } catch (error) {
     dispatch(addBalanceTaskError(error.message));
   }
