@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { patchTaskSwitch } from '../../../redux/tasks/tasksOperation';
 import {
-  active,
+  
   getFilterSelector,
 } from '../../../redux/weekTabs/weekSelectors';
 import CardTitle from '../cardTitle';
@@ -19,13 +19,15 @@ const CardFooter = ({ ...data }) => {
 
   const dispatch = useDispatch();
   const filterDate = useSelector(getFilterSelector);
-  const filter = data.days.filter(day => day.date === filterDate);
+  const findDay = data.days.find(day => day.date === filterDate);
 
   const taskCompleted = id => {
     dispatch(patchTaskSwitch(id, { date: filterDate }));
   };
 
-  console.log(filter[0]);
+  // console.log(findDay);
+
+
 
   return (
     <div className={s.cardFooter}>
@@ -36,7 +38,7 @@ const CardFooter = ({ ...data }) => {
       <TaskToggle
         id={data._id}
         taskCompleted={taskCompleted}
-        value={filter[0].isCompleted}
+        value={findDay.isCompleted}
       />
     </div>
   );
