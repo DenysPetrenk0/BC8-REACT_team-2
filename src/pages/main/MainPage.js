@@ -12,7 +12,7 @@ import ProgressBar from '../../components/progressBar/ProgressBar';
 
 const initialState = {
   width: window.innerWidth,
-  breakPoint: 321,
+  breakPoint: 580,
 };
 
 const MainPage = () => {
