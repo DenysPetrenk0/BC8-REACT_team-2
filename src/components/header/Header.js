@@ -8,11 +8,13 @@ import LanguageSwitcher from '../languageSwitcher/LanguageSwitcher';
 
 const Header = () => {
   return (
-    <HeaderContainer>
-      <Logo />
-      <LanguageSwitcher />
-      <Navigation />
-    </HeaderContainer>
+    <div className="container">
+      <HeaderContainer>
+        <Logo />
+        <LanguageSwitcher />
+        <Navigation />
+      </HeaderContainer>
+    </div>
   );
 };
 
