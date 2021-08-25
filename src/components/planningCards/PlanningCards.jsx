@@ -20,7 +20,11 @@ const PlanningCards = ({ tasks }) => {
       {tasks.length > 0 ? (
         <ul className={styles.cardList}>
           {tasks.map(task => (
-            <PlanningCardItem onAddActiveTask={onAddActiveTask} task={task} />
+            <PlanningCardItem
+              onAddActiveTask={onAddActiveTask}
+              task={task}
+              key={task._id}
+            />
           ))}
         </ul>
       ) : (
