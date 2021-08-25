@@ -9,7 +9,6 @@ import {
 } from '../../redux/weekTabs/weekSelectors';
 import styles from './MainPage.module.css';
 import ProgressBar from '../../components/progressBar/ProgressBar';
-import cx from 'classnames';
 import { ThemeContext } from '../../App';
 
 const initialState = {
@@ -37,11 +36,13 @@ const MainPage = () => {
   }, [dispatch]);
 
   return (
-    <div className={cx(styles.container, styles[theme.colors.background])}>
-      <div className={styles.main}>
-        <WeekTabs numbers={numbers} />
-        <WeekTabsContents tasks={tasks} />
-        {measure.width < measure.breakPoint && <ProgressBar />}
+    <div className={styles[theme.colors.background]}>
+      <div className={styles.container}>
+        <div className={styles.main}>
+          <WeekTabs numbers={numbers} />
+          <WeekTabsContents tasks={tasks} />
+          {measure.width < measure.breakPoint && <ProgressBar />}
+        </div>
       </div>
     </div>
   );
