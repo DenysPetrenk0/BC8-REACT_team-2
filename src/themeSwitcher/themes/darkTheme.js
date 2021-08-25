@@ -5,6 +5,7 @@ const dark = {
     text: 'themeDarkText',
     cardBg: 'darkCardBg',
     iconFill: 'darkIconFill',
+    modalBg: 'darkModalBg',
     on: '#FFBC33',
     off: '#5679D7',
   },
