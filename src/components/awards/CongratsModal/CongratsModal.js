@@ -5,11 +5,21 @@ import ModalClose from '../../modal/ModalClose';
 import styles from './CongratsModal.module.css';
 import catImage from '../../../images/catModal.png';
 import { useSelector } from 'react-redux';
-import { getAllAwards } from '../../../redux/awards/awardsSelectors';
+import {
+  getAllAwards,
+  getGiftIds,
+} from '../../../redux/awards/awardsSelectors';
 
 const CongratsModal = ({ onClose }) => {
   const { t } = useTranslation();
   const awards = useSelector(getAllAwards);
+  const selectedAwardsId = useSelector(getGiftIds);
+  console.log(`selectedAwardsId`, selectedAwardsId);
+
+  const congratsAwards = awards.filter(({ id }) =>
+    selectedAwardsId.includes(id),
+  );
+
   return (
     <Modal onClose={onClose}>
       <ModalClose onClose={onClose} />
@@ -23,7 +33,9 @@ const CongratsModal = ({ onClose }) => {
           {t('Congratulations You get')}
         </h3>
         <ul className={styles.CongratsModal__List}>
-          {awards.map(award => (
+          {console.log(`congratsAwards`, congratsAwards)}
+          {congratsAwards.map(award => (
+            // award => console.log(`award`, award)
             <li className={styles.CongratsModal__ListItem} key={award.id}>
               <img
                 className={styles.CongratsModal__Image}

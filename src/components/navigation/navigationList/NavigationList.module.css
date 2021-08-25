@@ -13,6 +13,10 @@
     border-right: 1px solid #858598;
     padding-right: 15px;
   }
+
+  .nav__link_item:hover {
+    color: black;
+  }
 }
 
 .nav__link_item_active {
