@@ -8,7 +8,7 @@
 .user__burger_menu_btn {
   float: right;
   border: none;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 @media screen and (min-width: 580px) {

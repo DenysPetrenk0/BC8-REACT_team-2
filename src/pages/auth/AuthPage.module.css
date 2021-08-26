@@ -7,6 +7,11 @@
   background-size: contain;
   background-position: bottom;
 }
+
+.darkBg {
+  background-color: rgba(82, 82, 100, 0.541);
+}
+
 @media screen and (min-device-pixel-ratio: 2),
   screen and (min-resolution: 192dpi),
   screen and (min-resolution: 2dppx) {
