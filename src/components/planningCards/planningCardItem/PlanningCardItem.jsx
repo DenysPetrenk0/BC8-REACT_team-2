@@ -43,7 +43,13 @@ const PlanningCardItem = ({ onAddActiveTask, task }) => {
 
   return (
     <li className={styles.cardItem}>
-      <img className={styles.cardImg} src={task.imageUrl} alt={task.title} />
+      <img
+        width="280"
+        height="194"
+        className={styles.cardImg}
+        src={task.imageUrl}
+        alt={task.title}
+      />
       <div className={styles.cadrFooter}>
         <div>
           <p className={styles.cardName}>{task.title}</p>

@@ -4,8 +4,6 @@ import { ThemeContext } from '../../App';
 
 const ThemeSwitcher = () => {
   const { theme, changeTheme } = useContext(ThemeContext);
-  console.log('~ changeTheme', changeTheme);
-  console.log(theme);
 
   return (
     <>
