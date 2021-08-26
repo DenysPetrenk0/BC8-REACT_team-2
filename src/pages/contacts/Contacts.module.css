@@ -124,3 +124,21 @@
     width: calc((100% - 90px) / 4);
   }
 }
+
+/* theme switch  */
+
+.darkBg {
+  background-color: rgba(82, 82, 100, 0.541);
+}
+
+.themeDarkText {
+  color: #fff;
+}
+
+.darkCardBg {
+  background-color: rgba(184, 184, 211, 0.541);
+}
+
+.darkIconFill {
+  fill: #fff;
+}

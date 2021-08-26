@@ -87,3 +87,23 @@
     margin-left: auto;
   }
 }
+
+.darkBg {
+  background-color: rgba(82, 82, 100, 0.541);
+}
+
+.themeDarkText {
+  color: #fff;
+}
+
+.darkCardBg {
+  background-color: rgba(184, 184, 211, 0.541);
+}
+
+.darkIconFill {
+  fill: #fff;
+}
+
+.darkModalBg {
+  background-color: rgb(82, 82, 100);
+}

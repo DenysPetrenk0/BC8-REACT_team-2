@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import WeekTabs from '../../components/week/weekTabs/WeekTabs';
 import WeekTabsContents from '../../components/week/weekTabsContents/WeekTabsContents';
@@ -9,6 +9,7 @@ import {
 } from '../../redux/weekTabs/weekSelectors';
 import styles from './MainPage.module.css';
 import ProgressBar from '../../components/progressBar/ProgressBar';
+import { ThemeContext } from '../../App';
 
 const initialState = {
   width: window.innerWidth,
@@ -17,6 +18,7 @@ const initialState = {
 
 const MainPage = () => {
   const [measure, setMeasure] = useState(initialState);
+  const { theme } = useContext(ThemeContext);
 
   const dispatch = useDispatch();
   const numbers = useSelector(getWeekDate);
@@ -34,11 +36,13 @@ const MainPage = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.main}>
-        <WeekTabs numbers={numbers} />
-        <WeekTabsContents tasks={tasks} />
-        {measure.width < measure.breakPoint && <ProgressBar />}
+    <div className={styles[theme.colors.background]}>
+      <div className={styles.container}>
+        <div className={styles.main}>
+          <WeekTabs numbers={numbers} />
+          <WeekTabsContents tasks={tasks} />
+          {measure.width < measure.breakPoint && <ProgressBar />}
+        </div>
       </div>
     </div>
   );
