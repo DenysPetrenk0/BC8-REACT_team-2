@@ -1,7 +1,7 @@
 // /** @format */
 
 import React from 'react';
-import Navigation from '../navigation/Navigation';
+import Navigation from '../navigation/navigation/Navigation';
 import Logo from '../navigation/logo/Logo';
 import HeaderContainer from '../header/headerContainer/HeaderContainer';
 import LanguageSwitcher from '../languageSwitcher/LanguageSwitcher';
