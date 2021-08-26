@@ -108,6 +108,14 @@
   margin-right: 10px;
 }
 
+.themeDarkText {
+  color: #fff;
+}
+
+.darkCardBg {
+  background-color: rgba(184, 184, 211, 0.541);
+}
+
 @media screen and (min-width: 580px) {
   .container {
     padding-left: 40px;

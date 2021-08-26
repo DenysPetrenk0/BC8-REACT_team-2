@@ -1,7 +1,8 @@
 .svg {
   width: 22px;
   height: 14px;
-  color: #858598;
+  fill: #858598;
+  background-color: inherit;
   cursor: pointer;
 }
 

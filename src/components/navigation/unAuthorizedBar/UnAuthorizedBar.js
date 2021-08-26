@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ModalBurger from '../modalBurger/ModalBurger';
@@ -9,6 +9,8 @@ import BurgerMenu from '../burgerMenuIcon/BurgerMenuIcon';
 import styles from './UnAuthorizedBar.module.css';
 import BurgerMenuUnAuth from '../burgerMenuUnAuth/BurgerMenuUnAuth';
 import useWindowDimensions from '../../../pages/planning/hooks/widthHook';
+import { ThemeContext } from '../../../App';
+import cx from 'classnames';
 
 const UnAuthorizatedBar = () => {
   const { width } = useWindowDimensions();
@@ -19,6 +21,8 @@ const UnAuthorizatedBar = () => {
   }, []);
 
   const { t } = useTranslation();
+
+  const { theme } = useContext(ThemeContext);
   return (
     <>
       {width < 580 ? (
@@ -28,16 +32,22 @@ const UnAuthorizatedBar = () => {
       ) : (
         <nav className={styles.nav}>
           <NavLink
-            className={styles.nav__link_item}
-            activeClassName={styles.nav__link_item_active}
+            className={cx(styles.nav__link_item, styles[theme.colors.text])}
+            activeClassName={cx(
+              styles.nav__link_item_active,
+              styles[theme.colors.link],
+            )}
             to="/auth"
             exact
           >
             {t('Authorization')}
           </NavLink>
           <NavLink
-            className={styles.nav__link_item}
-            activeClassName={styles.nav__link_item_active}
+            className={cx(styles.nav__link_item, styles[theme.colors.text])}
+            activeClassName={cx(
+              styles.nav__link_item_active,
+              styles[theme.colors.link],
+            )}
             to="/contacts-us"
             exact
           >

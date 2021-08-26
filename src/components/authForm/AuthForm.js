@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import { useTranslation } from 'react-i18next';
@@ -11,11 +11,14 @@ import styles from './AuthForm.module.css';
 import validationSchema from '../../utills/validationForm';
 // import { loginGoogle } from '../../redux/auth/authActions';
 // import axios from 'axios';
+import { ThemeContext } from '../../App';
+import cx from 'classnames';
 
 const AuthForm = ({ history }) => {
   const dispatch = useDispatch();
   const error = useSelector(getError);
   const { t } = useTranslation();
+  const { theme } = useContext(ThemeContext);
   // const match = useRouteMatch();
 
   // const login = useCallback(
@@ -66,10 +69,10 @@ const AuthForm = ({ history }) => {
   return (
     <div className={styles.container}>
       <div className={styles.row}>
-        <h1 className={styles.authTitle}>
+        <h1 className={cx(styles.authTitle, styles[theme.colors.text])}>
           {t('Complete tasks and get the best gifts')}
         </h1>
-        <div className={styles.authForm}>
+        <div className={cx(styles.authForm, styles[theme.colors.cardBg])}>
           <form noValidate onSubmit={formik.handleSubmit}>
             <p className={styles.authText}>
               {t('You can log in with your Google Account')}
