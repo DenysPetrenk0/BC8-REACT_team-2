@@ -86,6 +86,28 @@
   transform: scale(1.05);
 }
 
+.googleLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+
+  color: #000000;
+  cursor: pointer;
+  width: 150px;
+  height: 42px;
+  background: #f6f7fb;
+  border-radius: 6px;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.googleIcon {
+  margin-right: 10px;
+}
+
 @media screen and (min-width: 580px) {
   .container {
     padding-left: 40px;
