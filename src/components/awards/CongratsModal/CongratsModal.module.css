@@ -4,6 +4,8 @@
   width: 280px;
   min-height: 300px;
   background-color: white;
+  border-radius: 10px;
+  border: 3px dashed #ffbc33;
 }
 
 .CongratsModal__CatImage {
@@ -106,4 +108,34 @@
 
 .darkModalBg {
   background-color: rgb(82, 82, 100);
+}
+
+/* =============ERROR==================== */
+.Awards__Error {
+  position: absolute;
+  top: 35%;
+  left: 50px;
+  width: 180px;
+  text-align: center;
+}
+.Awards__ErrorName {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #000000;
+  text-align: center;
+}
+@media screen and (min-width: 580px) {
+  .Awards__Error {
+    top: 45%;
+    left: 100px;
+    width: 400px;
+  }
+  .Awards__ErrorName {
+    font-size: 20px;
+  }
 }
