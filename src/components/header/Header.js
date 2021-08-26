@@ -1,6 +1,6 @@
 // /** @format */
 
-import React from 'react';
+import React, { useContext } from 'react';
 import Navigation from '../navigation/navigation/Navigation';
 import Logo from '../navigation/logo/Logo';
 import HeaderContainer from '../header/headerContainer/HeaderContainer';
