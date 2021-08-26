@@ -5,7 +5,7 @@ import styles from './Planning.module.css';
 import { getTasks } from '../../redux/tasks/tasksSelector';
 import { addTask } from '../../redux/tasks/tasksOperation';
 import PlanningPoints from '../../components/planningPoints/PlanningPoints';
-import PlanningCards from '../../components/planningCards/PlanningCards';
+import PlanningCards from '../../components/planningCards/planningCards/PlanningCards';
 import { useSelector } from 'react-redux';
 import NewTaskModal from '../../components/taskModal/newTaskModal/NewTaskModal';
 import AddCustomTask from '../../components/addCustomTask/AddCustomTask';

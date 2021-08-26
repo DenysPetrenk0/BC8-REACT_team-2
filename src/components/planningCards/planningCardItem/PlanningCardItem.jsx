@@ -1,23 +1,9 @@
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import styles from '../PlanningCards.module.css';
+import styles from '../planningCards/PlanningCards.module.css';
 import sprite from '../image/symbol-defs.svg';
-import dataDays from '../dataDays.json';
-
-function declOfNum(n, text_forms) {
-  n = Math.abs(n) % 100;
-  var n1 = n % 10;
-  if (n > 10 && n < 20) {
-    return text_forms[2];
-  }
-  if (n1 > 1 && n1 < 5) {
-    return text_forms[1];
-  }
-  if (n1 === 1) {
-    return text_forms[0];
-  }
-  return text_forms[2];
-}
+import dataDays from '../data/dataDays.json';
+import declOfNum from '../../../utils/declOfNum';
 
 const initialState = {
   isVisible: false,
