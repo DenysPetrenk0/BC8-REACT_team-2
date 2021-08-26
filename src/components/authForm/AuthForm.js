@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 // import { error} from
 import { register, login } from '../../redux/auth/authOperations';
 // import { useRouteMatch } from "react-router-dom";
-
+import googleIcon from './googleIcon.svg';
 import { getError } from '../../redux/auth/authSelectors';
 import styles from './AuthForm.module.css';
 import validationSchema from '../../utills/validationForm';
@@ -75,16 +75,13 @@ const AuthForm = ({ history }) => {
               {t('You can log in with your Google Account')}
             </p>
 
-            <a href="https://kidslikev1.herokuapp.com/auth/google">
-              {/* <GoogleLogin
-                className={styles.googleBtn}
-                clientId="551259095016-urgqjvcdnufatornmrupmab9ove5qhvs.apps.googleusercontent.com"
-                buttonText="Google"
-                isSignedIn={true}
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy={'single_host_origin'}
-              /> */}
+            <a
+              className={styles.googleLink}
+              href="https://kidslikev1.herokuapp.com/auth/google"
+            >
+              <svg className={styles.googleIcon} width="18" height="18">
+                <use href={googleIcon + '#icon-google'}></use>
+              </svg>
               Google
             </a>
             <p className={styles.authText}>
