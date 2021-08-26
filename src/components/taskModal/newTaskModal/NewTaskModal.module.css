@@ -12,13 +12,18 @@
   overflow: hidden;
 }
 
-.taskImage {
+.taskImageContainer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  background-color: #fff;
+}
+
+.taskImage {
+  width: 100%;
   height: 130px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .taskButtonContainer {

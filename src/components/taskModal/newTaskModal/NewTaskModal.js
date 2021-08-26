@@ -45,7 +45,13 @@ const NewTaskModal = ({ onAddTask, onClose }) => {
         onSubmit={form.handleSubmit}
         className={styles.newTaskModalContainer}
       >
-        <img className={styles.taskImage} src={imageUrl || image} alt="task" />
+        <div className={styles.taskImageContainer}>
+          <img
+            className={styles.taskImage}
+            src={imageUrl || image}
+            alt="task"
+          />
+        </div>
         <TaskImageInput
           value={form.values.imageUrl}
           onChange={file => {
