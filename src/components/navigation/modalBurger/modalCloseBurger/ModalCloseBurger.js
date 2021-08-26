@@ -1,9 +1,9 @@
 import React from 'react';
 // import closeIcon from './closeIcon.svg';
 import styles from './ModalCloseBurger.module.css';
-import sprite from '../../../images/header/symbol-defs.svg';
+import sprite from '../../../../images/header/symbol-defs.svg';
 
-const ModalClose = ({ onClose }) => {
+const ModalCloseBurger = ({ onClose }) => {
   return (
     <button type="button" className={styles.closeButton} onClick={onClose}>
       <svg className={styles.svg}>
@@ -13,4 +13,4 @@ const ModalClose = ({ onClose }) => {
   );
 };
 
-export default ModalClose;
+export default ModalCloseBurger;

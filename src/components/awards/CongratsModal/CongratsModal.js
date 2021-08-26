@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import Modal from '../../modal/Modal';
-import ModalClose from '../../modal/ModalClose';
+import ModalClose from '../../modal/modalClose/ModalClose';
 import styles from './CongratsModal.module.css';
 import catImage from '../../../images/catModal.png';
 import { useSelector } from 'react-redux';

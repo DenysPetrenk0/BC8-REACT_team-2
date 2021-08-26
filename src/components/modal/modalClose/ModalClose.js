@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import closeIcon from './closeIcon.svg';
+import closeIcon from '../image/closeIcon.svg';
 import styles from './ModalClose.module.css';
-import { ThemeContext } from '../../App';
+import { ThemeContext } from '../../../App';
 import cx from 'classnames';
 
 const ModalClose = ({ onClose }) => {

@@ -4,7 +4,7 @@ import React, { useCallback, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ModalBurger from '../modalBurger/ModalBurger';
-import ModalCloseBurger from '../modalBurger/ModalCloseBurger';
+import ModalCloseBurger from '../modalBurger/modalCloseBurger/ModalCloseBurger';
 import BurgerMenu from '../burgerMenuIcon/BurgerMenuIcon';
 import styles from './UnAuthorizedBar.module.css';
 import BurgerMenuUnAuth from '../burgerMenuUnAuth/BurgerMenuUnAuth';
