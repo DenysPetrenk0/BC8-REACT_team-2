@@ -4,3 +4,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.darkBg {
+  background-color: rgba(82, 82, 100, 0.541);
+}
