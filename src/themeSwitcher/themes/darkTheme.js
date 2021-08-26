@@ -25,3 +25,6 @@ export default dark;
 // .darkCardBg {
 //   background-color: rgba(184, 184, 211, 0.541);
 // }
+//modalBg {
+// background-color: rgb(157, 157, 165);
+//}
