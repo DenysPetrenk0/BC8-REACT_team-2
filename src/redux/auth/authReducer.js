@@ -11,6 +11,7 @@ import {
   // getUserInfoRequest,
   loginGoogle,
   setUserToken,
+  logoutError,
 } from './authActions';
 import { addBalanceTaskSuccess } from '../tasks/tasksAction';
 
@@ -45,6 +46,9 @@ const token = createReducer(null, {
 
 const error = createReducer(null, {
   [registerError]: (_, action) => action.payload,
+  [getUserInfoError]: (_, action) => action.payload,
+  [loginError]: (_, action) => action.payload,
+  [logoutError]: (_, action) => action.payload,
 });
 
 const isAuthenticated = createReducer(false, {

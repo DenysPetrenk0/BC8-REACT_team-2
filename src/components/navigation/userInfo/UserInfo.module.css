@@ -43,3 +43,20 @@
   width: 18px;
   height: 18px;
 }
+
+.svg:hover {
+  fill: #ffbc33;
+}
+
+.themeDarkText {
+  color: #fff;
+  border-color: #fff;
+}
+
+.darkIconFill {
+  fill: #ffbc33;
+}
+
+.darkIconFill:hover {
+  fill: #fff;
+}

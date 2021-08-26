@@ -1,17 +1,24 @@
 /** @format */
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import styles from './ModalNavListAuth.module.css';
+import { ThemeContext } from '../../../App';
+import cx from 'classnames';
 
 const ModalNavListAuth = () => {
   const { t } = useTranslation();
+  const { theme } = useContext(ThemeContext);
+
   return (
     <div className={styles.container}>
       <NavLink
         className={styles.nav__link_item}
-        activeClassName={styles.nav__link_item_active}
+        activeClassName={cx(
+          styles.nav__link_item_active,
+          styles[theme.colors.link],
+        )}
         to="/"
         exact
       >
@@ -19,7 +26,10 @@ const ModalNavListAuth = () => {
       </NavLink>
       <NavLink
         className={styles.nav__link_item}
-        activeClassName={styles.nav__link_item_active}
+        activeClassName={cx(
+          styles.nav__link_item_active,
+          styles[theme.colors.link],
+        )}
         to="/planing"
         exact
       >
@@ -27,7 +37,10 @@ const ModalNavListAuth = () => {
       </NavLink>
       <NavLink
         className={styles.nav__link_item}
-        activeClassName={styles.nav__link_item_active}
+        activeClassName={cx(
+          styles.nav__link_item_active,
+          styles[theme.colors.link],
+        )}
         to="/awards"
         exact
       >
@@ -35,7 +48,10 @@ const ModalNavListAuth = () => {
       </NavLink>
       <NavLink
         className={styles.nav__link_item}
-        activeClassName={styles.nav__link_item_active}
+        activeClassName={cx(
+          styles.nav__link_item_active,
+          styles[theme.colors.link],
+        )}
         to="/contacts-us"
         exact
       >
