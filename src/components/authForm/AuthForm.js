@@ -5,19 +5,12 @@ import { useTranslation } from 'react-i18next';
 // import { error} from
 import { register, login } from '../../redux/auth/authOperations';
 // import { useRouteMatch } from "react-router-dom";
-import * as Yup from 'yup';
+
 import { getError } from '../../redux/auth/authSelectors';
 import styles from './AuthForm.module.css';
+import validationSchema from '../../utills/validationForm';
 // import { loginGoogle } from '../../redux/auth/authActions';
 // import axios from 'axios';
-
-const validationSchema = Yup.object().shape({
-  email: Yup.string().email().required('Email is Required.'),
-  password: Yup.string()
-    .required('No password provided.')
-    .min(8, 'Password is too short - should be 8 chars minimum.')
-    .matches(/(?=.*[0-9])/, 'Password must contain a number.'),
-});
 
 const AuthForm = ({ history }) => {
   const dispatch = useDispatch();
