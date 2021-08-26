@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import sprite from './sprite.svg';
+import sprite from '../awardsImages/sprite.svg';
 import styles from './AwardsTitle.module.css';
 import { ThemeContext } from '../../../App';
 import cx from 'classnames';

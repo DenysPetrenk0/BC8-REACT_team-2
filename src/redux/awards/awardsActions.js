@@ -9,6 +9,7 @@ export const orderAwardSuccess = createAction('awards/orderAwardSuccess');
 export const orderAwardError = createAction('awards/orderAwardError');
 
 export const resetAwards = createAction('awards/resetAwards');
+export const resetGiftsId = createAction('awards/resetGiftsId');
 
 export const updateBalance = createAction('awards/updateBalance');
 

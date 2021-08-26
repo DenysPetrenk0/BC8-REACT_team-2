@@ -9,6 +9,7 @@ import {
   orderAwardError,
   resetError,
   resetAwards,
+  resetGiftsId,
 } from './awardsActions';
 
 const itemsReducer = createReducer([], {
@@ -20,6 +21,7 @@ const itemsReducer = createReducer([], {
 
 const giftIdsReducer = createReducer([], {
   [orderAwardSuccess]: (_, action) => action.payload.giftIds,
+  [resetGiftsId]: () => [],
 });
 
 const loadingReducer = createReducer(false, {
