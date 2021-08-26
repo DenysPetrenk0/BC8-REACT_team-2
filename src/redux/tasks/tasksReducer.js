@@ -1,13 +1,19 @@
-import { createReducer } from '@reduxjs/toolkit';
+import { combineReducers, createReducer } from '@reduxjs/toolkit';
 import {
   getUserInfoSuccess,
   loginSuccess,
   registerSuccess,
 } from '../auth/authActions';
-// combineReducers,
-import { addBalanceTaskSuccess, createTaskSuccess, patchActiveTaskSuccess } from './tasksAction';
+import {
+  addBalanceTaskSuccess,
+  createTaskSuccess,
+  patchActiveTaskSuccess,
+  createTaskError,
+  patchActiveTaskError,
+  addBalanceTaskError,
+} from './tasksAction';
 
-const tasksReducer = createReducer([], {
+const tasksRequests = createReducer([], {
   [createTaskSuccess]: (state, action) => [action.payload, ...state],
   [registerSuccess]: (_, action) => action.payload.week.tasks,
   [loginSuccess]: (_, action) => action.payload.week.tasks,
@@ -17,11 +23,21 @@ const tasksReducer = createReducer([], {
       if (item._id === payload.id) return payload;
       return item;
     }),
-    [addBalanceTaskSuccess]: (state, {payload}) => 
+  [addBalanceTaskSuccess]: (state, { payload }) =>
     state.map(day => {
       if (day._id === payload.id) return payload.updatedTask.days;
       return day;
-    })
+    }),
 });
 
+const error = createReducer(null, {
+  [createTaskError]: (_, action) => action.payload,
+  [patchActiveTaskError]: (_, action) => action.payload,
+  [addBalanceTaskError]: (_, action) => action.payload,
+});
+
+const tasksReducer = combineReducers({
+  tasksRequests,
+  error,
+});
 export default tasksReducer;
