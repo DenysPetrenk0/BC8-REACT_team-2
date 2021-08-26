@@ -8,15 +8,18 @@ import {
   orderAwardSuccess,
   orderAwardError,
   resetError,
+  resetAwards,
 } from './awardsActions';
 
 const itemsReducer = createReducer([], {
   [fetchAwardsSuccess]: (_, action) => action.payload,
-  // [orderAwardSuccess]: (_, action) => action.payload,
+  [resetAwards]: state => [
+    ...state.map(item => ({ ...item, isSelected: false })),
+  ],
 });
 
-const giftsIdReducer = createReducer([], {
-  [orderAwardSuccess]: (_, action) => action.payload,
+const giftIdsReducer = createReducer([], {
+  [orderAwardSuccess]: (_, action) => action.payload.giftIds,
 });
 
 const loadingReducer = createReducer(false, {
@@ -37,7 +40,7 @@ const errorReducer = createReducer(null, {
 
 const awardsReducer = combineReducers({
   items: itemsReducer,
-  giftsId: giftsIdReducer,
+  giftIds: giftIdsReducer,
   loading: loadingReducer,
   error: errorReducer,
 });

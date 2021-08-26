@@ -4,6 +4,21 @@ import styles from '../PlanningCards.module.css';
 import sprite from '../image/symbol-defs.svg';
 import dataDays from '../dataDays.json';
 
+function declOfNum(n, text_forms) {
+  n = Math.abs(n) % 100;
+  var n1 = n % 10;
+  if (n > 10 && n < 20) {
+    return text_forms[2];
+  }
+  if (n1 > 1 && n1 < 5) {
+    return text_forms[1];
+  }
+  if (n1 === 1) {
+    return text_forms[0];
+  }
+  return text_forms[2];
+}
+
 const initialState = {
   isVisible: false,
 };
@@ -11,9 +26,10 @@ const initialState = {
 const daysName = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 const PlanningCardItem = ({ onAddActiveTask, task }) => {
-  const daysActive = useMemo(() => task.days.map(itemDay => itemDay.isActive), [
-    task.days,
-  ]);
+  const daysActive = useMemo(
+    () => task.days.map(itemDay => itemDay.isActive),
+    [task.days],
+  );
 
   const [visible, setVisible] = useState(initialState.isVisible);
   const [checkDays, setCheckDays] = useState(daysActive);
@@ -38,13 +54,20 @@ const PlanningCardItem = ({ onAddActiveTask, task }) => {
     toggleVisible();
     onAddActiveTask(taskId, { days: checkDays });
   };
+
   return (
-    <li className={styles.cardItem} key={task.id}>
+    <li className={styles.cardItem}>
       <img className={styles.cardImg} src={task.imageUrl} alt={task.title} />
       <div className={styles.cadrFooter}>
         <div>
           <p className={styles.cardName}>{task.title}</p>
-          <p className={styles.cardReward}>{task.reward} балла</p>
+          <p className={styles.cardReward}>
+            {`${task.reward} ${declOfNum(task.reward, [
+              t('point1'),
+              t('point'),
+              t('points'),
+            ])}`}
+          </p>
         </div>
         {visible.isVisible ? (
           <button

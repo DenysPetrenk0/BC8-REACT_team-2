@@ -1,5 +1,5 @@
 .cardContainer {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   width: 100%;
   max-width: 280px;
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
@@ -10,12 +10,13 @@
 
 .cardContainer:hover {
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
 }
 
 @media screen and (min-width: 580px) {
   .cardContainer {
-    width: 260px;
-    margin-top: 20px;
-    margin-left: 20px;
+    width: 280px;
+    /* margin-top: 20px; */
+    /* margin-left: 20px; */
   }
 }

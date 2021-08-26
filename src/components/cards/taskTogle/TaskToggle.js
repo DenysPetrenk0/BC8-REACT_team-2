@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import s from './TaskToggle.module.css';
 import { ReactComponent as CheckIcon } from '../cardsIcons/taskTogle_check.svg';
 import { ReactComponent as AttentionIcon } from '../cardsIcons/taskTogle_attention.svg';
 
-const TaskToggle = ({ id, taskCompleted, value }) => {
-  // const [disabled, setDisabled] = useState(false);
-
+const TaskToggle = ({ id, taskCompleted, isCompleted }) => {
   const onChange = e => {
-    // setDisabled(true);
     const id = e.target.id;
     taskCompleted(id);
   };
@@ -18,9 +15,8 @@ const TaskToggle = ({ id, taskCompleted, value }) => {
         id={id}
         className={s.checkbox}
         type="checkbox"
-        checked={value}
+        checked={isCompleted}
         onChange={onChange}
-        // disabled={disabled}
       />
       <span className={`${s.slider}`}>
         <CheckIcon className={s.checkIcon} width="11" height="11" />

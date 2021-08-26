@@ -1,11 +1,13 @@
 .cardItem {
   position: relative;
+  box-sizing: border-box;
   width: 280px;
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
 }
 .cardImg {
-  width: 280px;
-  height: 246px;
+  /* width: 280px;
+  height: 246px; */
   object-fit: cover;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
@@ -30,7 +32,7 @@
 .cardReward {
   display: inline-block;
   background-color: #5679d7;
-  padding: 3px 10px 4px 10px;
+  padding: 3px 10px 3px 10px;
   font-weight: 500;
   font-size: 10px;
   line-height: 1.2;
@@ -161,4 +163,22 @@
   .cardItem {
     width: calc((100% - 90px) / 4);
   }
+}
+
+/* theme switch  */
+
+.darkBg {
+  background-color: rgba(82, 82, 100, 0.541);
+}
+
+.themeDarkText {
+  color: #fff;
+}
+
+.darkCardBg {
+  background-color: rgba(184, 184, 211, 0.541);
+}
+
+.darkIconFill {
+  fill: #fff;
 }

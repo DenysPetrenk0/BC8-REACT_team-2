@@ -31,11 +31,15 @@
   margin-bottom: 10px;
 }
 
+.footerDate {
+  margin-bottom: 20px;
+}
+
 @media screen and (min-width: 580px) {
   .footerContainer {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     padding-bottom: 30px;
     padding-top: 60px;
   }
@@ -52,6 +56,10 @@
     border-right: 1px solid #e3e2e7;
     margin-bottom: 0;
   }
+  .footerDate {
+    margin-right: 40px;
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -61,4 +69,12 @@
     padding-bottom: 40px;
     padding-top: 50px;
   }
+}
+
+.darkBg {
+  background-color: rgba(82, 82, 100, 0.541);
+}
+
+.themeDarkText {
+  color: #fff;
 }

@@ -8,8 +8,8 @@ import { register, login } from '../../redux/auth/authOperations';
 import * as Yup from 'yup';
 import { getError } from '../../redux/auth/authSelectors';
 import styles from './AuthForm.module.css';
-import { loginGoogle } from '../../redux/auth/authActions';
-import axios from 'axios';
+// import { loginGoogle } from '../../redux/auth/authActions';
+// import axios from 'axios';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email().required('Email is Required.'),
@@ -31,17 +31,17 @@ const AuthForm = ({ history }) => {
   //   },
   //   [dispatch]
   // );
-  const responseGoogle = async response => {
-    axios.defaults.headers.common.Authorization = `Bearer ${response.accessToken}`;
-    console.log(`response`, response);
-    dispatch(
-      loginGoogle({
-        email: response.profileObj.email,
-        // tokenId: response.tokenObj.id_token,
-        tokenId: response.accessToken,
-      }),
-    );
-  };
+  // const responseGoogle = async response => {
+  //   axios.defaults.headers.common.Authorization = `Bearer ${response.accessToken}`;
+  //   console.log(`response`, response);
+  //   dispatch(
+  //     loginGoogle({
+  //       email: response.profileObj.email,
+  //       // tokenId: response.tokenObj.id_token,
+  //       tokenId: response.accessToken,
+  //     }),
+  //   );
+  // };
 
   const formik = useFormik({
     initialValues: {

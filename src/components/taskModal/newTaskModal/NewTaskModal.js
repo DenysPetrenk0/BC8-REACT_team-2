@@ -82,7 +82,7 @@ const NewTaskModal = ({ onAddTask, onClose }) => {
   );
 };
 
-export default ({ onAddTask }) => {
+const NewTaskModalContainer = ({ onAddTask }) => {
   const modalVisible = useSelector(getTaskModalVisible);
   const dispatch = useDispatch();
   const onClose = useCallback(() => {
@@ -91,3 +91,5 @@ export default ({ onAddTask }) => {
   if (!modalVisible) return null;
   return <NewTaskModal onAddTask={onAddTask} onClose={onClose} />;
 };
+
+export default NewTaskModalContainer;

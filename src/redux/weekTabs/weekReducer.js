@@ -34,6 +34,7 @@ function getWeekDay() {
 
 const infoWeekReduser = createReducer([], {
   [getWeekSuccess]: (_, { payload }) => payload.week,
+
 });
 
 const errorWeekReduser = createReducer(null, {

@@ -22,3 +22,9 @@
 .closeIcon:hover {
   fill: #ffbc33;
 }
+
+/* theme switch  */
+
+.darkIconFill {
+  fill: #fff;
+}

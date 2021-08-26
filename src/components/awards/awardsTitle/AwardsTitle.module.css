@@ -3,7 +3,11 @@
   width: 217px;
   height: 26px;
   margin-top: 20px;
-  margin-bottom: 30px;
+}
+@media screen and (min-width: 580px) {
+  .AwardsTitle__Wrapper {
+    margin-bottom: 30px;
+  }
 }
 
 .AwardsTitle__icon {
@@ -56,4 +60,10 @@
   color: #ffbc33;
   font-weight: 900;
   font-size: 16px;
+}
+
+/* theme switch  */
+
+.themeDarkText {
+  color: #fff;
 }

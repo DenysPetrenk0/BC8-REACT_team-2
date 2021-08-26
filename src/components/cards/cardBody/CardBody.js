@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./CardBody.module.css";
+import React from 'react';
+import styles from './CardBody.module.css';
 
 const CardBody = ({ imageUrl, title }) => {
   return (

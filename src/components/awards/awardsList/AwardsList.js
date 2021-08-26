@@ -14,13 +14,12 @@ import styles from './awardsList.module.css';
 import AwardsSubmitButton from '../awardsSubmitButton/AwardsSubmitButton';
 import Loader from 'react-loader-spinner';
 import CongratsModal from '../CongratsModal/CongratsModal';
-// import {getUserBalance} from "../../../redux/auth/authSelectors"
+import { resetAwards } from '../../../redux/awards/awardsActions';
 
 export default function AwardsList() {
   const dispatch = useDispatch();
-  const isLoadingAwards = useSelector(getLoading);
   const awards = useSelector(getAllAwards);
-  // const totalBalance = useSelector(getUserBalance);
+  const isLoadingAwards = useSelector(getLoading);
 
   const [gifts, setGifts] = useState(awards);
   const [showModal, setShowModal] = useState(false);
@@ -34,14 +33,9 @@ export default function AwardsList() {
     setGifts(awards);
   }, [awards]);
 
-  // useEffect(() => {
-  //   showModal && dispatch(orderAward());
-  //   return;
-  //   // dispatch(orderAward());
-  // }, [showModal, dispatch]);
-
   const onClose = () => {
     setShowModal(false);
+    dispatch(resetAwards());
   };
 
   const { t } = useTranslation();
@@ -71,9 +65,11 @@ export default function AwardsList() {
 
   return (
     <div className={styles.Awards__Container}>
-      {isLoadingAwards && (
-        <Loader type="ThreeDots" color="#ffbc33" height={70} width={70} />
-      )}
+      <div className={styles.Awards__LoaderContainer}>
+        {isLoadingAwards && (
+          <Loader type="ThreeDots" color="#ffbc33" height={50} width={50} />
+        )}
+      </div>
       <ul className={styles.Awards__List}>
         {gifts.map(award => (
           <li className={styles.Awards__ListItem} key={award.id}>
@@ -84,7 +80,7 @@ export default function AwardsList() {
                 className={styles.Awards__ListImage}
               />
               <div className={styles.Awards__ListFooter}>
-                <h3 className={styles.Awards__ListName}>{award.title}</h3>
+                <h3 className={styles.Awards__ListName}>{t(award.title)}</h3>
                 <div className={styles.Awards__ListTextWrapper}>
                   <p className={styles.Awards__ListText}>
                     {award.price} {t('POINTS')}
@@ -105,6 +101,7 @@ export default function AwardsList() {
                       type="checkbox"
                       name={award.id}
                       id={award.id}
+                      checked={award.isSelected}
                       aria-label="Переключить между выбрано и не выбрано"
                       onChange={setSelected}
                     />
