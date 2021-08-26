@@ -20,7 +20,6 @@ const validationSchema = Yup.object().shape({
 const NewTaskModal = ({ onAddTask, onClose }) => {
   const form = useFormik({
     initialValues: {
-      imageUrl: '',
       title: '',
       reward: '',
     },
