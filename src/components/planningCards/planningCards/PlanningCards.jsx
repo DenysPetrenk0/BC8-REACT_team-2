@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './PlanningCards.module.css';
-import defaultImg from './image/calendar.webp';
-import { patchActiveTask } from '../../redux/tasks/tasksOperation';
-import PlanningCardItem from './planningCardItem/PlanningCardItem';
+import defaultImg from '../image/calendar.webp';
+import { patchActiveTask } from '../../../redux/tasks/tasksOperation';
+import PlanningCardItem from '../planningCardItem/PlanningCardItem';
 
 const PlanningCards = ({ tasks }) => {
   const dispatch = useDispatch();
