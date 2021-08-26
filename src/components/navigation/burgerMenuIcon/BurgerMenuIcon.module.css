@@ -2,6 +2,7 @@
   width: 22px;
   height: 14px;
   color: #858598;
+  cursor: pointer;
 }
 
 .user__name {

@@ -3,6 +3,8 @@ const dark = {
   colors: {
     background: 'darkBg',
     text: 'themeDarkText',
+    link: 'linkActive',
+    boxShadow: 'boxShadowDark',
     cardBg: 'darkCardBg',
     iconFill: 'darkIconFill',
     modalBg: 'darkModalBg',
