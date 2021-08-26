@@ -8,7 +8,7 @@ import { hideTaskModal } from '../../../redux/taskModal/taskModalAction';
 import TaskImageInput from '../taskImageInput/TaskImageInput';
 import TaskInput from '../taskInput/TaskInput';
 import Modal from '../../modal/Modal';
-import ModalClose from '../../modal/ModalClose';
+import ModalClose from '../../modal/modalClose/ModalClose';
 import image from '../modalTaskImg.webp';
 import styles from './NewTaskModal.module.css';
 
