@@ -9,12 +9,12 @@ import {
   getAllAwards,
   getLoading,
 } from '../../../redux/awards/awardsSelectors';
-import sprite from './sprite.svg';
+import sprite from '../awardsImages/sprite.svg';
 import styles from './awardsList.module.css';
 import AwardsSubmitButton from '../awardsSubmitButton/AwardsSubmitButton';
 import Loader from 'react-loader-spinner';
 import CongratsModal from '../CongratsModal/CongratsModal';
-import { resetAwards } from '../../../redux/awards/awardsActions';
+import { resetAwards, resetGiftsId } from '../../../redux/awards/awardsActions';
 
 export default function AwardsList() {
   const dispatch = useDispatch();
@@ -36,6 +36,7 @@ export default function AwardsList() {
   const onClose = () => {
     setShowModal(false);
     dispatch(resetAwards());
+    dispatch(resetGiftsId());
   };
 
   const { t } = useTranslation();
@@ -131,7 +132,7 @@ export default function AwardsList() {
         ))}
       </ul>
       <AwardsSubmitButton onHandleSubmit={onHandleSubmit} />
-      {showModal && <CongratsModal onClose={onClose} />}
+      {showModal && <CongratsModal onClose={onClose} giftsList={gifts} />}
       <marquee
         className={styles.running__string}
         direction="left"
