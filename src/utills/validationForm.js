@@ -1,11 +1,11 @@
 import * as Yup from 'yup';
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email().required('Email is Required.'),
+  email: Yup.string().email().required('это обязательное поле'),
   password: Yup.string()
-    .required('No password provided.')
+    .required('это обязательное поле')
     .min(8, 'Password is too short - should be 8 chars minimum.')
-    .matches(/(?=.*[0-9])/, 'Password must contain a number.'),
+    .matches(/(?=.*[0-9])/, 'пароль должен включать цыфру'),
 });
 
 export default validationSchema;
