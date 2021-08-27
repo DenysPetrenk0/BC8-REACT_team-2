@@ -18,19 +18,13 @@
   padding-left: 30px;
 }
 
-.nav__link_item:not(:last-child) {
+.nav__link_item {
   border-top: 1px solid white;
   padding-top: 14px;
   padding-bottom: 14px;
 }
 
 .nav__link_item:nth-child(2n) {
-  border-bottom: 1px solid white;
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-
-.nav__link_item:nth-child(3n) {
   border-bottom: 1px solid white;
   padding-top: 14px;
   padding-bottom: 14px;
