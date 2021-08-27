@@ -9,7 +9,7 @@ const TaskImageInput = ({ onChange }) => {
         className={styles.inputImage}
         type="file"
         onChange={event => {
-          onChange(event.currentTarget.files[0]);
+          onChange(event.target.files[0]);
         }}
       />
 
