@@ -61,9 +61,10 @@ export const weekInfo = state => {
 export const getCardsInfo = state => state.weekInfo?.info?.tasks || [];
 export const getFilterSelector = state => state.weekInfo.filter;
 export const getDaySelector = state => state.weekInfo.day;
+export const getTasks = state => state.tasks.tasksRequests || [];
 
 export const getVisibleTasks = createSelector(
-  [getCardsInfo, getFilterSelector],
+  [getTasks, getFilterSelector],
   (tasks, filter) => {
     return tasks.filter(
       ({ days }) =>
