@@ -14,14 +14,32 @@ import {
 // const baseToken =
 //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTFkMGVmNzU2MjBjZDAwMTdlOGU0NGQiLCJzaWQiOiI2MTFkMGVmNzU2MjBjZDAwMTdlOGU0NGUiLCJpYXQiOjE2MjkyOTQzMjd9.pOQBlPgoQLUz3RA-ywzNM1I-etuOhfGb8XHa-eajoHs';
 
-export const addTask = (title, reward) => dispatch => {
+// export const addTask = (title, reward) => dispatch => {
+//   dispatch(createTaskRequest());
+//   const task = {
+//     title,
+//     reward,
+//   };
+//   axios
+//     .post(`/task`, task)
+//     .then(({ data }) => dispatch(createTaskSuccess(data)))
+//     .catch(error => dispatch(createTaskError(error.message)));
+// };
+
+export const addTask = (title, reward, file) => dispatch => {
   dispatch(createTaskRequest());
-  const task = {
-    title,
-    reward,
-  };
+  const formData = new FormData();
+  if (file) {
+    formData.set('title', title);
+    formData.set('reward', Number(reward));
+    formData.append('file', file);
+  } else {
+    formData.set('title', title);
+    formData.set('reward', Number(reward));
+  }
+
   axios
-    .post(`/task`, task)
+    .post(`/task`, formData)
     .then(({ data }) => dispatch(createTaskSuccess(data)))
     .catch(error => dispatch(createTaskError(error.message)));
 };
