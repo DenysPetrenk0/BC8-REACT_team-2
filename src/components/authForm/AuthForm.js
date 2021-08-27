@@ -107,7 +107,9 @@ const AuthForm = ({ history }) => {
                 onBlur={formik.handleBlur}
               />
               {formik.errors.email && formik.touched.email && (
-                <div className="input-feedback">{formik.errors.email}</div>
+                <div className={styles.inputFeedback}>
+                  {formik.errors.email}
+                </div>
               )}
             </div>
             <div className={styles.formGroup}>
@@ -125,7 +127,9 @@ const AuthForm = ({ history }) => {
                 onBlur={formik.handleBlur}
               />
               {formik.errors.password && formik.touched.password && (
-                <div className="input-feedback">{formik.errors.password}</div>
+                <div className={styles.inputFeedback}>
+                  {formik.errors.password}
+                </div>
               )}
             </div>
             <div className={styles.wrapperButton}>

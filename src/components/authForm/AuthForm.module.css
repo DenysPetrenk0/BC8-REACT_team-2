@@ -39,7 +39,7 @@
   font-size: 14px;
   letter-spacing: 0.04em;
 
-  color: #a6abb9;
+  color: #000000;
   background-color: #f6f7fb;
   border: none;
   border-top: 2px solid rgba(133, 133, 152, 0.3);
@@ -54,6 +54,14 @@
 
 .googleBtn {
   margin-bottom: 30px;
+}
+
+.inputFeedback {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+
+  color: #eb5757;
+  margin-bottom: 10px;
 }
 
 .wrapperButton {
