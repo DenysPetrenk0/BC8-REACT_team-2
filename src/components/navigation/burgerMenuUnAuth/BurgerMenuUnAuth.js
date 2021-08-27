@@ -2,11 +2,11 @@ import React from 'react';
 import ModalNavListUnAuth from '../modalNavListUnAuth/ModalNavListUnAuth';
 import styles from '../burgerMenuAuth/BurgerMenuAuth.module.css';
 
-const BurgerMenuUnAuth = () => {
+const BurgerMenuUnAuth = ({ onClose }) => {
   return (
     <>
       <div className={styles.container}>
-        <ModalNavListUnAuth />
+        <ModalNavListUnAuth onClose={onClose} />
       </div>
     </>
   );

@@ -57,7 +57,7 @@ const UnAuthorizatedBar = () => {
       )}
       {showModal && (
         <ModalBurger onClose={toggleModal}>
-          <BurgerMenuUnAuth />
+          <BurgerMenuUnAuth onClose={toggleModal} />
           <ModalCloseBurger onClose={toggleModal} />
         </ModalBurger>
       )}
