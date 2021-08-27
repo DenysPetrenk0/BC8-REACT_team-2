@@ -52,7 +52,7 @@ const PlanningCardItem = ({ onAddActiveTask, task }) => {
       />
       <div className={styles.cadrFooter}>
         <div>
-          <p className={styles.cardName}>{task.title}</p>
+          <p className={styles.cardName}>{t(task.title)}</p>
           <p className={styles.cardReward}>
             {`${task.reward} ${declOfNum(task.reward, [
               t('point1'),
