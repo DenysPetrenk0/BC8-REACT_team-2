@@ -24,9 +24,12 @@ const tasksRequests = createReducer([], {
       return item;
     }),
   [addBalanceTaskSuccess]: (state, { payload }) =>
-    state.map(day => {
-      if (day._id === payload.id) return payload.updatedTask.days;
-      return day;
+    state.map(task => {
+      if (task._id === payload.updatedTask.id) {
+        const { id: _id, ...newTask } = payload.updatedTask;
+        return { _id, ...newTask };
+      }
+      return task;
     }),
 });
 

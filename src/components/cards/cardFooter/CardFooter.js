@@ -7,15 +7,16 @@ import PointAmount from '../pointAmount';
 import TaskToggle from '../taskTogle/TaskToggle';
 import s from './CardFooter.module.css';
 
-const CardFooter = ({ ...data }) => {
-  const { title, reward } = data;
-
+const CardFooter = data => {
+  const { title, reward, days } = data;
   const dispatch = useDispatch();
   const filterDate = useSelector(getFilterSelector);
-  const findDay = data.days.find(day => day.date === filterDate);
+  const findDay = days.find(day => day.date === filterDate);
 
   const taskCompleted = id => {
     dispatch(patchTaskSwitch(id, { date: filterDate }));
+    console.log(filterDate);
+    console.log(findDay.isCompleted);
   };
 
   return (
@@ -27,7 +28,7 @@ const CardFooter = ({ ...data }) => {
       <TaskToggle
         id={data._id}
         taskCompleted={taskCompleted}
-        value={findDay.isCompleted}
+        isCompleted={findDay.isCompleted}
       />
     </div>
   );

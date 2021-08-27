@@ -8,6 +8,7 @@ const TaskToggle = ({ id, taskCompleted, isCompleted }) => {
     const id = e.target.id;
     taskCompleted(id);
   };
+  console.log(isCompleted);
 
   return (
     <label htmlFor={id} className={s.switcher}>

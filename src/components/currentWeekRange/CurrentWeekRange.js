@@ -3,6 +3,7 @@ import Card from '../cards/card/Card';
 import styles from './CurrentWeekRange.module.css';
 
 const CurrentWeekRange = ({ tasks }) => {
+  // console.log(tasks);
   return (
     <ul className={styles.taskList}>
       {tasks.map(task => (
