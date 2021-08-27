@@ -43,15 +43,15 @@ export default function AwardsList() {
 
   const onHandleSubmit = () => {
     setShowModal(true);
-    const data = gifts
-      .filter(gift => gift.isSelected)
-      .map(gift => Number(gift.id));
-    dispatch(
-      orderAward({
-        giftIds: data,
-      }),
-    );
   };
+
+  // useEffect(() => {
+  //   setTimeout =
+  //     (() => {
+  //       dispatch(resetAwards(), resetGiftsId());
+  //     },
+  //     1000);
+  // });
 
   const setSelected = event => {
     const { name } = event.target;
@@ -131,8 +131,9 @@ export default function AwardsList() {
           </li>
         ))}
       </ul>
-      <AwardsSubmitButton onHandleSubmit={onHandleSubmit} />
       {showModal && <CongratsModal onClose={onClose} giftsList={gifts} />}
+      <AwardsSubmitButton onHandleSubmit={onHandleSubmit} />
+
       <marquee
         className={styles.running__string}
         direction="left"

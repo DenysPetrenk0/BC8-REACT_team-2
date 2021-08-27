@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Modal from '../../modal/Modal';
 import ModalClose from '../../modal/modalClose/ModalClose';
@@ -6,7 +6,7 @@ import styles from './CongratsModal.module.css';
 import catImage from '../awardsImages/catModal.png';
 import sadCatImage from '../awardsImages/sadCatModal.png';
 import wonderCatImage from '../awardsImages/wonderCatModal.png';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   getAllAwards,
   getGiftIds,
@@ -14,8 +14,10 @@ import {
 import { ThemeContext } from '../../../App';
 import cx from 'classnames';
 import { getUserBalance } from '../../../redux/auth/authSelectors';
+import { orderAward } from '../../../redux/awards/awardsOperations';
 
 const CongratsModal = ({ onClose, giftsList }) => {
+  const dispatch = useDispatch();
   const { theme } = useContext(ThemeContext);
   const balance = useSelector(getUserBalance);
   const { t } = useTranslation();
@@ -32,9 +34,21 @@ const CongratsModal = ({ onClose, giftsList }) => {
     return acc;
   }, 0);
 
-  const getIsAwards = () => congratsAwardsBalance <= balance;
-  const isAwards = getIsAwards();
+  // const [isAwards, setIsAwards] = useState(congratsAwardsBalance <= balance);
+  // const getIsAwards = () => congratsAwardsBalance <= balance;
+
+  const isAwards = useMemo(() => congratsAwardsBalance <= balance, []);
   const isGiftList = checkedGiftList.length;
+
+  useEffect(() => {
+    const data = checkedGiftList.map(gift => Number(gift.id));
+    isAwards &&
+      dispatch(
+        orderAward({
+          giftIds: data,
+        }),
+      );
+  }, []);
 
   return (
     <Modal onClose={onClose}>
