@@ -52,7 +52,7 @@ const UserMenu = () => {
 
       {showModalBurgerMenu && (
         <ModalBurger onClose={toggleModalBurgerMenu}>
-          <BurgerMenuAuth onLogout={onLogOut} />
+          <BurgerMenuAuth onLogout={onLogOut} onClose={toggleModalBurgerMenu} />
           <ModalCloseBurger onClose={toggleModalBurgerMenu} />
         </ModalBurger>
       )}

@@ -7,7 +7,7 @@ import styles from './ModalNavListAuth.module.css';
 import { ThemeContext } from '../../../App';
 import cx from 'classnames';
 
-const ModalNavListAuth = () => {
+const ModalNavListAuth = ({ onClose }) => {
   const { t } = useTranslation();
   const { theme } = useContext(ThemeContext);
 
@@ -21,6 +21,7 @@ const ModalNavListAuth = () => {
         )}
         to="/"
         exact
+        onClick={onClose}
       >
         {t('Home')}
       </NavLink>
@@ -32,6 +33,7 @@ const ModalNavListAuth = () => {
         )}
         to="/planing"
         exact
+        onClick={onClose}
       >
         {t('Planning')}
       </NavLink>
@@ -43,6 +45,7 @@ const ModalNavListAuth = () => {
         )}
         to="/awards"
         exact
+        onClick={onClose}
       >
         {t('Awards')}
       </NavLink>
@@ -54,6 +57,7 @@ const ModalNavListAuth = () => {
         )}
         to="/contacts-us"
         exact
+        onClick={onClose}
       >
         {t('Contacts')}
       </NavLink>
