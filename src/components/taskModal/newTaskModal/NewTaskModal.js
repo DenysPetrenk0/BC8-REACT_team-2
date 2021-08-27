@@ -22,6 +22,7 @@ const NewTaskModal = ({ onAddTask, onClose }) => {
     initialValues: {
       title: '',
       reward: '',
+      file: '',
     },
     validationSchema,
     onSubmit: values => {
@@ -29,10 +30,9 @@ const NewTaskModal = ({ onAddTask, onClose }) => {
     },
   });
 
-  const imageUrl = useMemo(
-    () =>
-      !form.values.imageUrl ? '' : URL.createObjectURL(form.values.imageUrl),
-    [form.values.imageUrl],
+  const file = useMemo(
+    () => (!form.values.file ? '' : URL.createObjectURL(form.values.file)),
+    [form.values.file],
   );
 
   const { t } = useTranslation();
@@ -45,16 +45,12 @@ const NewTaskModal = ({ onAddTask, onClose }) => {
         className={styles.newTaskModalContainer}
       >
         <div className={styles.taskImageContainer}>
-          <img
-            className={styles.taskImage}
-            src={imageUrl || image}
-            alt="task"
-          />
+          <img className={styles.taskImage} src={file || image} alt="task" />
         </div>
         <TaskImageInput
-          value={form.values.imageUrl}
+          value={form.values.file}
           onChange={file => {
-            form.setFieldValue('imageUrl', file);
+            form.setFieldValue('file', file);
           }}
         />
         <TaskInput

@@ -29,8 +29,8 @@ const PlanningPage = () => {
 
   // create task for form
   const onAddTask = useCallback(
-    ({ title, reward, imageUrl }) => {
-      dispatch(addTask(title, reward, imageUrl));
+    ({ title, reward, file }) => {
+      dispatch(addTask(title, reward, file));
     },
     [dispatch],
   );
